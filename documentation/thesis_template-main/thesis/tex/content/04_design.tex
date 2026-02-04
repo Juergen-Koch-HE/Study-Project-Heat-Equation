@@ -127,6 +127,66 @@ U(x,t)=(C1*e^(x*squareroot(w)) + C2 *e^(-x*squareroot(w)))*C3*e^(a^2 * w)
 Einsetzen der Randbedingungen  in U(0,t) =  0, Ortsteil der Gleichungen 
 X(0) = C1*e^(0*squareroot(w))+ C2*e^(-0*squareroot(w)) = 0 
 
+Einesetzen der Randbedingungen in in den Ortsteilder Gelchungen, weil ????
+U(0,t)=U(pi,t)=0  =>  X(0)=X(pi)=0 \[u(0,t) = u(\pi,t) = 0 \quad \Longrightarrow \quad X(0) = X(\pi) = \]
+
+X(0) = C1*e^0*squareroot(w) + C2*e^-(0*squareroot(w)) = C1*1 + C2*1 = 
+
+C1 + C2 = 0 => C1 = -C2 => |C1| = |C2| = c
+
+X(x) = C*e^(x*squareroot(w)) - C*e^(-x*squareroot(w)) = C*( e^(x*squareroot(w)) - e^(-x*squareroot(w)) ) 
+
+\[X(0) = C_1 e^{0\sqrt{\omega}} + C_2 e^{-0\sqrt{\omega}}\]
+\[X(0) = C_1 \cdot 1 + C_2 \cdot 1\]
+\[C_1 + C_2 = 0\]
+\[C_1 = -C_2\]
+\[C_1| = |C_2| = C\]
+\[X(x) = C e^{x\sqrt{\omega}} - C e^{-x\sqrt{\omega}}\]
+
+
+\[X(\pi) = 0 = C * ( e^(pi*squareroot(w)) - e^(-pi*squareroot(w)) )  C \neq 0\] 
+\[=> e^(pi*squareroot(w)) - e^(-pi*squareroot(w)) = 0\] 
+\[=> e^(pi*squareroot(w)) = e^(-pi*squareroot(w))\]
+\[=> e^(2*pi*squareroot(w)) = 1\]
+
+Wegen Gaussccher Zahlenebene e^(2*pi*squareroot(w)) = e^(i*2*pi*squareroot(w)) 
+
+\[=> 2'\pi*squareroot(w) = i*2*pi*k       k ∈ Z \{0}\]
+\[=> squareroot(w) = i*k                  k ∈ Z \{0}\]
+\[=> w = -k^2                             k ∈ Z \{0}\]
+
+
+Einsetzen in \[ \lambda = a \pm i b \] X = e^(a*x) + (C1*cos(bx) + C2*sin(bx))
+
+X(x) = C1*cos(kx) + C2*sin(kx)
+\[ X(x) = C_1 \cos(kx) + C_2 \sin(kx) \]
+X(0) = C1*cos(0) + C2*sin(0) = C1*1 + C2*0 = C1 = 0
+\[ X(0) = C_1 \cos(0) + C_2 \sin(0) = C_1 \cdot 1 + C_2 \cdot 0 = C_1 = 0 \]
+
+X(x) = C2*sin(kx)
+\[ X(x) = C_2 \sin(kx) \]
+X(\pi) = C2*sin(k*pi) = 0  C2 != 0 => sin(k*pi) = 0 => k ∈ Z \{0}    ???? richtig 
+\[
+X(\pi) = C_2 \sin(k\pi) = 0 C_2 \neq 0 \;\Longrightarrow\; \sin(k\pi) = 0 k \in \mathbb{Z} \setminus \{0\}
+\]
+
+Zusammenführung der Lösung mit Randbedingungen
+U(x,t) = C2*sin(kx)*C3*e^(-a^2*k^2*t)
+U(x,t) = Ck*sin(kx)*e^(-a^2*k^2*t)         Ck = C2*C3 = konst.
+\[ U(x,t) = C_2 \sin(kx)\, C_3 e^{-a^2 k^2 t}
+U(x,t) = C_k \sin(kx)\, e^{-a^2 k^2 t}  C_k = C_2 C_3 = \text{konst.} \]
+
+Die Anfangsbedingung U(x,0) = 1 wird durch die Fourier-Analyse gelöst, um die Koeffizienten Ck zu bestimmen.
+Ck = 2/pi * Integral von 0 bis pi von U(x,0)*sin(kx) dx
+Ck = 2/pi * Integral von 0 bis pi von 1*sin(kx) dx
+\[
+C_k = \frac{2}{\pi} \int_{0}^{\pi} U(x,0)\sin(kx)\,\mathrm{d}x
+C_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(kx)\,\mathrm{d}x
+\]
+\[ C_k = \frac{2}{\pi} \int_{0}^{\pi} \left( -\frac{1}{k}\cos(kx) \right) \,\mathrm{d}x \]
+
+
+
 
 \section{Praxis}
 
