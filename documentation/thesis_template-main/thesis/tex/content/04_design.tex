@@ -1,111 +1,133 @@
-\chapter{Design}\label{sec:design}
-The structure for the design chapter strongly depends on the topic of your thesis.
-Throughout the process, you will refine this structure with your supervisor.
+\chapter{Analyse und Methodik}\label{sec:design}
 
-If you have a mathematical content in your thesis, you can use equations as follows.
-Each equation uses its own space and should not be longer than one line, otherwise it is difficult to read.
-For this document, the content of the equation is not important.
-Still, we reference and explain it as an example.
-Equation~\ref{eq:ifrnotas} defines the set of streams \sifr that will interfere with stream $s$ if no \gls{TAS} is configured.
-For the purpose of consistent formulas, we introduce commands for complex terms in the file \emph{content/definitions.tex}
+Frage: Wie gehst du vor, um dieses Modell zu untersuchen / zu lösen?
 
-\begin{equation}\label{eq:ifrnotas}
-    {\sifr} = \{ g | g \in \sedge \land g\neq s \land p_g \geq p_s \}
-\end{equation}
+Jetzt kommt das Wie, nicht das Was.
 
+Bei dir z. B.:
 
+Trennung der Variablen
 
-In your thesis, you can also use more complex equation structures.
-This structure still has one equation per line, but aligns them to be grouped together and indent the same way.
-The alignment happens through the \& across the lines.
-This complex structure still has references to each of the individual formulas.
-Therefore, we can easily explain each of the Equations~\ref{eq:C1}, \ref{eq:C2}, and \ref{eq:combinetassync} in the text.
+Produktansatz
 
-\begin{align}
-    & \text{case C1: } {\tenqCT} < {\topen} \label{eq:C1}\\
-    & \text{case C2: } {\tenqCT} + {\ddwell} + {\difrcross} < {\tclose} \label{eq:C2} \\
-    & {\dgate} = 
-        \begin{cases}
-            {\topen} - {\tenqCT} + {\difrpath}         & \text{case C1} \\
-            0                                                            & \text{case C2} \\
-            {\ctgcl} - {\tenqCT} + {\topen} + {\difrpath}  & \text{otherwise} 
-        \end{cases}\label{eq:combinetassync}
-\end{align}
+Eigenwertproblem
 
+analytische Lösung
 
-For your thesis, we recommend the use of tables to summarize series of data.
-Sometimes, tables are easier to read than a lot of text with data.
-In Table~\ref{tab:linkspeed}, we present the transmission delay of frames with different sizes at different link speeds.
-Instead of writing all these numbers in a long paragraph, we can now use the time to highlight key insights.
-For example, you can see that a frame with \SI{1522}{B} only consumes about twice the time at \SI{1}{Gbit/s}, compared to a frame with size \SI{64}{B} at \SI{100}{Mbit/s}.
+numerische Diskretisierung
 
-\begin{table}
-    \caption{Example transmission delays.}
-    \label{tab:linkspeed}
-    \begin{center}
-        \begin{tabular}{r|cccc}
-            \toprule
-            \textbf{Size} & \textbf{100 Mbit/s} & \textbf{1 Gbit/s} & \textbf{2.5 Gbit/s} & \textbf{10 Gbit/s} \\
-            \midrule
-            \textbf{64 B} & 6.7~\textmu s & 672 ns & 269 ns & 67 ns \\
-            \textbf{123 B} & 11.8~\textmu s & 1.2~\textmu s & 470 ns & 118 ns \\
-            \textbf{1,522 B} & 123.4~\textmu s & 12.3~\textmu s & 4.9~\textmu s & 1.2~\textmu s \\
-            \bottomrule
-        \end{tabular}
-    \end{center}
-\end{table}
+Vergleich analytisch ↔ numerisch
 
+🧠 Wichtig:
 
+Hier erklärst du Methoden
 
-In your thesis, you might want to explain your solution with Pseudocode algorithms.
-For example, Algorithm~\ref{alg:groupsort} presents a sorting algorithm for firewall rules.
-In Line~\ref{lst:line:extendgroup}, we compare if a rule depends on the current group.
+nicht „wir programmieren jetzt“, sondern wie man theoretisch zur Lösung kommt
 
-\begin{algorithm}
-    \caption{Group Sort}\label{alg:groupsort}
-    \begin{algorithmic}[1]
-    \For{$x \in RuleSet$}
-        \State $group \gets [x]$
-        \For{$y \in RuleSet[x.idx:]$}
-            \If{$dependency(group, y)$} 
-                \Comment{Extend group}\label{lst:line:extendgroup}
-                \State $group \gets group \# y$ 
-            \Else
-                \If{$hit\_count([y]) < hit\_count(group)$}
-                    \State \Comment{Move complete group}
-                    \State $y.idx \gets x.idx$
-                    \For{$z \in group$}
-                        \State $z.idx \gets z.idx + 1$
-                    \EndFor
-                \EndIf
-                \State $group \gets [y]$
-            \EndIf
-        \EndFor
-    \EndFor
-\end{algorithmic}
-\end{algorithm}
+➡️ Das ist die Denk- und Rechenarbeit.
 
 
 
 
-Finally, you can also use theorems, and lemmas in your thesis.
-Please make sure (as always) to reference each of them in the text and explain their meaning.
-For example, Theorem~\ref{thm:sometheorem}, or Lemma~\ref{thm:somelemma}.
 
-\begin{theorem}\label{thm:sometheorem}
-    Let \(f\) be a function whose derivative exists in every point, then \(f\) 
-    is a continuous function.
-\end{theorem}
+Konkret befasst sich diese Arbeit mit einer homogen eindimensionalen Wärmeleitglei-chung, welche keine Wärmequelle hat und deren Ränder eine einheitlich konstante Temperatur haben. Das bedeutet diese Gleichung einen Körper, in beschriebenem Fall, eine infinitesimal dünne Metallschiene beim Erkalten in einem perfekten Labor Umfeld beschreibt. 
+Allgemeine Wärmeleitgleichung ohne Wärmequelle: Ut` = Ux`` * a^2
+Dabei steht Ut’ für den nach der Zeit abgeleiteten Teil der Gleichung und Ux`` für den nach dem Ort abgeleiteten Teil der Gleichung a beschreibt in dieser Gleichung den spe-zifischen Temperaturleitungskoeffizient, der beschreibt, wie gut oder schlecht das Mate-rial Wärme leitet.
+Auf dieser Basis aufbauend wurden Dirichlet-Randbedingungen von 0°Grad Celsius angenommen. 
 
-\begin{lemma}\label{thm:somelemma}
-    Given two line segments whose lengths are \(a\) and \(b\) respectively there is a 
-    real number \(r\) such that \(b=ra\).
-\end{lemma}
 
-For formal procedures and algorithms, use the unified notation of proofs to state your conclusions.
-An example for that follows here:
 
-\begin{proof}\label{thm:someproof}
-    To prove it by contradiction try and assume that the statement is false,
-    proceed from there and at some point you will arrive to a contradiction.
-\end{proof}
+
+
+
+\section{Theorie}
+
+\subsection{Labor Übersicht}
+
+Das Labor für das Modul Modellbildung und Simulation soll den Studenten schrittweise die Lösung der Wärmeleitgleichung nach dem Produktverfahren nähergebracht werden.
+
+1.	Imports (sollen gleich bleiben, wie bei den anderen Laboren).
+
+2.	Modelling: Als Einleitung zum Thema, wird ein Video eingefügt dieses Video beschreibt das Verhalten des Materials, wenn es an einer Seite durch eine Wärmequelle erhitzt wird. 
+
+3.	Darauf folgt die Herleitung der Wärmeleitgleichung aus dem Energieerhaltungs- Fouriers- und Gaußgesetz. 
+
+4.	Danach muss der Student seine erste Aufgabe lösen diese beinhaltet das Berechnen des Temperaturleitkoeffizienten. Die notwendigen Informationen sind durch Wikipedia Links bereitgestellt.
+
+5.	Lösen der Wärmeleitgleichung für Stab in 1D ohne Wärmequelle. Explizite Lö-sung mit Anfangs- und Randbedingungen.
+
+6.	Lösen der Wärmeleitgleichung für Stab in 1D mit Wärmequelle. Explizite Lö-sung mit Anfangs- und Randbedingungen.
+
+7.	Simulation/Diskretisierung
+
+Zusätzliche Aufgaben, für den Fall, dass wir schneller fertig werden.
+Berechnen der Lösung für die Wärmeleitgleichung auf näherungsweisem Numerischen weg.
+
+\subsection{Werkzeuge und Infrastruktur}
+Die technische Umsetzung erfolgt in der Programmiersprache Python unter Verwen-dung von:
+-	Jupyter Notebook für interaktive Entwicklung
+-	NumPy für numerische Berechnungen
+-	Matplotlib für Visualisierung der Ergebnisse
+-	Pandas für die strukturierung der berechneten ergebnise
+-	Math für das nutzen von variablen wie pi, cos, sin, ...
+Die Anwendung soll abschließend auf einem Hochschul-Cluster bereitgestellt werden. Die Kompatibilität mit der dortigen Infrastruktur (Python-Version, Bibliotheken, evtl. Containerisierung) wird im Projektverlauf berücksichtigt.
+
+\subsection{Analytische Lösungsverfahren}
+Es wurde das analytische Lösungsverfahren zur Lösung der Wärmeleitgleichung durchgeführt. 
+!!!! Vorteile von Lösung mit Analytischen verfahren!!!! 
+
+Randbedingungen 
+U(0,t) =  0;		t>= 0 0 < x > pi 
+U(Pi,t) = 0;
+
+Anfangswert 
+U(x,0) = 1,  
+
+Es wurde der der Ansatz der Separation der variablen verwendet, um den Ort X(x) und die Zeit T(t) zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und die Gleichungen können nach der jeweiligen Unbekannten aufge-löst werden, 
+Wärmeleitgleichung: Ut `= a^2 * Ux``
+
+Ableiten nach der Zeit 
+U(x,t) = X(x) * T(t) -> Ut`(x,t) = X(x) * T`(t)
+
+Ableiten nach dem Ort X(x)
+U(x,t) = X(x) * T(t) -> Ux``(x,t) = X``(x) * T(t) 
+
+Einsetzen in die Wärmeleitgleichung 
+X(x) * T`(t) = a^2 * X``(x) * T(t)
+
+Durchführung der Separation der Variablen
+( X``(x) / X(x) ) = ( T`(t) / ( a^2 * T(t) ) = lambda (!!!mathematischen lambda trick erklären!!!!)
+
+Auflösen der Wärmeleitgleichung nach dem Ort X(x)
+( X``(x) / X(x) ) = lambda  
+
+Umformen in die Charakteristische Gleichung (!!!Charachteristische Gleichung erklären!!!)
+0 = -X``(x) + w *  X(x)
+0 = -lambda^2 + w             / squareroot
+Lambda1,2 = +/- squareroot(w)
+
+Einsetzen der Lösung in die Standardgleichung 
+X(x) = C1 * e^(x*squareroot(w)) + C2 * e^(-x * squareroot(w))
+
+Ableiten nach der Zeit T(t)
+( T`(t) / ( a^2 * T(t) ) ) = w 
+
+Umformen in die Charakteristische Gleichung
+T`(t) = a^2 * T(t) * w
+0 = -T`(t) + a^2 * T(t) * w
+0 = -lambda + a^2 * w 
+lambda = a^2 * w
+
+Einsetzen der Lösung in die Standardgleichung
+T(t) = C3 * e^(t*a^2*w)
+
+Zusammen führen der separierten Gleichungen, Allgemeine Gleichunng
+U(x,t)=(C1*e^(x*squareroot(w)) + C2 *e^(-x*squareroot(w)))*C3*e^(a^2 * w)
+
+Einsetzen der Randbedingungen  in U(0,t) =  0, Ortsteil der Gleichungen 
+X(0) = C1*e^(0*squareroot(w))+ C2*e^(-0*squareroot(w)) = 0 
+
+
+\section{Praxis}
+
+
