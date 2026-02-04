@@ -1,0 +1,29 @@
+\chapter{Implementation}
+In your implementation section, you can also use code listings to explain the details of your work.
+To include the code you have two options: A) use the inline method for short one liner: \lstinline[language=Python]{[elem for elem in my\_list if elem.variable==filter_value]}, or
+B) use multiline listings to visualize more complex examples.
+Similar with figures, make sure to always reference your multiline listings and explain what they do.
+In Listing~\ref{lst:test}, you find the function \lstinline[language=Python]{my_filter} with two parameters.
+This function uses the list in the first parameter for all elements with the variable equal to the second parameter.
+
+\begin{lstlisting}[language=Python,caption={A filter function in Python},label={lst:test}]
+def my_filter(my_list, filter_value):
+    new_list = []
+    for elem in my_list:
+        if elem.variable == filter_value:
+            new_list.append(elem)
+    return new_list
+\end{lstlisting}
+
+If you have even more detailed code listings, they belong into the appendix. 
+For example, you can find a filter function with an additional sorting method in the Appendix~\ref{sec:app-lambda}.
+
+In some cases, it might happen that your inline code does not fit into the current line anymore.
+For example with this code here: \lstinline[language=Python]{[elem for elem in my\_list if elem.variable==filter_value]}
+But don't worry, the arrow in the beginning of the line will highlight that!
+
+If you require further details on the use of listings in LaTeX, you can find additional information on listings at the following two locations:
+\begin{enumerate}
+    \item \href{https://en.wikibooks.org/wiki/LaTeX/Source\_Code\_Listings}{https://en.wikibooks.org/wiki/LaTeX/Source\_Code\_Listings}
+    \item \href{https://www.overleaf.com/learn/latex/Code\_listing}{https://www.overleaf.com/learn/latex/Code\_listing}
+\end{enumerate}

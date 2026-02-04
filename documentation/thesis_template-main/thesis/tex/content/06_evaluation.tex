@@ -1,0 +1,57 @@
+\chapter{Evaluation}
+The content, e.g., measurements, survey, or simulations, of the evaluation depends on your thesis.
+What will not depend on your thesis that you have results that you will visualize in figures.
+In general, use one figure after each other and explain how to read it and directly discuss the content and \textbf{meaning}.
+Sometimes, you want to visualize a change through your design and implementation, or want to compare two systems.
+Then, you should place the figures either above each other or next to each other.
+The LaTeX package \emph{subcaption} helps with that, and it looks as follows.
+
+Figure~\ref{fig:singlenodeevaluation} shows two figures with different configurations during the measurement.
+Table~\ref{tab:singlenodeevalscenarios} presents six different settings for the evaluation of a single node.
+We use these settings throughout the evaluation with the labels S1 to S6.
+Figure~\ref{fig:singlenode} shows the measured forwarding delay for the six different settings without interference on a single node.
+Each measurement contains at least \SI{1000}{packets} and is visualized as box plot.
+Figure~\ref{fig:singlenodeinterference} shows measurements for the same six settings, but this time with interference by other traffic.
+One can clearly see that the majority of the results (the box represents 50\% of all measurements) is similarly distributed for the settings S4 to S6.
+However, we also see a lot of outliers, raising the worst-case latency to \SI{80}{\mu s}.
+For the settings S1 to S3, we see the same outliers, caused by the interference.
+Across all settings, we observe the settings S2 and S3 having the best performance, without and with interference.
+
+
+\begin{table}
+    \caption{Single Node Evaluation Settings}
+    \label{tab:singlenodeevalscenarios}
+    \begin{center}
+        \begin{tabular}{cl}
+            \toprule
+            \textbf{Setting} & \textbf{Description} \\
+            \midrule
+            S1 & Strict Priority \\ 
+            S2 & FP with priority 7 in the express category \\ 
+            S3 & synchronized TAS with prio. 7 in the TAS window \\ 
+            S4 & unsynchronized TAS with prio. 7; $CT_{app}^{s} = 100 \text{\textmu s}$ \\ 
+            S5 & unsynchronized TAS with prio. 7; $CT_{app}^{s} = 45 \text{\textmu s}$ \\ 
+            S6 & unsynchronized TAS with prio. 7; $CT_{app}^{s} = 196 \text{\textmu s}$ \\ 
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{content/figures/templatetext/single_node.png}
+        \caption{no interference}
+        \label{fig:singlenode}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{content/figures/templatetext/single_node_with_interference.png}
+        \caption{interference}
+        \label{fig:singlenodeinterference}
+    \end{subfigure}
+    \caption{Single node queuing delay evaluation}
+    \label{fig:singlenodeevaluation}
+\end{figure}

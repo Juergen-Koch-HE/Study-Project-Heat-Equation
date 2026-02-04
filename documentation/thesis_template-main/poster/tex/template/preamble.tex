@@ -1,0 +1,37 @@
+%% Fill in the page size here. If the proportions of the fonts
+%% are not satisfactory, change the scale parameter
+\usepackage[orientation=portrait,size=a1,scale=1.4]{beamerposter}
+\usepackage[english,ngerman]{babel}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage[backend=bibtex,style=ieee, citestyle=numeric-comp, sorting=nty, mincitenames=1, maxcitenames=1]{biblatex}
+\usepackage{hyperref}
+
+\newlength{\textpagepad}\setlength{\textpagepad}{1cm}
+\setlength{\columnsep}{2\textpagepad} % for captions
+
+\newenvironment{blockwithcontent}[1]{%
+  \begin{block}{#1}%
+    \hspace{\textpagepad}%
+    \begin{minipage}{\textwidth-2\textpagepad}%
+}{%
+    \end{minipage}%
+  \end{block}%
+}
+
+% Usage: \parallelminipages[<optional:vertical alignment>]{<left page width>}{<left content>}{<right content>}
+\newcommand{\parallelminipages}[4][c]{%
+  \begin{minipage}{\textwidth}%
+    \begin{minipage}[#1]{#2-0.5\textpagepad}%
+      #3%
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}[#1]{\textwidth-#2-0.5\textpagepad}%
+      #4%
+    \end{minipage}%
+  \end{minipage}%
+}
+
+% Usage: \debugframebox{<any content whose bounds you want to visualize>}
+\newcommand{\debugframebox}[1]{{\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.01pt}\framebox{#1}}}

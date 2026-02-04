@@ -1,0 +1,111 @@
+\chapter{Design}\label{sec:design}
+The structure for the design chapter strongly depends on the topic of your thesis.
+Throughout the process, you will refine this structure with your supervisor.
+
+If you have a mathematical content in your thesis, you can use equations as follows.
+Each equation uses its own space and should not be longer than one line, otherwise it is difficult to read.
+For this document, the content of the equation is not important.
+Still, we reference and explain it as an example.
+Equation~\ref{eq:ifrnotas} defines the set of streams \sifr that will interfere with stream $s$ if no \gls{TAS} is configured.
+For the purpose of consistent formulas, we introduce commands for complex terms in the file \emph{content/definitions.tex}
+
+\begin{equation}\label{eq:ifrnotas}
+    {\sifr} = \{ g | g \in \sedge \land g\neq s \land p_g \geq p_s \}
+\end{equation}
+
+
+
+In your thesis, you can also use more complex equation structures.
+This structure still has one equation per line, but aligns them to be grouped together and indent the same way.
+The alignment happens through the \& across the lines.
+This complex structure still has references to each of the individual formulas.
+Therefore, we can easily explain each of the Equations~\ref{eq:C1}, \ref{eq:C2}, and \ref{eq:combinetassync} in the text.
+
+\begin{align}
+    & \text{case C1: } {\tenqCT} < {\topen} \label{eq:C1}\\
+    & \text{case C2: } {\tenqCT} + {\ddwell} + {\difrcross} < {\tclose} \label{eq:C2} \\
+    & {\dgate} = 
+        \begin{cases}
+            {\topen} - {\tenqCT} + {\difrpath}         & \text{case C1} \\
+            0                                                            & \text{case C2} \\
+            {\ctgcl} - {\tenqCT} + {\topen} + {\difrpath}  & \text{otherwise} 
+        \end{cases}\label{eq:combinetassync}
+\end{align}
+
+
+For your thesis, we recommend the use of tables to summarize series of data.
+Sometimes, tables are easier to read than a lot of text with data.
+In Table~\ref{tab:linkspeed}, we present the transmission delay of frames with different sizes at different link speeds.
+Instead of writing all these numbers in a long paragraph, we can now use the time to highlight key insights.
+For example, you can see that a frame with \SI{1522}{B} only consumes about twice the time at \SI{1}{Gbit/s}, compared to a frame with size \SI{64}{B} at \SI{100}{Mbit/s}.
+
+\begin{table}
+    \caption{Example transmission delays.}
+    \label{tab:linkspeed}
+    \begin{center}
+        \begin{tabular}{r|cccc}
+            \toprule
+            \textbf{Size} & \textbf{100 Mbit/s} & \textbf{1 Gbit/s} & \textbf{2.5 Gbit/s} & \textbf{10 Gbit/s} \\
+            \midrule
+            \textbf{64 B} & 6.7~\textmu s & 672 ns & 269 ns & 67 ns \\
+            \textbf{123 B} & 11.8~\textmu s & 1.2~\textmu s & 470 ns & 118 ns \\
+            \textbf{1,522 B} & 123.4~\textmu s & 12.3~\textmu s & 4.9~\textmu s & 1.2~\textmu s \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{table}
+
+
+
+In your thesis, you might want to explain your solution with Pseudocode algorithms.
+For example, Algorithm~\ref{alg:groupsort} presents a sorting algorithm for firewall rules.
+In Line~\ref{lst:line:extendgroup}, we compare if a rule depends on the current group.
+
+\begin{algorithm}
+    \caption{Group Sort}\label{alg:groupsort}
+    \begin{algorithmic}[1]
+    \For{$x \in RuleSet$}
+        \State $group \gets [x]$
+        \For{$y \in RuleSet[x.idx:]$}
+            \If{$dependency(group, y)$} 
+                \Comment{Extend group}\label{lst:line:extendgroup}
+                \State $group \gets group \# y$ 
+            \Else
+                \If{$hit\_count([y]) < hit\_count(group)$}
+                    \State \Comment{Move complete group}
+                    \State $y.idx \gets x.idx$
+                    \For{$z \in group$}
+                        \State $z.idx \gets z.idx + 1$
+                    \EndFor
+                \EndIf
+                \State $group \gets [y]$
+            \EndIf
+        \EndFor
+    \EndFor
+\end{algorithmic}
+\end{algorithm}
+
+
+
+
+Finally, you can also use theorems, and lemmas in your thesis.
+Please make sure (as always) to reference each of them in the text and explain their meaning.
+For example, Theorem~\ref{thm:sometheorem}, or Lemma~\ref{thm:somelemma}.
+
+\begin{theorem}\label{thm:sometheorem}
+    Let \(f\) be a function whose derivative exists in every point, then \(f\) 
+    is a continuous function.
+\end{theorem}
+
+\begin{lemma}\label{thm:somelemma}
+    Given two line segments whose lengths are \(a\) and \(b\) respectively there is a 
+    real number \(r\) such that \(b=ra\).
+\end{lemma}
+
+For formal procedures and algorithms, use the unified notation of proofs to state your conclusions.
+An example for that follows here:
+
+\begin{proof}\label{thm:someproof}
+    To prove it by contradiction try and assume that the statement is false,
+    proceed from there and at some point you will arrive to a contradiction.
+\end{proof}

@@ -1,0 +1,128 @@
+\chapter{Related Work}
+The related work section is often underrated. Make sure that you focus on this topic BEFORE your thesis, but do not leave it out of sight during and after the thesis.
+
+\section{Structure}
+The related work section can have different structures:
+\begin{description}
+    \item[Grouped by Topic] 
+        The easiest way for you is to group the related work by topic.
+        This means that you group the literature by common attributes and discuss them together.
+    \item[Grouped by Relevance]
+        You can also group the work by relevance. This means, you start with work impacting your thesis the most.
+        Towards the end of the section, you introduce related work least relevant.
+\end{description}
+
+We will give a small example on the grouping by topic in the following.
+
+\section{Searching for Literature}
+A related work chapter starts with the literature research.
+There are two main sources, and many others, which you should use in parallel!
+In general, you should not only use the keywords that you come up with first, but continue your search with synonyms or other phrasings for the same topic.
+
+Google Scholar~\cite{googlescholar} is the largest search engine for scientific literature.
+Sometimes, you do not find the PDF version of a document directly, but below the documents, you can find the \emph{All XYZ versions} link, as shown in Figure~\ref{fig:googlescholar}.
+Often, this helps to get the PDF version without a paywall.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{content/figures/templatetext/googlescholar.png}
+    \caption{An example search in Google Scholar}
+    \label{fig:googlescholar}
+\end{figure}
+
+Another good source for scientific literature is ResearchGate~\cite{researchgate}.
+Many authors upload the full text versions of their papers here.
+Alternatively, you can request the full text by the authors (sadly, they often do not respond...).
+
+You need to enter all references that you want to use in the \emph{content/thesis.bib} file.
+Both, Google Scholar and ResearchGate give you export formats in BibTex style, such that you can copy and paste the entry.
+Additionally, some tools presented in Section~\ref{sec:rw-tools} do the same thing.
+However, please make sure to double-check the BibTeX entry yourself!!
+\marktext{One common mistake is that you assume the capitalization stays the same, but it does not.}
+Make sure to use double brackets \emph{\{\{SOME TEXT\}\}} around the text you want to keep the capitalization.
+Finally, you can also use the library DBPL~\cite{dbpllibrary} to retrieve well maintained BibTeX entries for a very large number of scientific literature.
+
+With scientific literature, it is important that you state the authors name, if you refer to their work in detail.
+For example, Müller et al.~\cite{DBLP:conf/sicherheit/MullerRWWH22} present a scanning pipeline for the analysis of software versions on the internet.
+This pipeline includes banner grabbing to retrieve version information of services.
+It is important that you put the \~{} between the name (always use the first author's last name and add \emph{et al.} if there are multiple authors) and the \emph{\textbackslash cite}.
+To have a good understanding of the differences to your work, you \textbf{need} to put a relation between your work and the related work.
+Compared to Müller et al., we also include the probes for cryptographic configurations.
+With that, we are able to analyze the landscape of offered cypher suites in, e.g., TLS or OPC~UA.
+
+Alternatively, you can also group literature that is very similar.
+The modeling of TSN networks is well researched for numerous use cases~\cite{DBLP:conf/rtns/HellmannsHHDKH21, DBLP:conf/conext/WusteneyHSOHMH22}, including detailed forwarding latency, jitter, and interference models.
+However, none of these components models load dependent delays, such as firewalls.
+Therefore, we present the first model of a firewall to be included in TSN network simulation.
+We recommend grouping literature only, if they are far away from the own research, and you want to show that a certain field of research (not too important for you) is well covered.
+
+\section{Writing Scientific Text}
+In general, scientific text differs from what you learned in school.
+The text should not be entertaining or exciting, but present technical information.
+Therefore, do not be afraid to repeat technical terms, without finding synonyms.
+Also, keep your sentences simple and short (especially in English).
+
+\subsection{In German}
+German texts are typically written in a passive form.
+\todonote{Add some information on German texts}
+
+\subsection{In English}
+Writing in English is different from German.
+In English texts, you use active voice.
+A good source for detailed information is the book ``Scientific Writing'' from Justin Zobel~\cite{DBLP:books/sp/Zobel14}.
+Students from HS Esslingen can read it for free.
+\todonote{Add some information on English texts}
+
+\section{Tools to Support Writing}\label{sec:rw-tools}
+\todoinline{Include details on tool support}
+\subsection{Tools for Writing}
+A very useful tool for your thesis is Visual Studio Code (VS Code)~\cite{vscode}.
+With this tool, all programming, but also writing of the thesis is made easier!
+To write your thesis with VS-Code, we recommend the following extensions:
+\begin{itemize}
+    \item VS Code Extension: LaTeX Workshop (c.f. Figure~\ref{fig:latexworkshop})
+    \item VS Code Extension: LaTeX Utils (c.f. Figure~\ref{fig:latexutils})
+    \item VS Code Extension: LTex - LanguageTool (c.f. Figure~\ref{fig:ltexlanguage})
+\end{itemize}
+
+With these extensions, VS Code will automatically compile the LaTeX code of this thesis template and the previewed PDFs are updated automatically in the background.
+You can view the compiled PDFs in VS-Code using the shortcut \textit{cmd + alt + v}.
+Other useful shortcuts include:
+\begin{itemize}
+\item jumping from the code to the PDF:
+    \begin{itemize}
+    \item \textbf{mac:} \emph{cmd + option + j}
+    \item \textbf{windows/linux:} \emph{ctrl + alt + j}
+    \end{itemize}
+\item jumping from the PDF to the code:
+    \begin{itemize}
+    \item \textbf{mac:} \emph{cmd + click}
+    \item \textbf{windows/linux}: \emph{ctrl + click}
+    \end{itemize}
+\end{itemize}
+
+Additionally, \emph{LTex} will highlight grammar and spelling mistakes.
+Please follow the documentation of this plugin to change the language to something else than English if necessary.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{content/figures/templatetext/vscode-latexworkshop.png}
+    \caption{VS Code Plugin: LaTeX Workshop}
+    \label{fig:latexworkshop}
+\end{figure}
+
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{content/figures/templatetext/vscode-latexutils.png}
+    \caption{VS Code Plugin: LaTeX Utils}
+    \label{fig:latexutils}
+\end{figure}
+
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{content/figures/templatetext/vscode-ltex-languagetool.png}
+    \caption{VS Code Plugin: LTeX - LanguageTool}
+    \label{fig:ltexlanguage}
+\end{figure}
+
+\subsection{Tools to Organize References}
+We reccomend the use of the tool Zotero~\cite{zotero} to manage your references.
+\todoinline{Include details on Zotero}

@@ -1,0 +1,100 @@
+\chapter{Background}
+The background section guides you through the use of the template and some features we included to make writing a little easier.
+
+\section{metadata.tex and title.tex}
+The file \emph{template/metadata.tex} includes all information on you, the title of the thesis and supervisors.
+This information is used during the compilation of the template to fill out all the details.
+Especially in the file \emph{thesis\_template/title.tex}, you will see the use of this metadata.
+Please adjust this title page and the metadata to fit to your thesis topic, thesis category, company, and supervisors.
+
+
+\section{packages.tex}
+The file \emph{template/packages.tex} includes all used packages.
+Please only add your packages here!
+This makes debugging of conflicts between packages easier, as you have them all together.
+
+
+\section{macros.tex}
+This section introduces the use of the predefined macros.
+You are free to extend this list of macros in the file \emph{template/macros.tex}.
+
+\subsection{todonotes}
+\emph{todonotes} is a very useful package to track open items within a document and not mess around with special identifies to search for your TODOs.
+
+\subsubsection{List of TODOs}
+In the \emph{thesis.tex} document, you can find the \emph{\textbackslash listoftodos} line. 
+This generates a list of all TODOs defined in this document.
+
+\subsubsection{TODOs}
+In your document, you have two options to mark TODOs on your text. 
+The first option is the one for short notes: \emph{\textbackslash todonote}\todonote{Short TODO}.
+This todonote will pop up on the side of the document and point to the location in the paragraph, where it is linked to.
+Do not use if for long texts.
+In case you have long notes that you want to remember, you can use \emph{\textbackslash todoinline}.
+\todoinline{This is a very long TODO note that might go across multiple lines. You can really write some meaningful text in here and still read it later on.}
+You will notice, that after such an inline TODO, the text is indented, even if you did not create the paragraph yourself.
+But as you are on a work-in-progress document, this does not matter too much.
+
+\subsubsection{REVIEW}
+\review
+The review notice shows that a section is ready for review. 
+Use it to show your supervisor that you would like to get feedback for this section.
+Just add the \emph{\textbackslash review} command after the headline and the according information will be inserted into the PDF document.
+
+\subsubsection{FEEDBACK}
+\feedback{Is this a correct use of a feedback mark?}
+If you want to document a question you have for your supervisor, just use the command \emph{\textbackslash feedback}.
+This will generate an inline comment with the note that feedback is required.
+
+\subsection{Text Suggestions}
+We developed a macro to indicate suggestions for change.
+This macro keeps the old text striked through and prints the suggested text colored in olive next to it.
+For example, \suggest{this is the old text}{this is the new text}.
+
+\subsection{Marked Text}
+You do not need to create TODOs for all elements that you need to recheck.
+For example, you can just \marktext{mark text sections with the command \emph{\textbackslash marktext}} and the macros will highlight this text for you.
+These are not listed in the list of todos.
+
+\subsection{Thesis Goals and Numbered Elements}
+In the file \emph{template/macros.tex}, we included the definition of goals for your thesis.
+You can use the numbering of goals through the section \emph{goal} as used in Section~\ref{sec:goals}.
+If necessary, you can also create such numbering for other elements that come up in your thesis.
+One student started the thesis by defining anomalies that should be detected with an \gls{IDS}.
+He used this mechanism to reference the individual anomalies.
+
+
+\section{Acronyms}
+When writing your thesis, you might use a lot of acronyms.
+In order to have the fully written on the first use, and after that only use the short version you would need to go through the document at the end.
+Therefore, we recommend to use the following package: \emph{glossaries-extra} with the module \emph{acronym}.
+In the file \emph{content/acronyms.tex}, we defined a few acronyms as example and will explain the use in the following.
+
+In your text, you should always use the command \emph{\textbackslash gls\{gPTP\}} to call an acronym.
+With that, the first appearance will include both, short and long form (to visualize the effect, we mark the output red): \marktext{\gls{gPTP}}
+With the second use, you will only have the short form: \marktext{\gls{gPTP}}
+
+If you need to use the full term, you can use the command \emph{\textbackslash acrlong\{gPTP\}}: \marktext{\glsxtrlong{gPTP}}.
+Alternatively, you can force the short version with the command \emph{\textbackslash acrshort\{gPTP\}}: \marktext{\glsxtrshort{gPTP}}.
+
+To update the list of acronyms, you must enter the following command in your terminal: \emph{makeglossaries thesis}
+Please remember to do that also before you generate your final version.
+
+\section{Finalize your Document}
+
+\subsection{Remove unused Tables of Entries}
+In the \emph{thesis.tex}, you find a number of tables for different kinds of entries (see \emph{\textbackslash listof.....}).
+Depending on if you use Tables or Code snippets, you need them, or you don't.
+Please remove all unused ones, such that you do not have empty ones in the final document.
+Also make sure, that the \emph{\textbackslash listoftodos} is empty and then remove it as well.
+
+\subsection{Preparing for the Print}
+If you want to print your document with a binding, you should adjust the document, depending on the type of print.
+Most likely, you will have a binding on the left.
+Therefore, you need to adjust the use of the package \emph{geometry} in \emph{template/packages.tex} to include the \emph{bindingoffset=15mm}.
+Otherwise, you will squeeze you text into the binding on the left.
+Additionally, you need to choose, if you will print on both sides of the paper or only on the front side.
+For the front side only, you need to set the option \emph{oneside} in the first row of the \emph{thesis.tex} file.
+Make sure, that you configure the printer to only use the front side.
+Alternatively, you can tell teh document to start chapters on the right-hand side and also print on the back side of the paper.
+For this, you need to set the option \emph{twoside} in the first row of the \emph{thesis.tex} file instead of the \emph{oneside}.

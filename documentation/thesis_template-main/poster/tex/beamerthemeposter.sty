@@ -1,0 +1,123 @@
+\ProvidesPackage{beamerthemeposter}
+
+\usepackage{ifthen}
+\usepackage{ragged2e}
+\usepackage{times}
+\usepackage[many]{tcolorbox}
+\usepackage{calc}
+
+\apptocmd{\frame}{}{\justifying}{}
+\selectcolormodel{cmyk}
+\usecolortheme{HSE}
+
+% We need the hmargin as variables for later
+\newlength{\hmargin}
+\setlength{\hmargin}{.05\paperwidth}
+\newlength{\headerwidth}
+\setlength{\headerwidth}{\paperwidth-2\hmargin} % 
+\newlength{\blocktopskip}
+\setlength{\blocktopskip}{3ex}
+
+\geometry{hmargin=\hmargin}
+
+\setlength\leftmargini{4em}
+
+\setbeamerfont{block title}{size=\Large,series=\bfseries}
+\setbeamerfont{title}{size=\Huge,series=\bfseries}
+\setbeamerfont{subtitle}{size=\Large}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{institute}{size=\small}
+
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+\setbeamertemplate{itemize/enumerate subbody begin}{\large}
+\setbeamertemplate{itemize items}[circle]{\color{hse-blue100}}
+
+%background for pages
+\newlength{\kitbottom}
+\usebackgroundtemplate{
+	\setlength{\kitbottom}{.005\paperwidth}%
+  \begin{pgfpicture}{0mm}{0mm}{\paperwidth}{\paperheight}
+    {\pgfsetcornersarced{\pgfpoint{.01\paperwidth}{.01\paperwidth}}
+    \pgfpathmoveto{\pgfpoint{.99\paperwidth}{\kitbottom}}
+    \pgfpathlineto{\pgfpoint{.01\paperwidth}{\kitbottom}}
+    \pgfpathlineto{\pgfpoint{.01\paperwidth}{\paperheight-.01\paperwidth}}}
+
+    {\pgfsetcornersarced{\pgfpoint{.01\paperwidth}{.01\paperwidth}}
+    \pgfpathmoveto{\pgfpoint{.01\paperwidth}{\paperheight-.01\paperwidth}}
+    \pgfpathlineto{\pgfpoint{.99\paperwidth}{\paperheight-.01\paperwidth}}
+    \pgfpathlineto{\pgfpoint{.99\paperwidth}{\kitbottom}}}
+
+    \color{white}
+    \pgfusepath{fill}
+  \end{pgfpicture}%
+}
+
+\setbeamertemplate{frametitle}{}
+
+\setbeamertemplate{headline}
+{
+  \begin{beamercolorbox}[wd=1\paperwidth]{bg}
+    \begin{columns}[totalwidth=\headerwidth]
+      % Apply hmargin from geometry
+      \hspace{\hmargin}
+      \begin{column}{.7\headerwidth}
+        \vspace{.02\paperwidth}
+
+        \ifx\inserttitle\empty\else
+          \usebeamerfont{title}
+          \inserttitle
+          \vspace{0.4em}
+        \fi
+
+        \ifx\insertsubtitle\empty\else
+          \usebeamerfont{subtitle}
+          \insertsubtitle
+          \vspace{0.4em}
+        \fi
+
+        \ifx\insertauthor\empty\else
+          \usebeamerfont{author}
+          \insertauthor
+          \vspace{0.4em}
+        \fi
+
+        \ifx\insertinstitute\empty\else
+          \usebeamerfont{institute}
+          \insertinstitute
+          \vspace{0.4em}
+        \fi
+      \end{column}
+
+      \begin{column}{.3\headerwidth}
+        \vspace{.02\paperwidth}
+        \includegraphics[width=\textwidth]{logos/HSLogo.pdf} 
+        \includegraphics[width=\textwidth]{images/ITSecStamp.png}
+      \end{column}
+    \end{columns}
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{}
+
+\setbeamertemplate{caption}[numbered]
+\setbeamerfont{block body}{size=\large}
+
+\setbeamertemplate{block begin}{
+  \vskip \blocktopskip
+  \begin{beamercolorbox}[sep=1ex]{block title}%
+    { % Wrap a block around this so the usebeamerfont does not influence the sep
+      \usebeamerfont*{block title}%
+      \insertblocktitle
+    }
+  \end{beamercolorbox}%
+
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip \blocktopskip}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[]{block body}%
+  % \begin{beamercolorbox}[leftskip=1em,rightskip=1em,colsep*=.75ex,sep=0.5ex,vmode]{block body}%
+    % \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+
+\setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}

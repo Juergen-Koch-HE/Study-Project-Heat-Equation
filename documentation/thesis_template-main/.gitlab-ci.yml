@@ -1,0 +1,39 @@
+stages:
+  - compile
+
+abstract:
+  stage: compile
+  image: registry.gitlab.com/islandoftex/images/texlive:latest
+  script:
+    - cd abstract/tex
+    - make abstract
+  after_script:
+    - cat abstract/tex/abstract.log
+  artifacts:
+    paths:
+      - abstract/tex/abstract.pdf
+
+poster:
+  stage: compile
+  image: registry.gitlab.com/islandoftex/images/texlive:latest
+  script:
+    - cd poster/tex
+    - make poster
+  after_script:
+    - cat poster/tex/poster.log
+  artifacts:
+    paths:
+      - poster/tex/poster.pdf
+
+thesis:
+  stage: compile
+  image: registry.gitlab.com/islandoftex/images/texlive:latest
+  script:
+    - cd thesis/tex
+    - make thesis
+  after_script:
+    - cat thesis/tex/thesis.log
+  artifacts:
+    paths:
+      - thesis/tex/thesis.pdf
+
