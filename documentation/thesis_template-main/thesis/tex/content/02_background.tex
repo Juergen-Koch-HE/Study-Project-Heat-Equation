@@ -1,99 +1,78 @@
 \chapter{Theoretische Grundlagen}
-The background section guides you through the use of the template and some features we included to make writing a little easier.
+In diesem Abschnitt werden Theoretische Grundlagen geschaffen, auf denen die späteren Kapitel aufbauen.
 
 \section{Wärmeleitung als physikalisches Phänomen}
 Das Phänomen der Wärmeleitung beschreibt den Wärmefluss in einem Körper, als Wärmetransport von warmen zu kälteren Bereichen. Es beschreibt, wie sich die Wärmeenergie ohne Bewegung der Teilchen (Konvektion) des Körpers in diesem ausbreitet. Aus-gegangen von einem isotropen homogenen Material, strahlt dabei die Wärme immer gleichmäßig vom Wärmsten zum kältesten Punkt des Körpers und sorgt so dafür, dass das Material sich gleichmäßig temperiert. Die Temperatur, die dadurch an einem Ort x zu einer Zeit t in diesem Material entsteht, wird U genannt. Daraus ergibt sich folgende Gleichung U(x,t) mit t >= 0 und x> Rand min x<= Rand max, sie beschreibt für jeden Punkt zu jeder Zeit die jeweilige Temperatur. Die Ränder des Materials sind gesondert zu betrachten. Sie können entsprechend der Situation angepasst werden, sie sind für den Wärmeabfluss entweder durchlässig oder nicht. Das bedeutet das der Körper seine Wärme an die Umgebung, in der er sich befinden entweder abstrahlen kann oder nicht. Realistisch ist, dass der Körper seine Wärme abstrahlt, jedoch kann in der Mathematik auch mit perfekt gedämmten Rändern gearbeitet werden. Im Großen und Ganzen gibt es drei Rändertypen für die Wärmeleitgleichung. Beginnend mit der Dirichlet-Randbedingung, des Mathematikers Johann Peter Gustav Lejeune Dirichlet, sie be-schreibt den Rand als Netz aus Koordinaten Punkten, das sich um den Körper spannt. Auch hier kann zu jeder Zeit an jedem Ort in diesem Netz die Temperatur des Randes festgelegt werden, als Q(x,t) oder der Einfachheit halber kann ein fester Wert für das gesamte Netz angenommen werden, zum Beispiel 20° Celsius. Dies Könnte der Raum-temperatur entsprechen, in der sich der Körper befindet. Nachfolgend die Neumann-Randbedingung des Mathematikers Carl Gottfried Neumann, sie gib anstatt der Außen-temperatur den Wärmestrom -I(x,t) an, über den die Wärme des Körpers über seine Ränder abgestrahlt wird, und seinen Normalvektor N welcher die Abstrahlrichtung be-stimmt. Daraus ergibt sich dann die Gleichung P(x,t)= -I*N. Zum Schluss die Robin-Randbedingung des Mathematikers Victor Gustave Robin. Sie ist die realistischste Randbedingung, denn Sie kombiniert Eigenschaften der Dirichlet- und Neuman-Randbedingung. In der Robin-Randbedingung wird der Wärmestrom I(x,t) berücksichtig und eine Temperaturdifferenz zwischen der Randtemperatur Q(x,t) und der Temperatur im Körper U(x,t) berechnet. Außerdem beinhaltet sie noch eine Weiter Komponente den Wärmeübergangskoeffizient β(x), welcher beschreibt wie gut die Wärme zwischen dem Körper und der Umgebung um ihn gleitet, ist. Zum Beispiel würde der Wärmekoeffizient einer Thermoskanne mit Tee bestimmen, wie schnell die Wärme des Tees über die Außenwand der Thermoskanne seine Wärme abgibt. Daraus ergibt sich folgende Gleichung I(t,x)*N = β(x)* [U(t,x) - Q(t,x)](So einfach ist Mathematik, xxxx, S.12-27)
 
+\section{Modellannahme und physikalische Größen}
+
+1D-Stab
+
+Kontinuumsannahme
+
+ρ,c,k,α,u(x,t)
+ρ,c,k,α,u(x,t)
+
+keine Quellen / Senken
 
 
+\section{Herleitung der Wärmeleitungsgleichung}
+Die Herleitung der Wärmeleitungsgleichung basiert auf dem Energieerhaltungssatz von Mayer, Joule und Helmholtz.
+Dieser besagt, dass sich die im Inneren eines Körpers gespeicherte Energie
+nur dadurch ändern kann, dass Energie über dessen Rand hinein- oder hinausfließt.
+Zur Anwendung dieses Prinzips wird ein 1D Stabelement betrachtet,
+das ein Intervall von $[x-\Delta x,\,x+\Delta x]$ hat.
+Die Temperaturverteilung im Stab wird durch die Funktion $u(x,t)$ beschrieben.
 
-\section{Herleitung der Wärmeleitgleichung}
-The file \emph{template/packages.tex} includes all used packages.
-Please only add your packages here!
-This makes debugging of conflicts between packages easier, as you have them all together.
+Die innere Energie pro Volumen ist proportional zur Temperatur und ergibt sich zu
+$\rho c u(x,t)$, wobei $\rho$ die Dichte des Materials und $c$ die spezifische
+Wärmekapazität bezeichnet.
+Die gesamte innere Energie des betrachteten Stabelements erhält man daher durch
+Integration über das Volumen.
 
+Die zeitliche Änderung der inneren Energie über ein Zeitintervall $2\Delta t$
+kann somit durch
+\[
+c\rho \int_{x-\Delta x}^{x+\Delta x}
+\bigl(u(\xi,t+\Delta t)-u(\xi,t-\Delta t)\bigr)\,\mathrm{d}\xi
+\]
+beschrieben werden.
+Dieser Ausdruck stellt die Energiebilanz des Stabelements dar und entspricht der
+Anwendung des Energieerhaltungssatzes auf das betrachtete Kontrollvolumen
+(vgl.\ Cannon, Section~1.1).
 
-\section{macros.tex}
-This section introduces the use of the predefined macros.
-You are free to extend this list of macros in the file \emph{template/macros.tex}.
+Der Wärmetransport im Stab erfolgt durch Wärmeleitung und wird durch das
+Fourier'sche Gesetz beschrieben.
+In eindimensionaler Form lautet dieses
+\[
+q(x,t) = -k\,\frac{\partial u}{\partial x}(x,t),
+\]
+wobei $q(x,t)$ den Wärmestrom und $k$ die Wärmeleitfähigkeit des Materials bezeichnet.
+Das negative Vorzeichen drückt aus, dass Wärme stets in Richtung abnehmender
+Temperatur fließt.
 
-\subsection{todonotes}
-\emph{todonotes} is a very useful package to track open items within a document and not mess around with special identifies to search for your TODOs.
+Der Netto-Wärmestrom in das Stabelement ergibt sich aus der Differenz der
+Wärmestrome an den Randpunkten $x-\Delta x$ und $x+\Delta x$.
+Setzt man diesen Wärmestrom in die Energiebilanz ein und lässt die Größen
+$\Delta x$ und $\Delta t$ gegen null gehen, so erhält man eine lokale
+Differentialgleichung für die Temperaturentwicklung:
+\[
+\rho c\,\frac{\partial u}{\partial t}
+=
+\frac{\partial}{\partial x}
+\left(
+k\,\frac{\partial u}{\partial x}
+\right).
+\]
 
-\subsubsection{List of TODOs}
-In the \emph{thesis.tex} document, you can find the \emph{\textbackslash listoftodos} line. 
-This generates a list of all TODOs defined in this document.
+Für konstante Materialparameter vereinfacht sich diese Gleichung zur
+klassischen Wärmeleitungsgleichung
+\[
+\frac{\partial u}{\partial t}
+=
+\alpha\,\frac{\partial^2 u}{\partial x^2},
+\qquad
+\alpha = \frac{k}{\rho c},
+\]
+wobei $\alpha$ als thermische Diffusivität bezeichnet wird.
 
-\subsubsection{TODOs}
-In your document, you have two options to mark TODOs on your text. 
-The first option is the one for short notes: \emph{\textbackslash todonote}\todonote{Short TODO}.
-This todonote will pop up on the side of the document and point to the location in the paragraph, where it is linked to.
-Do not use if for long texts.
-In case you have long notes that you want to remember, you can use \emph{\textbackslash todoinline}.
-\todoinline{This is a very long TODO note that might go across multiple lines. You can really write some meaningful text in here and still read it later on.}
-You will notice, that after such an inline TODO, the text is indented, even if you did not create the paragraph yourself.
-But as you are on a work-in-progress document, this does not matter too much.
-
-\subsubsection{REVIEW}
-\review
-The review notice shows that a section is ready for review. 
-Use it to show your supervisor that you would like to get feedback for this section.
-Just add the \emph{\textbackslash review} command after the headline and the according information will be inserted into the PDF document.
-
-\subsubsection{FEEDBACK}
-\feedback{Is this a correct use of a feedback mark?}
-If you want to document a question you have for your supervisor, just use the command \emph{\textbackslash feedback}.
-This will generate an inline comment with the note that feedback is required.
-
-\subsection{Text Suggestions}
-We developed a macro to indicate suggestions for change.
-This macro keeps the old text striked through and prints the suggested text colored in olive next to it.
-For example, \suggest{this is the old text}{this is the new text}.
-
-\subsection{Marked Text}
-You do not need to create TODOs for all elements that you need to recheck.
-For example, you can just \marktext{mark text sections with the command \emph{\textbackslash marktext}} and the macros will highlight this text for you.
-These are not listed in the list of todos.
-
-\subsection{Thesis Goals and Numbered Elements}
-In the file \emph{template/macros.tex}, we included the definition of goals for your thesis.
-You can use the numbering of goals through the section \emph{goal} as used in Section~\ref{sec:goals}.
-If necessary, you can also create such numbering for other elements that come up in your thesis.
-One student started the thesis by defining anomalies that should be detected with an \gls{IDS}.
-He used this mechanism to reference the individual anomalies.
-
-
-\section{Acronyms}
-When writing your thesis, you might use a lot of acronyms.
-In order to have the fully written on the first use, and after that only use the short version you would need to go through the document at the end.
-Therefore, we recommend to use the following package: \emph{glossaries-extra} with the module \emph{acronym}.
-In the file \emph{content/acronyms.tex}, we defined a few acronyms as example and will explain the use in the following.
-
-In your text, you should always use the command \emph{\textbackslash gls\{gPTP\}} to call an acronym.
-With that, the first appearance will include both, short and long form (to visualize the effect, we mark the output red): \marktext{\gls{gPTP}}
-With the second use, you will only have the short form: \marktext{\gls{gPTP}}
-
-If you need to use the full term, you can use the command \emph{\textbackslash acrlong\{gPTP\}}: \marktext{\glsxtrlong{gPTP}}.
-Alternatively, you can force the short version with the command \emph{\textbackslash acrshort\{gPTP\}}: \marktext{\glsxtrshort{gPTP}}.
-
-To update the list of acronyms, you must enter the following command in your terminal: \emph{makeglossaries thesis}
-Please remember to do that also before you generate your final version.
-
-\section{Finalize your Document}
-
-\subsection{Remove unused Tables of Entries}
-In the \emph{thesis.tex}, you find a number of tables for different kinds of entries (see \emph{\textbackslash listof.....}).
-Depending on if you use Tables or Code snippets, you need them, or you don't.
-Please remove all unused ones, such that you do not have empty ones in the final document.
-Also make sure, that the \emph{\textbackslash listoftodos} is empty and then remove it as well.
-
-\subsection{Preparing for the Print}
-If you want to print your document with a binding, you should adjust the document, depending on the type of print.
-Most likely, you will have a binding on the left.
-Therefore, you need to adjust the use of the package \emph{geometry} in \emph{template/packages.tex} to include the \emph{bindingoffset=15mm}.
-Otherwise, you will squeeze you text into the binding on the left.
-Additionally, you need to choose, if you will print on both sides of the paper or only on the front side.
-For the front side only, you need to set the option \emph{oneside} in the first row of the \emph{thesis.tex} file.
-Make sure, that you configure the printer to only use the front side.
-Alternatively, you can tell teh document to start chapters on the right-hand side and also print on the back side of the paper.
-For this, you need to set the option \emph{twoside} in the first row of the \emph{thesis.tex} file instead of the \emph{oneside}.
