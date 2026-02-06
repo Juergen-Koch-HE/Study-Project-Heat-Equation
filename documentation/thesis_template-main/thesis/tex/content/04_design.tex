@@ -165,7 +165,7 @@ X(0) = C1*cos(0) + C2*sin(0) = C1*1 + C2*0 = C1 = 0
 
 X(x) = C2*sin(kx)
 \[ X(x) = C_2 \sin(kx) \]
-X(\pi) = C2*sin(k*pi) = 0  C2 != 0 => sin(k*pi) = 0 => k ∈ Z \{0}    ???? richtig 
+X(\pi) = C2*sin(k*pi) = 0  C2 != 0 => sin(k*pi) = 0 => \[k ∈ Z \{0} \]    ???? richtig 
 \[
 X(\pi) = C_2 \sin(k\pi) = 0 C_2 \neq 0 \;\Longrightarrow\; \sin(k\pi) = 0 k \in \mathbb{Z} \setminus \{0\}
 \]
@@ -179,9 +179,10 @@ U(x,t) = C_k \sin(kx)\, e^{-a^2 k^2 t}  C_k = C_2 C_3 = \text{konst.} \]
 Die Anfangsbedingung U(x,0) = 1 wird durch die Fourier-Analyse gelöst, um die Koeffizienten Ck zu bestimmen.
 Ck = 2/pi * Integral von 0 bis pi von U(x,0)*sin(kx) dx
 Ck = 2/pi * Integral von 0 bis pi von 1*sin(kx) dx
-\[C_k = \frac{2}{\pi} \int_{0}^{\pi} U(x,0)\sin(kx)\,\mathrm{d}x
-C_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(kx)\,\mathrm{d}x\]
-
+\[
+C_k = \frac{2}{\pi} \int_{0}^{\pi} U(x,0)\sin(kx)\,\mathrm{d}x
+C_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(kx)\,\mathrm{d}x
+\]
 \[ C_k = \frac{2}{\pi} \int_{0}^{\pi} \left( -\frac{1}{k}\cos(kx) \right) \,\mathrm{d}x \]
 
 \[ C_k = \frac{2\,(1-\cos(k\pi))}{\pi k} \]     \[ \cos(k\pi) = (-1)^k, \]
@@ -199,8 +200,11 @@ C_k    = \frac{2\,(1-(-1)^2)}{\pi\cdot 2}
       = \frac{4}{3\pi}.
 \]
 
-Für ungerade \(k\) gilt damit allgemein:
+Daraus folgt für ungerade \(k\) gilt 
 => \[C_k = 4/(pi*k)\]
+
+und für gerade \(k\) 
+=> \[C_k = 0\]
 
 Die spezielle Lösung der Wärmeleitungsgleichung lautet somit:
 \[
