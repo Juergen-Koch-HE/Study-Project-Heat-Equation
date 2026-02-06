@@ -96,7 +96,7 @@ Einsetzen in die Wärmeleitgleichung
 X(x) * T`(t) = a^2 * X``(x) * T(t)
 
 Durchführung der Separation der Variablen
-( X``(x) / X(x) ) = ( T`(t) / ( a^2 * T(t) ) = lambda (!!!mathematischen lambda trick erklären!!!!)
+( X``(x) / X(x) ) = ( T`(t) / ( a^2 * T(t) ) = lambda (!!!mathematischen lambda trick erklären!!!!))
 
 Auflösen der Wärmeleitgleichung nach dem Ort X(x)
 ( X``(x) / X(x) ) = lambda  
@@ -179,12 +179,11 @@ U(x,t) = C_k \sin(kx)\, e^{-a^2 k^2 t}  C_k = C_2 C_3 = \text{konst.} \]
 Die Anfangsbedingung U(x,0) = 1 wird durch die Fourier-Analyse gelöst, um die Koeffizienten Ck zu bestimmen.
 Ck = 2/pi * Integral von 0 bis pi von U(x,0)*sin(kx) dx
 Ck = 2/pi * Integral von 0 bis pi von 1*sin(kx) dx
-\[
-C_k = \frac{2}{\pi} \int_{0}^{\pi} U(x,0)\sin(kx)\,\mathrm{d}x
-C_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(kx)\,\mathrm{d}x
-\]
-\[ C_k = \frac{2}{\pi} \int_{0}^{\pi} \left( -\frac{1}{k}\cos(kx) \right) \,\mathrm{d}x \]
 
+\[C_k = \frac{2}{\pi} \int_{0}^{\pi} U(x,0)\sin(kx)\,\mathrm{d}x
+C_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(kx)\,\mathrm{d}x\]
+
+\[ C_k = \frac{2}{\pi} \int_{0}^{\pi} \left( -\frac{1}{k}\cos(kx) \right) \,\mathrm{d}x \]
 
 
 
