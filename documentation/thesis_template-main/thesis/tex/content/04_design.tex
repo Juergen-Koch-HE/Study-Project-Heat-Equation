@@ -179,13 +179,33 @@ U(x,t) = C_k \sin(kx)\, e^{-a^2 k^2 t}  C_k = C_2 C_3 = \text{konst.} \]
 Die Anfangsbedingung U(x,0) = 1 wird durch die Fourier-Analyse gelöst, um die Koeffizienten Ck zu bestimmen.
 Ck = 2/pi * Integral von 0 bis pi von U(x,0)*sin(kx) dx
 Ck = 2/pi * Integral von 0 bis pi von 1*sin(kx) dx
-
 \[C_k = \frac{2}{\pi} \int_{0}^{\pi} U(x,0)\sin(kx)\,\mathrm{d}x
 C_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(kx)\,\mathrm{d}x\]
 
 \[ C_k = \frac{2}{\pi} \int_{0}^{\pi} \left( -\frac{1}{k}\cos(kx) \right) \,\mathrm{d}x \]
 
+\[ C_k = \frac{2\,(1-\cos(k\pi))}{\pi k} \]     \[ \cos(k\pi) = (-1)^k, \]
+\[ C_k = \frac{2\,(1-(-1)^k)}{\pi k} \]
 
+Einsetzen von geraden und ungeraden zahlen 2 und 3 
+\[
+C_k    = \frac{2\,(1-(-1)^2)}{\pi\cdot 2}
+       = \frac{2\,(1-1)}{2\pi}
+       = 0,
+\]
+\[
+  C_k = \frac{2\,(1-(-1)^3)}{\pi\cdot 3}
+      = \frac{2\,(1+1)}{3\pi}
+      = \frac{4}{3\pi}.
+\]
+
+Für ungerade \(k\) gilt damit allgemein:
+=> \[C_k = 4/(pi*k)\]
+
+Die spezielle Lösung der Wärmeleitungsgleichung lautet somit:
+\[
+U(x,t) = \frac{4}{\pi k}\,\sin(kx)\,e^{-a^2 k^2 t}.
+\]
 
 \section{Praxis}
 
