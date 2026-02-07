@@ -60,29 +60,33 @@ Da das Ergebnis der Anwendung einer homognenen Differentialgleichung immer gleic
 \[ 0 = C_1*0+C_2*0\] 
 
 Dieses prinzip ermöglicht es aus den einfachen lösungen der linearen homogenen Differetntialgleichung eine Allgemeine lösung zu formulieren 
-(Koch & Stempfle, xxxx, S.501) Auflage 18
+(Koch & Stempfle, 2018, S.501)
 
-\subsubsubsection{Characteristische Gleichung}
-Das Prinzip der Characteristischen Gleichung wird beim lösern linearere homogener Differentialgleichungen angwendet und erleichter das auflösen der Gleichung. Dabei wird der Exponentialansatz dazu genutzt: $Y(x) = e^{\lambda*x}$
+\subsubsubsection{Charakteristische Gleichung}
+Das Prinzip der Characteristischen Gleichung wird beim lösern linearere homogener Differentialgleichungen mit konstanten Koeffizienten angwendet und erleichter das Auflösen der Gleichung. Dabei wird der Exponentialansatz dazu genutzt: $Y(x) = e^{\lambda x}$
 
-Dabei wird also beim lösen der Gleichung die Ableitung $Y(x)^k$ jeweils durch $\lambda^k$ ersetzt. Dabei ist darauf zu achten das $Y(x)^0 = \lambda^0 = 1 $ und $Y(x)^1 =\lambda$ ist.
+Dabei gilt beim lösen der Gleichung die Ableitung wird  $Y^k(x) = e^{\lambda^k x}$. Dabei kann man den gemeinsamen Faktor kürzen so das $\lambda^k$ entsteht.
+Dabei gilt das $Y^0(x) = \lambda^0 = 1 $ und $Y^1(x)=\lambda$ ist.
 Hat die Gleichung nun den Grad n, entsteht ein Characterristisches Polynom. Welches aufgelöst werden muss, um die Eigenwerte für $\lambda_1$ bis $\lambda_n$ zu berechnen.
 Folgendes Beispiel beschreibt den vorgang.
 \[ 
-Y_{xx}(x)+2*Y_{x}+Y(x)= 0 \Rightarrow\ \lambda^2+\lambda+1 = 0
+Y_{xx}(x)+2*Y_{x}-Y(x)= 0 \Rightarrow\ \lambda^2+2*\lambda-1 = 0
 \]
 
 \[
-\lambda_{1,2}=\frac{-2\pm\sqrt{2^2-4\cdot1\cdot1}}{2\cdot1}
-=\frac{-2\pm\sqrt{4-4}}{2}
-=\frac{-2\pm 0}{2}=-1
+\lambda_{1,2}=\frac{-2\pm\sqrt{2^2-4\cdot1\cdot(-1)}}{2\cdot1}
+=\frac{-2\pm\sqrt{8}}{2}
+\Rightarrow \frac{-2+\sqrt{8}}{2}=  ~ 0,4  
+\Rightarrow \frac{-2+\sqrt{8}}{2}=  ~ -2,4 
 \]
-\[\lambda_{1}=-1\]
+
 
 Es gibt vier verschieden Arten von Eigenwerten in den unterschieden werden muss. Es gibt einfache und mehrfache relle Eigenwerte sowie einfache komplexe und mehrfache komplexe Eigenwerte.
-Aus den lösungen der einfachen oder mehrfache reele Eigenwerte werden Eigenwertfunktionen die Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1*e^{\lambda_1*x}+ ... + C_n*e^{\lambda_n*x}$
+Aus den Lösungen der einfachen oder mehrfache reele Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1*e^{\lambda_1*x}+ ... + C_n*e^{\lambda_n*x}$ eingesetzt (Koch & Stempfle, 2018, S.506-512).
+Die Lösungen der komplexen Eigenwerte kommen mit einem komplexen so wie einem rellen anteil $\lambda = a \pm i*b$ dabei steht a für den rellen und i für die Eulersche Identität welche b als den immaginären Anteil markiert (Koch & Stempfle, 2018, S.454).
+Die Lösungen der einfachen und mehrfachen koplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a*x}*C1*cos(b*x) + e^{a*x}*C2*sin(b*x)+ ... + e^{a*x}*Cn*cos(b*x)$ (Koch & Stempfle, 2018, S.509-512).
 
-
+\[Y(x)= C_1*e^{0,9*x}+C_2*e^{-1,9x}\]
 \[
 Y(x)=\left(C_1+C_2x\right)e^{-x}
 \]
