@@ -49,18 +49,43 @@ Bevor die Wärmeleitgleichung aufgestellt wird, werden in diesem Abschnitt wicht
 
 \subsubsection{Differeentialgleichung}
 \subsubsubsection{Exponentialansatz}
-\subsubsubsection{Linearkombination von Lösungen}
-Die Theroie der Linearkombination von Lösungen homogener Differentialgleichungen besagt dass, sobald diese mindestens zwei lösungen hat, 
-diese mit belibigen Konstanten multipliziert und dann addiert werden dürfen und dass sich daraus dann wiedere eine Lösung ergibt. 
-Durch die Linearkombination der Lösungen von y_1 und y_2 ergibt sich fogkendes Phänomen.
-\[ Y(x) = C_1*y_1(x)+C_2*y_2(x)\]
 
-Da eine homogene DGL immer Y(x) = 0 sein muss, ergibt sich aus der Liniarität der Teillösungen auch also y_1=0 und Y_2=0 sein.
-Da eine homogene Differentialgleichung per Definition erfüllt ist, wenn ihr Gesamtwert Null ergibt, müssen auch die Teillösungen \(y_{1}\) und \(y_{2}\) beim Einsetzen jeweils das Ergebnis Null liefern. Aufgrund der Linearität übertragen sich die Konstanten auf diese Einzelergebnisse, sodass die gesamte Linearkombination ebenfalls Null ergibt:
+\subsubsubsection{Linearkombination von Lösungen}
+Das Prinzip der Linearkombination von Lösungen, linearer homogener Differentialgleichungen, besagt dass sobald diese mindestens zwei lösungen hat, 
+diese mit belibigen Konstanten multipliziert und dann addiert werden dürfen und dass sich daraus dann wiedere eine Lösung ergibt. 
+Durch die Linearkombination der Lösungen von y_1 und y_2 ergibt sich fogkendes Phänomen:
+\[ Y(x) = C_1*Y_1(x)+C_2*Y_2(x)\]
+
+Da das Ergebnis der Anwendung einer homognenen Differentialgleichung immer gleich null sein muss, sonst wäre sie nicht homogen. Ergibt sich durch die Linearität auch dass, die Teillösungen $Y_1$ und $Y_2$ beim einsetzen in die Gleichung $Y(x)$ gleich null ergeben.
 \[ 0 = C_1*0+C_2*0\] 
-Somit ist bewiesen, dass die kombinierte Funktion \(Y(x)\) die Bedingung der homogenen Gleichung weiterhin erfüllt.
+
+Dieses prinzip ermöglicht es aus den einfachen lösungen der linearen homogenen Differetntialgleichung eine Allgemeine lösung zu formulieren 
+(Koch & Stempfle, xxxx, S.501) Auflage 18
 
 \subsubsubsection{Characteristische Gleichung}
+Das Prinzip der Characteristischen Gleichung wird beim lösern linearere homogener Differentialgleichungen angwendet und erleichter das auflösen der Gleichung. Dabei wird der Exponentialansatz dazu genutzt: $Y(x) = e^{\lambda*x}$
+
+Dabei wird also beim lösen der Gleichung die Ableitung $Y(x)^k$ jeweils durch $\lambda^k$ ersetzt. Dabei ist darauf zu achten das $Y(x)^0 = \lambda^0 = 1 $ und $Y(x)^1 =\lambda$ ist.
+Hat die Gleichung nun den Grad n, entsteht ein Characterristisches Polynom. Welches aufgelöst werden muss, um die Eigenwerte für $\lambda_1$ bis $\lambda_n$ zu berechnen.
+Folgendes Beispiel beschreibt den vorgang.
+\[ 
+Y_{xx}(x)+2*Y_{x}+Y(x)= 0 \Rightarrow\ \lambda^2+\lambda+1 = 0
+\]
+
+\[
+\lambda_{1,2}=\frac{-2\pm\sqrt{2^2-4\cdot1\cdot1}}{2\cdot1}
+=\frac{-2\pm\sqrt{4-4}}{2}
+=\frac{-2\pm 0}{2}=-1
+\]
+\[\lambda_{1}=-1\]
+
+Es gibt vier verschieden Arten von Eigenwerten in den unterschieden werden muss. Es gibt einfache und mehrfache relle Eigenwerte sowie einfache komplexe und mehrfache komplexe Eigenwerte.
+Aus den lösungen der einfachen oder mehrfache reele Eigenwerte werden Eigenwertfunktionen die Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1*e^{\lambda_1*x}+ ... + C_n*e^{\lambda_n*x}$
+
+
+\[
+Y(x)=\left(C_1+C_2x\right)e^{-x}
+\]
 
 
 \subsubsection{Seperation der Variablen}
