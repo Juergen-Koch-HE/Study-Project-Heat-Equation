@@ -72,69 +72,96 @@ Die technische Umsetzung erfolgt in der Programmiersprache Python unter Verwen-d
 -	Math für das nutzen von variablen wie pi, cos, sin, ...
 Die Anwendung soll abschließend auf einem Hochschul-Cluster bereitgestellt werden. Die Kompatibilität mit der dortigen Infrastruktur (Python-Version, Bibliotheken, evtl. Containerisierung) wird im Projektverlauf berücksichtigt.
 
+\subsection{Mathische Grundlagen}
+
+Bevor die Wärmeleitgleichung aufgestellt wird, werden in diesem Abschnitt wichtige mathematische Grundlagen behandelt, die einzelne  vorgänge auf dem Lösungsweg erst möglich machen. 
+
+\subsubsection{Differeentialgleichung}
+\subsubsubsection{Exponentialansatz}
+\subsubsubsection{Linearkombination von Lösungen}
+Die Theroie der Linearkombination von Lösungen homogener Differentialgleichungen besagt dass, sobald diese mindestens zwei lösungen hat, 
+diese mit belibigen Konstanten multipliziert und dann addiert werden dürfen und dass sich daraus dann wiedere eine Lösung ergibt. 
+Durch die Linearkombination der Lösungen von y_1 und y_2 ergibt sich fogkendes Phänomen.
+\[ Y(x) = C_1*y_1(x)+C_2*y_2(x)\]
+
+Da eine homogene DGL immer Y(x) = 0 sein muss, ergibt sich aus der Liniaritöt der Teillösungen auch also y_1=0 und Y_2=0 sein.
+\[ 0 = C_1*0+C_2*0\] !!!!ist noch falsch aber checke auc nicht !!!
+
+
+\subsubsubsection{Characteristische Gleichung}
+
+
+\subsubsection{Seperation der Variablen}
+\subsubsection{Gausche Zahlenebene}
+\subsubsection{Fourier}
+
+
+
+
+
 \subsection{Analytische Lösungsverfahren}
 Es wurde das analytische Lösungsverfahren zur Lösung der Wärmeleitgleichung durchgeführt. 
 !!!! Vorteile von Lösung mit Analytischen verfahren!!!! 
-
 Randbedingungen 
-U(0,t) =  0;		t>= 0 0 < x > pi 
-U(Pi,t) = 0;
+\[U(0,t) =  0;		t \ge 0,\; 0 < x < \pi
+U(Pi,t) = 0; \]
 
 Anfangswert 
-U(x,0) = 1,  
+\[U(x,0) = 1,  \]
 
-Es wurde der der Ansatz der Separation der variablen verwendet, um den Ort X(x) und die Zeit T(t) zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und die Gleichungen können nach der jeweiligen Unbekannten aufge-löst werden, 
-Wärmeleitgleichung: Ut `= a^2 * Ux``
+Es wurde der der Ansatz der Separation der variablen verwendet, um den Ort \[X(x)\] und die Zeit \[T(t)\] zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und die Gleichungen können nach der jeweiligen Unbekannten aufgelöst werden, 
+Wärmeleitgleichung: \[Ut `= a^2 * Ux``\]
 
 Ableiten nach der Zeit 
-U(x,t) = X(x) * T(t) -> Ut`(x,t) = X(x) * T`(t)
+\[U(x,t) = X(x) * T(t) -> Ut`(x,t) = X(x) * T`(t)\]
 
 Ableiten nach dem Ort X(x)
-U(x,t) = X(x) * T(t) -> Ux``(x,t) = X``(x) * T(t) 
+\[U(x,t) = X(x) * T(t) -> Ux``(x,t) = X``(x) * T(t)\] 
 
 Einsetzen in die Wärmeleitgleichung 
-X(x) * T`(t) = a^2 * X``(x) * T(t)
+\[X(x) * T`(t) = a^2 * X``(x) * T(t)\]
 
 Durchführung der Separation der Variablen
-( X``(x) / X(x) ) = ( T`(t) / ( a^2 * T(t) ) = lambda (!!!mathematischen lambda trick erklären!!!!))
+\[( X``(x) / X(x) ) = ( T`(t) / ( a^2 * T(t) ) = q   q = Konst.\] (!!!mathematischen lambda trick erklären!!!!))
 
 Auflösen der Wärmeleitgleichung nach dem Ort X(x)
-( X``(x) / X(x) ) = lambda  
+\[( X``(x) / X(x) ) = q\]  
 
-Umformen in die Charakteristische Gleichung (!!!Charachteristische Gleichung erklären!!!)
-0 = -X``(x) + w *  X(x)
-0 = -lambda^2 + w             / squareroot
-Lambda1,2 = +/- squareroot(w)
+Um die lineare homgene Differentialgleichung in die Charakteristische Gleichung umzuformen wird der Exponential ansatz \[X(x) = e^(lambda*x)\] genutzt.  Koch buch S.505
+\[0 = -X``(x) + w *  X(x)
+0 = -\lambda^2*e^(\lambda x) + w*e^(\lambda x) 
+0 = -\lambda^2 + w             
+\lambda1,2 = +/- \sqrt{w}\]
 
 Einsetzen der Lösung in die Standardgleichung 
-X(x) = C1 * e^(x*squareroot(w)) + C2 * e^(-x * squareroot(w))
+\[X(x) = C1 * e^(x*\sqrt{w}) + C2 * e^(-x * \sqrt{w})\]
 
 Ableiten nach der Zeit T(t)
-( T`(t) / ( a^2 * T(t) ) ) = w 
+\[( T`(t) / ( a^2 * T(t) ) ) = w \]
 
 Umformen in die Charakteristische Gleichung
-T`(t) = a^2 * T(t) * w
+\[T`(t) = a^2 * T(t) * w
 0 = -T`(t) + a^2 * T(t) * w
-0 = -lambda + a^2 * w 
-lambda = a^2 * w
+0 = -\lambda + a^2 * w 
+\lambda = a^2 * w\]
 
 Einsetzen der Lösung in die Standardgleichung
-T(t) = C3 * e^(t*a^2*w)
+\[T(t) = C3 * e^(t*a^2*w)\]
 
 Zusammen führen der separierten Gleichungen, Allgemeine Gleichunng
-U(x,t)=(C1*e^(x*squareroot(w)) + C2 *e^(-x*squareroot(w)))*C3*e^(a^2 * w)
+\[U(x,t)=(C1*e^(x*\sqrt{w}) + C2 *e^(-x*\sqrt{w}))*C3*e^(a^2 * w)\]
 
-Einsetzen der Randbedingungen  in U(0,t) =  0, Ortsteil der Gleichungen 
-X(0) = C1*e^(0*squareroot(w))+ C2*e^(-0*squareroot(w)) = 0 
+Einsetzen der Randbedingungen  in \[U(0,t) =  0\], Ortsteil der Gleichungen 
+\[X(0) = C1*e^ (0*\sqrt{w})+ C2*e^ (-0*\sqrt{w}) = 0 \]
 
-Einesetzen der Randbedingungen in in den Ortsteilder Gelchungen, weil ????
-U(0,t)=U(pi,t)=0  =>  X(0)=X(pi)=0 \[u(0,t) = u(\pi,t) = 0 \quad \Longrightarrow \quad X(0) = X(\pi) = \]
+Einesetzen der Randbedingungen in in den Ortsteilder Gelchungen. 
+\[U(0,t) = u(\pi,t) = 0 \quad \Longrightarrow \quad X(0) = X(\pi) = \]
 
-X(0) = C1*e^0*squareroot(w) + C2*e^-(0*squareroot(w)) = C1*1 + C2*1 = 
+Aufgrund der Linearkombination kann C bestimmt werden. 
+\[X(0) = C1*e^0*\sqrt{w} + C2*e^-(0*\sqrt{w}) = C1*1 + C2*1 = 
+C1 + C2 = 0 => C1 = -C2 => |C1| = |C2| = c\]
 
-C1 + C2 = 0 => C1 = -C2 => |C1| = |C2| = c
-
-X(x) = C*e^(x*squareroot(w)) - C*e^(-x*squareroot(w)) = C*( e^(x*squareroot(w)) - e^(-x*squareroot(w)) ) 
+\[X(x) = C*e^(x*\sqrt{w}) - C*e^(-x*\sqrt{w}) = C*( e^(x*\sqrt{w}) - e^(-x*\sqrt{w}) ) \]
 
 \[X(0) = C_1 e^{0\sqrt{\omega}} + C_2 e^{-0\sqrt{\omega}}\]
 \[X(0) = C_1 \cdot 1 + C_2 \cdot 1\]
@@ -144,28 +171,28 @@ X(x) = C*e^(x*squareroot(w)) - C*e^(-x*squareroot(w)) = C*( e^(x*squareroot(w)) 
 \[X(x) = C e^{x\sqrt{\omega}} - C e^{-x\sqrt{\omega}}\]
 
 
-\[X(\pi) = 0 = C * ( e^(pi*squareroot(w)) - e^(-pi*squareroot(w)) )  C \neq 0\] 
-\[=> e^(pi*squareroot(w)) - e^(-pi*squareroot(w)) = 0\] 
-\[=> e^(pi*squareroot(w)) = e^(-pi*squareroot(w))\]
-\[=> e^(2*pi*squareroot(w)) = 1\]
+\[X(\pi) = 0 = C * ( e^(pi*\sqrt{w}) - e^(-pi*\sqrt{w})) )  C \neq 0\] 
+\[=> e^(pi*\sqrt{w}) - e^(-pi*\sqrt{w}) = 0\] 
+\[=> e^(pi*\sqrt{w}) = e^(-pi*\sqrt{w})\]
+\[=> e^(2*pi*\sqrt{w}) = 1\]
 
-Wegen Gaussccher Zahlenebene e^(2*pi*squareroot(w)) = e^(i*2*pi*squareroot(w)) 
+Wegen Gausscher Zahlenebene \[e^(2*pi*\sqrt{w}) = e^(i*2*pi*\sqrt{w})\]
 
-\[=> 2'\pi*squareroot(w) = i*2*pi*k       k ∈ Z \{0}\]
-\[=> squareroot(w) = i*k                  k ∈ Z \{0}\]
-\[=> w = -k^2                             k ∈ Z \{0}\]
+\[=> 2'\pi*\sqrt{w} = i*2*pi*k       k ∈ Z \{0}\]
+\[=> \sqrt{w} = i*k                  k ∈ Z \{0}\]
+\[=> w = -k^2                        k ∈ Z \{0}\]
 
 
-Einsetzen in \[ \lambda = a \pm i b \] X = e^(a*x) + (C1*cos(bx) + C2*sin(bx))
+Einsetzen in \[ \lambda = a \pm i b  X(x) = e^(a*x) + (C1*cos(bx) + C2*sin(bx))\]
 
-X(x) = C1*cos(kx) + C2*sin(kx)
-\[ X(x) = C_1 \cos(kx) + C_2 \sin(kx) \]
-X(0) = C1*cos(0) + C2*sin(0) = C1*1 + C2*0 = C1 = 0
-\[ X(0) = C_1 \cos(0) + C_2 \sin(0) = C_1 \cdot 1 + C_2 \cdot 0 = C_1 = 0 \]
+\[X(x) = C1*cos(kx) + C2*sin(kx)
+ X(x) = C_1 \cos(kx) + C_2 \sin(kx) \]
+\[X(0) = C1*cos(0) + C2*sin(0) = C1*1 + C2*0 = C1 = 0
+ X(0) = C_1 \cos(0) + C_2 \sin(0) = C_1 \cdot 1 + C_2 \cdot 0 = C_1 = 0 \]
 
-X(x) = C2*sin(kx)
-\[ X(x) = C_2 \sin(kx) \]
-X(\pi) = C2*sin(k*pi) = 0  C2 != 0 => sin(k*pi) = 0 => \[k ∈ Z \{0} \]    ???? richtig 
+\[X(x) = C2*sin(kx)
+ X(x) = C_2 \sin(kx) \]
+\[X(\pi) = C2*sin(k*pi) = 0  C2 != 0 => sin(k*pi) = 0 => k ∈ Z \{0} \]    ???? richtig 
 \[
 X(\pi) = C_2 \sin(k\pi) = 0 C_2 \neq 0 \;\Longrightarrow\; \sin(k\pi) = 0 k \in \mathbb{Z} \setminus \{0\}
 \]
@@ -176,7 +203,7 @@ U(x,t) = Ck*sin(kx)*e^(-a^2*k^2*t)         Ck = C2*C3 = konst.
 \[ U(x,t) = C_2 \sin(kx)\, C_3 e^{-a^2 k^2 t}
 U(x,t) = C_k \sin(kx)\, e^{-a^2 k^2 t}  C_k = C_2 C_3 = \text{konst.} \]
 
-Die Anfangsbedingung U(x,0) = 1 wird durch die Fourier-Analyse gelöst, um die Koeffizienten Ck zu bestimmen.
+Die Anfangsbedingung \[U(x,0) = 1\] wird durch die Fourier-Analyse gelöst, um die Koeffizienten \[C_k\] zu bestimmen.
 Ck = 2/pi * Integral von 0 bis pi von U(x,0)*sin(kx) dx
 Ck = 2/pi * Integral von 0 bis pi von 1*sin(kx) dx
 \[
@@ -211,6 +238,17 @@ Die spezielle Lösung der Wärmeleitungsgleichung lautet somit:
 U(x,t) = \frac{4}{\pi k}\,\sin(kx)\,e^{-a^2 k^2 t}.
 \]
 
+\section{Gibbisch Phänomen}
+\section{Überschwinger Glätten}
+
+
+
+
+
+
 \section{Praxis}
+
+
+
 
 
