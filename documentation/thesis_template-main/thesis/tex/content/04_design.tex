@@ -31,7 +31,7 @@ nicht „wir programmieren jetzt“, sondern wie man theoretisch zur Lösung kom
 
 
 Konkret befasst sich diese Arbeit mit einer homogen eindimensionalen Wärmeleitglei-chung, welche keine Wärmequelle hat und deren Ränder eine einheitlich konstante Temperatur haben. Das bedeutet diese Gleichung einen Körper, in beschriebenem Fall, eine infinitesimal dünne Metallschiene beim Erkalten in einem perfekten Labor Umfeld beschreibt. 
-Allgemeine Wärmeleitgleichung ohne Wärmequelle: Ut` = Ux`` * a^2
+Allgemeine Wärmeleitgleichung ohne Wärmequelle: \[u_t = a^2\,u_{xx}\]
 Dabei steht Ut’ für den nach der Zeit abgeleiteten Teil der Gleichung und Ux`` für den nach dem Ort abgeleiteten Teil der Gleichung a beschreibt in dieser Gleichung den spe-zifischen Temperaturleitungskoeffizient, der beschreibt, wie gut oder schlecht das Mate-rial Wärme leitet.
 Auf dieser Basis aufbauend wurden Dirichlet-Randbedingungen von 0°Grad Celsius angenommen. 
 
@@ -42,35 +42,6 @@ Auf dieser Basis aufbauend wurden Dirichlet-Randbedingungen von 0°Grad Celsius 
 
 \section{Theorie}
 
-\subsection{Labor Übersicht}
-
-Das Labor für das Modul Modellbildung und Simulation soll den Studenten schrittweise die Lösung der Wärmeleitgleichung nach dem Produktverfahren nähergebracht werden.
-
-1.	Imports (sollen gleich bleiben, wie bei den anderen Laboren).
-
-2.	Modelling: Als Einleitung zum Thema, wird ein Video eingefügt dieses Video beschreibt das Verhalten des Materials, wenn es an einer Seite durch eine Wärmequelle erhitzt wird. 
-
-3.	Darauf folgt die Herleitung der Wärmeleitgleichung aus dem Energieerhaltungs- Fouriers- und Gaußgesetz. 
-
-4.	Danach muss der Student seine erste Aufgabe lösen diese beinhaltet das Berechnen des Temperaturleitkoeffizienten. Die notwendigen Informationen sind durch Wikipedia Links bereitgestellt.
-
-5.	Lösen der Wärmeleitgleichung für Stab in 1D ohne Wärmequelle. Explizite Lö-sung mit Anfangs- und Randbedingungen.
-
-6.	Lösen der Wärmeleitgleichung für Stab in 1D mit Wärmequelle. Explizite Lö-sung mit Anfangs- und Randbedingungen.
-
-7.	Simulation/Diskretisierung
-
-Zusätzliche Aufgaben, für den Fall, dass wir schneller fertig werden.
-Berechnen der Lösung für die Wärmeleitgleichung auf näherungsweisem Numerischen weg.
-
-\subsection{Werkzeuge und Infrastruktur}
-Die technische Umsetzung erfolgt in der Programmiersprache Python unter Verwen-dung von:
--	Jupyter Notebook für interaktive Entwicklung
--	NumPy für numerische Berechnungen
--	Matplotlib für Visualisierung der Ergebnisse
--	Pandas für die strukturierung der berechneten ergebnise
--	Math für das nutzen von variablen wie pi, cos, sin, ...
-Die Anwendung soll abschließend auf einem Hochschul-Cluster bereitgestellt werden. Die Kompatibilität mit der dortigen Infrastruktur (Python-Version, Bibliotheken, evtl. Containerisierung) wird im Projektverlauf berücksichtigt.
 
 \subsection{Mathische Grundlagen}
 
@@ -240,13 +211,6 @@ U(x,t) = \frac{4}{\pi k}\,\sin(kx)\,e^{-a^2 k^2 t}.
 
 \section{Gibbisch Phänomen}
 \section{Überschwinger Glätten}
-
-
-
-
-
-
-\section{Praxis}
 
 
 
