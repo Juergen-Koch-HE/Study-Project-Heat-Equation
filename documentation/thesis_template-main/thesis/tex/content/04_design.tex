@@ -48,6 +48,8 @@ Auf dieser Basis aufbauend wurden Dirichlet-Randbedingungen von 0°Grad Celsius 
 Bevor die Wärmeleitgleichung aufgestellt wird, werden in diesem Abschnitt wichtige mathematische Grundlagen behandelt, die einzelne  vorgänge auf dem Lösungsweg erst möglich machen. 
 
 \subsubsection{Differeentialgleichung}
+Vlt ein paar sätze zu DGL !!!!!!!!!!!!!
+
 \subsubsubsection{Exponentialansatz}
 
 \subsubsubsection{Linearkombination von Lösungen}
@@ -65,7 +67,7 @@ Dieses prinzip ermöglicht es aus den einfachen lösungen der linearen homogenen
 \subsubsubsection{Charakteristische Gleichung}
 Das Prinzip der Characteristischen Gleichung wird beim lösern linearere homogener Differentialgleichungen mit konstanten Koeffizienten angwendet und erleichter das Auflösen der Gleichung. Dabei wird der Exponentialansatz dazu genutzt: $Y(x) = e^{\lambda x}$
 
-Dabei gilt beim lösen der Gleichung die Ableitung wird  $Y^k(x) = e^{\lambda^k x}$. Dabei kann man den gemeinsamen Faktor kürzen so das $\lambda^k$ entsteht.
+Dabei gilt beim lösen der Gleichung die Ableitung wird  $Y^k(x) = \lambda^k e^{\lambda x}$. Dabei kann man den gemeinsamen Faktor kürzen so das $Y^k(x) = \lambda^k$ entsteht.
 Dabei gilt das $Y^0(x) = \lambda^0 = 1 $ und $Y^1(x)=\lambda$ ist.
 Hat die Gleichung nun den Grad n, entsteht ein Characterristisches Polynom. Welches aufgelöst werden muss, um die Eigenwerte für $\lambda_1$ bis $\lambda_n$ zu berechnen.
 Folgendes Beispiel beschreibt den vorgang.
@@ -76,25 +78,34 @@ Y_{xx}(x)+2*Y_{x}-Y(x)= 0 \Rightarrow\ \lambda^2+2*\lambda-1 = 0
 \[
 \lambda_{1,2}=\frac{-2\pm\sqrt{2^2-4\cdot1\cdot(-1)}}{2\cdot1}
 =\frac{-2\pm\sqrt{8}}{2}
-\Rightarrow \frac{-2+\sqrt{8}}{2}=  ~ 0,4  
-\Rightarrow \frac{-2+\sqrt{8}}{2}=  ~ -2,4 
+\Rightarrow \frac{-2+\sqrt{8}}{2}=  -1 + sqrt{2} 
+\Rightarrow \frac{-2+\sqrt{8}}{2}=  -1 - sqrt{2} 
 \]
 
 
-Es gibt vier verschieden Arten von Eigenwerten in den unterschieden werden muss. Es gibt einfache und mehrfache relle Eigenwerte sowie einfache komplexe und mehrfache komplexe Eigenwerte.
-Aus den Lösungen der einfachen oder mehrfache reele Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1*e^{\lambda_1*x}+ ... + C_n*e^{\lambda_n*x}$ eingesetzt (Koch & Stempfle, 2018, S.506-512).
-Die Lösungen der komplexen Eigenwerte kommen mit einem komplexen so wie einem rellen anteil $\lambda = a \pm i*b$ dabei steht a für den rellen und i für die Eulersche Identität welche b als den immaginären Anteil markiert (Koch & Stempfle, 2018, S.454).
+Es gibt vier verschieden Arten von Eigenwerten, zwischen denen unterschieden werden muss. Es gibt einfache und mehrfache relle Eigenwerte sowie einfache komplexe und mehrfache komplexe Eigenwerte.
+Aus den Lösungen der einfachen oder mehrfache reelle Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1*e^{\lambda_1*x}+ ... + C_n*e^{\lambda_n*x}$ eingesetzt (Koch & Stempfle, 2018, S.506-512).
+Die Lösungen der komplexen Eigenwerte kommen mit einem komplexen so wie einem rellen anteil $\lambda = a \pm i*b$ dabei steht a für den rellen und i für die immaginäre Einheit welche b als den immaginären Anteil markiert (Koch & Stempfle, 2018, S.454).
 Die Lösungen der einfachen und mehrfachen koplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a*x}*C1*cos(b*x) + e^{a*x}*C2*sin(b*x)+ ... + e^{a*x}*Cn*cos(b*x)$ (Koch & Stempfle, 2018, S.509-512).
 
-\[Y(x)= C_1*e^{0,9*x}+C_2*e^{-1,9x}\]
+\[Y(x)= C_1*e^{0,9*x}+C_2*e^{-1,9x}\]  fehler in der logik hier beheben !!!!!!!!!!!!!!!!
 \[
 Y(x)=\left(C_1+C_2x\right)e^{-x}
 \]
 
 
 \subsubsection{Seperation der Variablen}
-\subsubsection{Gausche Zahlenebene}
-\subsubsection{Fourier}
+
+\subsubsection{Gausche Zahlenebene} grmmatik korregieren !!!!!!!!!!!!!!!
+
+Die Gausche Zahlenebene beschreibt die komplexen Zahlen. Eine komplexe Zahl besteht aus einem real und imaginären mit der Einheit i Teil.
+$z = x +iy$ Beschreibt die Relle Zahl wobei man sich x, den Realteil und y, den Imaginärteil als zwei koordinaten eines Punktes in einem Kartesischen Koordinatensytems vorstellen muss. Wobei die horizontale Achse den Realteil und die vertikal Achse den Imaginärteil beschreibt. Die komplexen Zahlen können in verschiedenen formen geschrieben werden, hier wird im folgenden die Exponentilaform besprochen. Diese sieht folgend aus $ z = r e^{i \phi}$, $r$ beschreibt die länge des Vektors und $\phi$ den Phasenwinkel, dadurch bewegt sich eine komplexe zahl immer im Kreis um den Nullpunkt des Koordinatensystems. Das einzige das sich durch das rechnen it diesen Zahlen verändern kann ist der abstand zum zentrum des Koordinatensystems, die komplexe Zahl wird immer nur ziwschen den Quadranten wander. 
+
+Die eulersche identität (entdeckt von Leonhard Euler) die für jede reele komplexe Zahl gilt. Beschreibt wie sich die Zahlen im Einheitskreis um den Nullpunkt drehen.
+$e^{i \phi} = \cos(\phi) + i sin(\phi)$
+$|e^{i \phi}| = 1$ das bedeuted das der Betrag der komplexen Zahlen, die die Form $e^{i \phi}$ haben, immer den Abstand 1 zum Nullpunkt des Koordinatensystems. Da sie sich auf dem Einheitskreis bewegen und dieser in jede richtung und in jedem winkel den selben Betrag hat ist. 
+
+\subsubsection{Fourier-Reihen}
 
 
 
@@ -177,7 +188,7 @@ C1 + C2 = 0 => C1 = -C2 => |C1| = |C2| = c\]
 \[=> e^(pi*\sqrt{w}) = e^(-pi*\sqrt{w})\]
 \[=> e^(2*pi*\sqrt{w}) = 1\]
 
-Wegen Gausscher Zahlenebene \[e^(2*pi*\sqrt{w}) = e^(i*2*pi*\sqrt{w})\]
+Wegen Gausscher Zahlenebene \[e^(2*pi*\sqrt{w}) = e^(i*2*pi*\sqrt{w})\]    korregieren !!!!!
 
 \[=> 2'\pi*\sqrt{w} = i*2*pi*k       k ∈ Z \{0}\]
 \[=> \sqrt{w} = i*k                  k ∈ Z \{0}\]
