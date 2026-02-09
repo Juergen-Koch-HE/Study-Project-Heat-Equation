@@ -141,48 +141,48 @@ Einsetzen in die Wärmeleitgleichung
 \[X(x) * T_t(t) = a^2 * X_{xx}(x) * T(t)\]
 
 Durchführung der Separation der Variablen
-\[( X_{xx}(x) / X(x) ) = ( T_t(t) / ( a^2 * T(t) ) = q   q = Konst.\] (!!!mathematischen lambda trick erklären!!!!))
+\[\frac{ X_{xx}(x)}{ X(x)}  = \frac{T_t(t)}{ a^2 * T(t) } = q \qquad   q = Konst.\] (!!!mathematischen lambda trick erklären!!!!))
 
 Auflösen der Wärmeleitgleichung nach dem Ort X(x)
-\[( X_{xx}(x) / X(x) ) = q\]  
+\[\frac{X_{xx}(x)}{X(x)} = q\]  
 
 Um die lineare homgene Differentialgleichung in die Charakteristische Gleichung umzuformen wird der Exponential ansatz \[X(x) = e^{\lambda*x}\] genutzt.  Koch buch S.505
-\[0 = -X_{xx}(x) + w *  X(x)
-0 = -\lambda^2*e^{\lambda x} + w*e^{\lambda x} 
-0 = -\lambda^2 + w             
-\lambda_{1,2} = +/- \sqrt{w}\]
+\[0 = -X_{xx}(x) + w *  X(x)\]
+\[0 = -\lambda^2*e^{\lambda x} + w*e^{\lambda x} \]
+\[0 = -\lambda^2 + w \]            
+\[\lambda_{1,2} = \pm \sqrt{w}\]
 
 Einsetzen der Lösung in die Standardgleichung 
 \[X(x) = C_1 * e^{x*\sqrt{w}} + C_2 * e^{-x * \sqrt{w}}\]
 
 Ableiten nach der Zeit T(t)
-\[( T_t(t) / ( a^2 * T(t) ) ) = w \]
+\[\frac{T_t(t)}{ a^2 * T(t)} = w \]
 
 Umformen in die Charakteristische Gleichung
-\[T_t(t) = a^2 * T(t) * w
-0 = -T_t(t) + a^2 * T(t) * w
-0 = -\lambda + a^2 * w 
+\[T_t(t) = a^2 * T(t) * w\]
+\[0 = -T_t(t) + a^2 * T(t) * w\]
+\[0 = -\lambda + a^2 * w 
 \lambda = a^2 * w\]
 
 Einsetzen der Lösung in die Standardgleichung
-\[T(t) = C3 * e^{t*a^2*w}\]
+\[T(t) = C_3e^{t*a^2*w}\]
 
 Zusammen führen der separierten Gleichungen, Allgemeine Gleichunng
-\[U(x,t)=(C_1*e^{x*\sqrt{w}} + C_2 *e^{-x*\sqrt{w}})*C_3*e^{a^2 * w}\]
+\[U(x,t)=(C_1e^{x*\sqrt{w}} + C_2e^{-x*\sqrt{w}})*C_3e^{a^2 * w}\]
 
 Einsetzen der Randbedingungen \[U(0,t) =  0\] 
 
 in, Ortsteil der Gleichungen 
-\[X(0) = C1*e^{0*\sqrt{w}}+ C2*e^{-0*\sqrt{w}} = 0 \]
+\[X(0) = C_1e^{0*\sqrt{w}}+ C_2*e^{-0*\sqrt{w}} = 0 \]
 
 Einesetzen der Randbedingungen in in den Ortsteil der Gleichungen. 
 \[U(0,t) = u(\pi,t) = 0 \quad \Longrightarrow \quad X(0) = X(\pi) = 0 \]
 
 Aufgrund der Linearkombination kann C bestimmt werden. 
-\[X(0) = C1*e^{0*\sqrt{w}} + C2*e^{-0*\sqrt{w}} = C_1*1 + C_2*1 = 
+\[X(0) = C_1e^{0*\sqrt{w}} + C_2e^{-0*\sqrt{w}} = C_1*1 + C_2*1 = 
 C_1 + C_2 = 0 => C_1 = -C_2 => |C_1| = |C_2| = c\]
 
-\[X(x) = C*e^{x*\sqrt{w}} - C*e^{-x*\sqrt{w}} = C*( e^{x*\sqrt{w}} - e^{-x*\sqrt{w}}) \]
+\[X(x) = Ce^{x*\sqrt{w}} - Ce^{-x*\sqrt{w}} = C( e^{x*\sqrt{w}} - e^{-x*\sqrt{w}}) \]
 
 \[X(0) = C_1 e^{0\sqrt{\omega}} + C_2 e^{-0\sqrt{\omega}}\]
 \[X(0) = C_1 \cdot 1 + C_2 \cdot 1\]
@@ -193,13 +193,13 @@ C_1 + C_2 = 0 => C_1 = -C_2 => |C_1| = |C_2| = c\]
 
 
 \[X(\pi) = 0 = C * ( e^{\pi*\sqrt{w}} - e^{-\pi*\sqrt{w}} )  C \neq 0\] 
-\[\Rightarrow e^{\pi*\sqrt{w}} - e^{-pi*\sqrt{w}} = 0\] 
-\[\Rightarrow e^{\pi*\sqrt{w}} = e^{-pi*\sqrt{w}}\]
+\[\Rightarrow e^{\pi*\sqrt{w}} - e^{-\pi*\sqrt{w}} = 0\] 
+\[\Rightarrow e^{\pi*\sqrt{w}} = e^{-\pi*\sqrt{w}}\]
 \[\Rightarrow e^{2*\pi*\sqrt{w}} = 1\]
 
-Wegen Gausscher Zahlenebene \[e^{2*pi*\sqrt{w}} = e^{i*2*pi*\sqrt{w}}\]    korregieren !!!!!
+Wegen Gausscher Zahlenebene \[e^{2*\pi*\sqrt{w}} = e^{i*2*\pi*\sqrt{w}}\]    korregieren !!!!!
 
-\[\Rightarrow 2\pi*\sqrt{w} = i*2*pi*k,\qquad k \in \mathbb{Z} \setminus \{0\}
+\[\Rightarrow 2\pi*\sqrt{w} = i*2*\pi*k,\qquad k \in \mathbb{Z} \setminus \{0\}
 \]
 \[\Rightarrow \sqrt{w} = i*k, \qquad k \in \mathbb{Z} \setminus \{0\}
 \]
@@ -207,30 +207,29 @@ Wegen Gausscher Zahlenebene \[e^{2*pi*\sqrt{w}} = e^{i*2*pi*\sqrt{w}}\]    korre
 \]
 
 
-Einsetzen in \[ \lambda = a \pm i b  X(x) = e^{a*x} + (C_1*cos(bx) + C_2*sin(bx))\]
+Einsetzen in  $\lambda = a \pm i b$  
+\[X(x) = e^{a*x} + (C_1*cos(bx) + C_2*sin(bx))\]
 
-\[X(x) = C_1*cos(kx) + C_2*sin(kx)
- X(x) = C_1 \cos(kx) + C_2 \sin(kx) \]
-\[X(0) = C_1*cos(0) + C_2*sin(0) = C_1*1 + C_2*0 = C1 = 0 \]
+\[X(x) = C_1cos(kx) + C_2sin(kx) = C_1 \cos(kx) + C_2 \sin(kx) \]
+\[X(0) = C_1cos(0) + C_2sin(0) = C_1*1 + C_2*0 = C1 = 0 \]
 \[X(0) = C_1 \cos(0) + C_2 \sin(0) = C_1 \cdot 1 + C_2 \cdot 0 = C_1 = 0 \]
 
-\[X(x) = C_2*sin(kx)
+\[X(x) = C_2sin(kx)
  X(x) = C_2 \sin(kx) \]
-\[X(\pi) = C_2*sin(k*pi) = 0  C_2 != 0 => sin(k*pi) = 0 => \qquad k \in \mathbb{Z} \setminus \{0\} \]    ???? richtig 
+\[X(\pi) = C_2sin(k*\pi) = 0\]
+\[sin(k*\pi) = 0 \qquad C_2 \neq 0  \qquad k \in \mathbb{Z} \setminus \{0\} \]    ???? richtig 
 \[
-X(\pi) = C_2 \sin(k\pi) = 0 C_2 \neq 0 \;\Longrightarrow\; , \qquad k \in \mathbb{Z} \setminus \{0\}
+X(\pi) = C_2 \sin(k\pi) = 0 \qquad C_2 \neq 0 \qquad k \in \mathbb{Z} \setminus \{0\}
 \]
 
 Zusammenführung der Lösung mit Randbedingungen:
-\[U(x,t) = C_2*sin(kx)*C_3*e^{-a^2*k^2*t}\]
-\[U(x,t) = C_k*sin(kx)*e^{-a^2*k^2*t}\]         
-\[Ck = C_2*C_3 = \text{konst.}\]
-\[ U(x,t) = C_2 \sin(kx)\, C_3 e^{-a^2 k^2 t}
-U(x,t) = C_k \sin(kx)\, e^{-a^2 k^2 t}  C_k = C_2 C_3 = \text{konst.} \]
+\[U(x,t) = C_2sin(kx)*C_3e^{-a^2*k^2*t}\ \qquad Ck = C_2C_3 = \text{konst.} \]
+\[U(x,t) = C_ksin(kx)*e^{-a^2*k^2*t}\]         
+\[ U(x,t) = C_2 \sin(kx)\, C_3 e^{-a^2 k^2 t}\]
 
 Die Anfangsbedingung $U(x,0) = 1$ wird durch die Fourier-Analyse gelöst, um die Koeffizienten $C_k$ zu bestimmen.
-\[C_k = 2/pi * \text{Integral von 0 bis pi von} U(x,0)*sin(kx) dx\]
-\[C_k = 2/pi * \text{Integral von 0 bis pi von} 1*sin(kx) dx\]
+\[C_k = 2\pi * \text{Integral von 0 bis } \pi \text{ von } U(x,0)*sin(kx) dx\]
+\[C_k = 2\pi * \text{Integral von 0 bis } \pi \text{ von }1*sin(kx) dx\]
 \[
 C_k = \frac{2}{\pi} \int_{0}^{\pi} U(x,0)\sin(kx)\,\mathrm{d}x\]
 \[
