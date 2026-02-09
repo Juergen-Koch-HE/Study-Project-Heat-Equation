@@ -75,16 +75,16 @@ Y_{xx}(x)+2*Y_{x}-Y(x)= 0 \Rightarrow\ \lambda^2+2*\lambda-1 = 0
 
 \[
 \lambda_{1,2}=\frac{-2\pm\sqrt{2^2-4\cdot1\cdot(-1)}}{2\cdot1}
-=\frac{-2\pm\sqrt{8}}{2}
-\Rightarrow \frac{-2+\sqrt{8}}{2}=  -1 + sqrt{2} 
-\Rightarrow \frac{-2+\sqrt{8}}{2}=  -1 - sqrt{2} 
-\]
+=\frac{-2\pm\sqrt{8}}{2}\]
+\[\lambda_{1}=\frac{-2+\sqrt{8}}{2}=  -1 + \sqrt{2}\]
+\[\lambda_{2}=\frac{-2+\sqrt{8}}{2}=  -1 - \sqrt{2}\]
+
 
 
 Es gibt vier verschieden Arten von Eigenwerten, zwischen denen unterschieden werden muss. Es gibt einfache und mehrfache relle Eigenwerte sowie einfache komplexe und mehrfache komplexe Eigenwerte.
 Aus den Lösungen der einfachen oder mehrfache reelle Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1*e^{\lambda_1*x}+ ... + C_n*e^{\lambda_n*x}$ eingesetzt (Koch \& Stempfle, 2018, S.506-512).
 Die Lösungen der komplexen Eigenwerte kommen mit einem komplexen so wie einem rellen anteil $\lambda = a \pm i*b$ dabei steht a für den rellen und i für die immaginäre Einheit welche b als den immaginären Anteil markiert (Koch \& Stempfle, 2018, S.454).
-Die Lösungen der einfachen und mehrfachen koplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a*x}*C1*cos(b*x) + e^{a*x}*C2*sin(b*x)+ ... + e^{a*x}*Cn*cos(b*x)$ (Koch \& Stempfle, 2018, S.509-512).
+Die Lösungen der einfachen und mehrfachen koplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a*x}*C_1*cos(b*x) + e^{a*x}*C_2*sin(b*x)+ ... + e^{a*x}*C_n*cos(b*x)$ (Koch \& Stempfle, 2018, S.509-512).
 
 \[Y(x)= C_1*e^{0,9*x}+C_2*e^{-1,9x}\]  fehler in der logik hier beheben !!!!!!!!!!!!!!!!
 \[
@@ -97,7 +97,7 @@ Y(x)=\left(C_1+C_2x\right)e^{-x}
 \subsection{Gausche Zahlenebene} grmmatik korregieren !!!!!!!!!!!!!!!
 
 Die Gausche Zahlenebene beschreibt die komplexen Zahlen. Eine komplexe Zahl besteht aus einem real und imaginären mit der Einheit $i$ Teil.
-$z = x +iy$ Beschreibt die Relle Zahl wobei man sich x, den Realteil und y, den Imaginärteil als zwei koordinaten eines Punktes in einem Kartesischen Koordinatensytems vorstellen muss. Wobei die horizontale Achse den Realteil und die vertikal Achse den Imaginärteil beschreibt. Die komplexen Zahlen können in verschiedenen formen geschrieben werden, hier wird im folgenden die Exponentilaform besprochen. Diese sieht folgend aus $ z = r e^{i \phi}$, $r$ beschreibt die länge des Vektors und $\phi$ den Phasenwinkel, dadurch bewegt sich eine komplexe zahl immer im Kreis um den Nullpunkt des Koordinatensystems. Das einzige das sich durch das rechnen it diesen Zahlen verändern kann ist der abstand zum zentrum des Koordinatensystems, die komplexe Zahl wird immer nur ziwschen den Quadranten wander. 
+$z = x +iy$ Beschreibt die Reelle Zahl wobei man sich $x$, den Realteil und $y$, den Imaginärteil als zwei Koordinaten eines Punktes in einem Kartesischen Koordinatensytems vorstellen muss. Wobei die horizontale Achse den Realteil und die vertikal Achse den Imaginärteil beschreibt. Die komplexen Zahlen können in verschiedenen formen geschrieben werden, hier wird im folgenden die Exponentilaform besprochen. Diese sieht folgend aus $ z = r e^{i \phi}$, $r$ beschreibt die länge des Vektors und $\phi$ den Phasenwinkel, dadurch bewegt sich eine komplexe zahl immer im Kreis um den Nullpunkt des Koordinatensystems. Das einzige das sich durch das rechnen it diesen Zahlen verändern kann ist der abstand zum zentrum des Koordinatensystems, die komplexe Zahl wird immer nur ziwschen den Quadranten wander. 
 
 Die eulersche identität (entdeckt von Leonhard Euler) die für jede reele komplexe Zahl gilt. Beschreibt wie sich die Zahlen im Einheitskreis um den Nullpunkt drehen.
 $e^{i \phi} = \cos(\phi) + i sin(\phi)$
@@ -118,46 +118,49 @@ Um die Fourier Koeffizienten $a_k$ und $b_k$ zu berechnen muss man wissen ob ein
 \subsection{Analytische Lösungsverfahren}
 Es wurde das analytische Lösungsverfahren zur Lösung der Wärmeleitgleichung durchgeführt. 
 !!!! Vorteile von Lösung mit Analytischen verfahren!!!! 
-Randbedingungen 
-\[U(0,t) =  0;		t \ge 0,\; 0 < x < \pi
-U(Pi,t) = 0; \]
+
+Randbedingungen: 
+\[
+U(0,t)=0 \;\text{und}\; U(\pi,t)=0, \qquad t \ge 0,\; 0 < x < \pi
+\]
+
 
 Anfangswert 
 \[U(x,0) = 1,  \]
 
-Es wurde der der Ansatz der Separation der variablen verwendet, um den Ort \[X(x)\] und die Zeit \[T(t)\] zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und die Gleichungen können nach der jeweiligen Unbekannten aufgelöst werden, 
-Wärmeleitgleichung: \[Ut `= a^2 * Ux``\]
+Es wurde der der Ansatz der Separation der variablen verwendet, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und die Gleichungen können nach der jeweiligen Unbekannten aufgelöst werden, 
+Wärmeleitgleichung: \[U_t= a^2 * U_{xx}\]
 
 Ableiten nach der Zeit 
-\[U(x,t) = X(x) * T(t) -> Ut`(x,t) = X(x) * T`(t)\]
+\[U(x,t) = X(x) * T(t) \Rightarrow  U_t(x,t) = X(x) * T_t(t)\]
 
 Ableiten nach dem Ort X(x)
-\[U(x,t) = X(x) * T(t) -> Ux``(x,t) = X``(x) * T(t)\] 
+\[U(x,t) = X(x) * T(t) \Rightarrow U_{xx}(x,t) = X_{xx}(x) * T(t)\] 
 
 Einsetzen in die Wärmeleitgleichung 
-\[X(x) * T`(t) = a^2 * X``(x) * T(t)\]
+\[X(x) * T_t(t) = a^2 * X_{xx}(x) * T(t)\]
 
 Durchführung der Separation der Variablen
-\[( X``(x) / X(x) ) = ( T`(t) / ( a^2 * T(t) ) = q   q = Konst.\] (!!!mathematischen lambda trick erklären!!!!))
+\[( X_{xx}(x) / X(x) ) = ( T_t(t) / ( a^2 * T(t) ) = q   q = Konst.\] (!!!mathematischen lambda trick erklären!!!!))
 
 Auflösen der Wärmeleitgleichung nach dem Ort X(x)
-\[( X``(x) / X(x) ) = q\]  
+\[( X_{xx}(x) / X(x) ) = q\]  
 
 Um die lineare homgene Differentialgleichung in die Charakteristische Gleichung umzuformen wird der Exponential ansatz \[X(x) = e^{\lambda*x}\] genutzt.  Koch buch S.505
-\[0 = -X``(x) + w *  X(x)
+\[0 = -X_{xx}(x) + w *  X(x)
 0 = -\lambda^2*e^{\lambda x} + w*e^{\lambda x} 
 0 = -\lambda^2 + w             
 \lambda_{1,2} = +/- \sqrt{w}\]
 
 Einsetzen der Lösung in die Standardgleichung 
-\[X(x) = C1 * e^{x*\sqrt{w}} + C2 * e^{-x * \sqrt{w}}\]
+\[X(x) = C_1 * e^{x*\sqrt{w}} + C_2 * e^{-x * \sqrt{w}}\]
 
 Ableiten nach der Zeit T(t)
-\[( T`(t) / ( a^2 * T(t) ) ) = w \]
+\[( T_t(t) / ( a^2 * T(t) ) ) = w \]
 
 Umformen in die Charakteristische Gleichung
-\[T`(t) = a^2 * T(t) * w
-0 = -T`(t) + a^2 * T(t) * w
+\[T_t(t) = a^2 * T(t) * w
+0 = -T_t(t) + a^2 * T(t) * w
 0 = -\lambda + a^2 * w 
 \lambda = a^2 * w\]
 
@@ -165,17 +168,19 @@ Einsetzen der Lösung in die Standardgleichung
 \[T(t) = C3 * e^{t*a^2*w}\]
 
 Zusammen führen der separierten Gleichungen, Allgemeine Gleichunng
-\[U(x,t)=(C1*e^{x*\sqrt{w}} + C2 *e^{-x*\sqrt{w}})*C3*e^{a^2 * w}\]
+\[U(x,t)=(C_1*e^{x*\sqrt{w}} + C_2 *e^{-x*\sqrt{w}})*C_3*e^{a^2 * w}\]
 
-Einsetzen der Randbedingungen  in \[U(0,t) =  0\], Ortsteil der Gleichungen 
+Einsetzen der Randbedingungen \[U(0,t) =  0\] 
+
+in, Ortsteil der Gleichungen 
 \[X(0) = C1*e^{0*\sqrt{w}}+ C2*e^{-0*\sqrt{w}} = 0 \]
 
 Einesetzen der Randbedingungen in in den Ortsteil der Gleichungen. 
 \[U(0,t) = u(\pi,t) = 0 \quad \Longrightarrow \quad X(0) = X(\pi) = 0 \]
 
 Aufgrund der Linearkombination kann C bestimmt werden. 
-\[X(0) = C1*e^0*\sqrt{w} + C2*e^-(0*\sqrt{w}) = C1*1 + C2*1 = 
-C1 + C2 = 0 => C1 = -C2 => |C1| = |C2| = c\]
+\[X(0) = C1*e^{0*\sqrt{w}} + C2*e^{-0*\sqrt{w}} = C_1*1 + C_2*1 = 
+C_1 + C_2 = 0 => C_1 = -C_2 => |C_1| = |C_2| = c\]
 
 \[X(x) = C*e^{x*\sqrt{w}} - C*e^{-x*\sqrt{w}} = C*( e^{x*\sqrt{w}} - e^{-x*\sqrt{w}}) \]
 
@@ -188,21 +193,21 @@ C1 + C2 = 0 => C1 = -C2 => |C1| = |C2| = c\]
 
 
 \[X(\pi) = 0 = C * ( e^{\pi*\sqrt{w}} - e^{-\pi*\sqrt{w}} )  C \neq 0\] 
-\[=> e^{\pi*\sqrt{w}} - e^{-pi*\sqrt{w}} = 0\] 
-\[=> e^{\pi*\sqrt{w}} = e^{-pi*\sqrt{w}}\]
-\[=> e^{2*\pi*\sqrt{w}} = 1\]
+\[\Rightarrow e^{\pi*\sqrt{w}} - e^{-pi*\sqrt{w}} = 0\] 
+\[\Rightarrow e^{\pi*\sqrt{w}} = e^{-pi*\sqrt{w}}\]
+\[\Rightarrow e^{2*\pi*\sqrt{w}} = 1\]
 
 Wegen Gausscher Zahlenebene \[e^{2*pi*\sqrt{w}} = e^{i*2*pi*\sqrt{w}}\]    korregieren !!!!!
 
-\[\rightarrow 2\pi*\sqrt{w} = i*2*pi*k,\qquad k \in \mathbb{Z} \setminus \{0\}
+\[\Rightarrow 2\pi*\sqrt{w} = i*2*pi*k,\qquad k \in \mathbb{Z} \setminus \{0\}
 \]
-\[\rightarrow \sqrt{w} = i*k, \qquad k \in \mathbb{Z} \setminus \{0\}
+\[\Rightarrow \sqrt{w} = i*k, \qquad k \in \mathbb{Z} \setminus \{0\}
 \]
-\[\rightarrow w = -k^{2}, \qquad k \in \mathbb{Z} \setminus \{0\}
+\[\Rightarrow w = -k^{2}, \qquad k \in \mathbb{Z} \setminus \{0\}
 \]
 
 
-Einsetzen in \[ \lambda = a \pm i b  X(x) = e^{a*x} + (C1*cos(bx) + C2*sin(bx))\]
+Einsetzen in \[ \lambda = a \pm i b  X(x) = e^{a*x} + (C_1*cos(bx) + C_2*sin(bx))\]
 
 \[X(x) = C_1*cos(kx) + C_2*sin(kx)
  X(x) = C_1 \cos(kx) + C_2 \sin(kx) \]
@@ -224,8 +229,8 @@ Zusammenführung der Lösung mit Randbedingungen:
 U(x,t) = C_k \sin(kx)\, e^{-a^2 k^2 t}  C_k = C_2 C_3 = \text{konst.} \]
 
 Die Anfangsbedingung $U(x,0) = 1$ wird durch die Fourier-Analyse gelöst, um die Koeffizienten $C_k$ zu bestimmen.
-\[Ck = 2/pi * \text{Integral von 0 bis pi von} U(x,0)*sin(kx) dx\]
-Ck = 2/pi * \text{Integral von 0 bis pi von} 1*sin(kx) dx
+\[C_k = 2/pi * \text{Integral von 0 bis pi von} U(x,0)*sin(kx) dx\]
+\[C_k = 2/pi * \text{Integral von 0 bis pi von} 1*sin(kx) dx\]
 \[
 C_k = \frac{2}{\pi} \int_{0}^{\pi} U(x,0)\sin(kx)\,\mathrm{d}x\]
 \[
@@ -252,7 +257,7 @@ Daraus folgt für ungerade $k$ gilt:
  \[C_k = 4/(pi*k)\]
 
 und für gerade $k$:
-=> \[C_k = 0\]
+ \[C_k = 0\]
 
 Die spezielle Lösung der Wärmeleitungsgleichung lautet somit:
 \[
