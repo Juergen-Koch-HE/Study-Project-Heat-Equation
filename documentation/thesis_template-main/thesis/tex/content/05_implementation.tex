@@ -8,49 +8,24 @@ Als Programmiersprache wurde Python gewählt, da diese sich hervorragend für Be
 \section{Aufbau des Labors}
 Der Aufbau des Labors lehnt sich an dem Aufbau von dem Labor des Roboter-Arms. Das bedeutet zunächst folgt eine Einleitung in das Thema mit einem kleinen Video, gefolgt von einer mathematischen Einleitung in das Thema, ein paar Aufgaben, welche dann zum weiteren Verständnis mithilfe von Python und den genannten Bibliotheken visualisiert als Simulationen. Aufgrund dieser Simulationen soll tieferes Verständnis für die Wärmeleitungsgleichung erzeugt werden. 
 
-
-Frage: Wie hast du das Ganze praktisch umgesetzt?
-
-Jetzt wird’s technisch:
-
-Bei dir z. B.:
-
-Python
-
-Jupyter Notebook
-
-NumPy / Matplotlib
-
-Struktur des Labors
-
-Aufbau der Simulation
-
-Visualisierung (Heatmap)
-
-Hier darf Code rein – aber erklärend, nicht dump.
-
-
-
-\subsection{Labor Übersicht}
-
 Das Labor für das Modul Modellbildung und Simulation soll den Studenten schrittweise die Lösung der Wärmeleitgleichung nach dem Produktverfahren nähergebracht werden.
+\begin{enumerate}
+\item Imports: Sollen gleich bleiben, wie bei den anderen Laboren.
 
-1.	Imports (sollen gleich bleiben, wie bei den anderen Laboren).
+\item Modelling: Als Einleitung zum Thema, wird ein Video eingefügt dieses Video beschreibt das Verhalten eines eindimensionalen Stabelements, wenn es an einer Seite durch eine Wärmequelle erhitzt wird. 
 
-2.	Modelling: Als Einleitung zum Thema, wird ein Video eingefügt dieses Video beschreibt das Verhalten des Materials, wenn es an einer Seite durch eine Wärmequelle erhitzt wird. 
+\item Derivation of the heat equation: Darauf folgt die Herleitung der Wärmeleitungsgleichung aus dem Energieerhaltungs- Fouriers- und Gaußgesetz. Danach muss der Student seine erste Aufgabe lösen diese beinhaltet das Berechnen des Temperaturleitkoeffizienten. Die notwendigen Informationen sind durch Wikipedia Links bereitgestellt.
 
-3.	Darauf folgt die Herleitung der Wärmeleitgleichung aus dem Energieerhaltungs- Fouriers- und Gaußgesetz. 
+\item Implementation:
+\item Visualization:
 
-4.	Danach muss der Student seine erste Aufgabe lösen diese beinhaltet das Berechnen des Temperaturleitkoeffizienten. Die notwendigen Informationen sind durch Wikipedia Links bereitgestellt.
+\item Lösen der Wärmeleitgleichung für Stab in 1D ohne Wärmequelle. Explizite Lösung mit Anfangs- und Randbedingungen.
 
-5.	Lösen der Wärmeleitgleichung für Stab in 1D ohne Wärmequelle. Explizite Lö-sung mit Anfangs- und Randbedingungen.
+\item Simulation/Diskretisierung
+\end{enumerate}
 
-6.	Lösen der Wärmeleitgleichung für Stab in 1D mit Wärmequelle. Explizite Lö-sung mit Anfangs- und Randbedingungen.
 
-7.	Simulation/Diskretisierung
 
-Zusätzliche Aufgaben, für den Fall, dass wir schneller fertig werden.
-Berechnen der Lösung für die Wärmeleitgleichung auf näherungsweisem Numerischen weg.
 
 \subsection{Werkzeuge und Infrastruktur}
 Die technische Umsetzung erfolgt in der Programmiersprache Python unter Verwen-dung von:
@@ -104,6 +79,9 @@ Die Anwendung soll abschließend auf einem Hochschul-Cluster bereitgestellt werd
   \label{fig:heat-simulation5}
 \end{figure}
 
-\subsection{Gibbsches Phänomen in der Simulation}
+\FloatBarrier
 
+\subsection{Gibbsches Phänomen in der Simulation}
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 \subsection{Überschwringungen Glätten}
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
