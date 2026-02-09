@@ -107,11 +107,14 @@ $|e^{i \phi}| = 1$ das bedeuted das der Betrag der komplexen Zahlen, die die For
 
 \subsubsection{Fourier-Reihen}
 
-Eine Fourier-Reihe stellt eine periodische mathematische Funktion, in sich wiederholenden Sinus- und Kosinus thermen dar. Das beduted die ergebnisse dieser Gleichungen wiederholen sich nach einer Periode $T$ (Koch & Stempfle, 2018, S.191).  
+Eine Fourier-Reihe stellt eine periodische mathematische Funktion, in sich wiederholenden Sinus- und Kosinus thermen dar. Das beduted die ergebnisse dieser Gleichungen wiederholen sich nach einer Periode $T$.
 Damit eine Funktion als periodisch gilt sollte sie $f(x+p)=f(x)$ sein, wobei die Periode $p > 0$ ist (Koch & Stempfle, 2018, S.191).
 
-Eine Fourier-Reihe wird so defniiert $f(t)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k\cos(kwt)+b_k\sin(kwt)\right),\qquad \omega=\frac{2\pi}{T}$. Dabei steht $\frac{a_0}{2}$ für den Mittelwert der Funktion über eine Periode. a_k und b_k sind die Fourier-Koeffizienten, sie bestimmen die Form der Schwingung der Reihe, ob sie eher Wellenförmig oder Eckig ist. $k$ indexiert die Frequenzteile der Reihe, sie kompensiert die die überschwingenden positiven und negativen Flächenanteile der Funktion und führt zu einem glettungs effekt des Ergebnis, je höher $k$ ist. $w$ die Kreisfrequenz die bestimmt wie schnell die Funktion innerhalb einer Periode schwingt und $t$ die Zeitvariable.
-Um die Fourier_Koeffizienten $a_k$ und $b_k$ zu berechnen muss man wissen ob eine periodische Funktion gerade, also einen Kosinusanteil, oder ungerade, also einen Sinusanteil hat, ist. Ob eine funktion $f(t)$ ungerade oder gerade ist erkennt man wenn man sie auf Achsen symetrie prüft. Ist die funktion $f(-t) = f(t)$ dann ist sie Achsensymetrisch. Is die Funktion $f(-t) = -f(t)$ dan ist sie Punktsymetrisch und somit ungerade.  
+Eine Fourier-Reihe wird so defniiert $f(t)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k\cos(kwt)+b_k\sin(kwt)\right),\qquad \omega=\frac{2\pi}{T}$. Dabei steht $\frac{a_0}{2}$ für den Mittelwert der Funktion über eine Periode. a_k und b_k sind die Fourier-Koeffizienten, sie bestimmen die Form der Schwingung der Reihe, ob sie eher Wellenförmig oder Eckig ist. $k$ indexiert die Frequenzteile der Reihe, sie kompensiert die die überschwingenden positiven und negativen Flächenanteile der Funktion und führt zu einem glettungs effekt des Ergebnis, je höher $k$ ist. $w$ die Kreisfrequenz die bestimmt wie schnell die Funktion innerhalb einer Periode schwingt und $t$ die Zeitvariable (Koch & Stempfle, 2018, S.578-581).
+Um die Fourier_Koeffizienten $a_k$ und $b_k$ zu berechnen muss man wissen ob eine periodische Funktion gerade, also einen Kosinusanteil, oder ungerade, also einen Sinusanteil hat, ist. Ob eine funktion $f(t)$ ungerade oder gerade ist erkennt man wenn man sie auf Achsen symetrie prüft. Ist die funktion $f(-t) = f(t)$ dann ist sie Achsensymetrisch. Is die Funktion $f(-t) = -f(t)$ dann ist sie Punktsymetrisch und somit ungerade(Koch & Stempfle, 2018, S.188-189).
+
+\[a_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\cos(k\omega t)\,dt, \qquad k = 0,1,2,\ldots\]
+\[b_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin(k\omega t)\,dt, \qquad k = 1,2,\ldots\]
 
 
 \subsection{Analytische Lösungsverfahren}
@@ -254,7 +257,12 @@ Die spezielle Lösung der Wärmeleitungsgleichung lautet somit:
 U(x,t) = \frac{4}{\pi k}\,\sin(kx)\,e^{-a^2 k^2 t}.
 \]
 
-\section{Gibbisch Phänomen}
+\section{Gibbssches Phänomen}
+Das Gibbisch Phänomen, entdeckt von Josiah Willard Gibbbs, bezeichnet die Über- und Unterschwinger, die bei der Approximation einer Funktion durch ihre Fourier-Reihe in der Nähe einer Sprungstelle auftreten(Koch & Stempfle, 2018, S.581-582). Das kann man sich als einen abrupten Richtungswechsel in einem Graphen vorstellen(Koch & Stempfle, 2018, S.258). Zum Beipiel bei einer Rechteckfunktion, die linksseitig für $x < 1$ mit $f(x) = 1$ und rechtseitigen für als $x > 1$ mit$ f(x) = -1$ definiert ist, entsteht dort wo sich die Intervalle berühren bei $x = 1$ eine Sprungstelle.
+Das Gibbssche Phänomen ist eine feste größe und hat eine Abweichung von der Sptze des Überschwingers zur Spitze des Unterschwingers von ungefähr $18\%$. Durch das einbeziehen sehr vieler Sinus- und Kosinusglieder wird der Bereich in dem das Gibbssche Phänomen auftritt schmaler, jedoch wird die Abweichung Grenzbereich nicht unter $18\%$(Koch & Stempfle, 2018, S.581-582). 
+
+Dieses Phänomen tritt besonders in Unstetigen Grenzregionen von Differeentilgleichungen auf und hat somit eine relevanz für die Wärmeleitglichung
+
 \section{Überschwinger Glätten}
 
 
