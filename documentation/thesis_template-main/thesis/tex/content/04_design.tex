@@ -18,13 +18,13 @@ numerische Diskretisierung
 
 Vergleich analytisch ↔ numerisch
 
-🧠 Wichtig:
+Wichtig:
 
 Hier erklärst du Methoden
 
 nicht „wir programmieren jetzt“, sondern wie man theoretisch zur Lösung kommt
 
-➡️ Das ist die Denk- und Rechenarbeit.
+Das ist die Denk- und Rechenarbeit.
 
 
 
@@ -46,7 +46,7 @@ Eine Differeenzialgleichung ist eine Gleichung deren Lösung eine Fuktion ist. S
 So könnte eine gewöhliche Differeenzialgleichung aussehen $f(x) = f'(x)+1$. Es gibt auser der gewöhnlichen auch noch andere Gleichungs arten eine für diesen 
 Bericht wichtige, ist die partielle Differeenzialgleichung. Sie beinhaltet im gegensatz zur gewöhlichen mehrer Veränderliche. 
 Ein beispiel für eine partielle Differeenzialgleichung ist $2*f(x,y) = f_{yy}(x,y)$. Auch die Wärmeleitgleichung ist eien partielle Differeenzialgleichung 
-da sie einersetz nach der Zeit und anderseits nach dem Ort abgeleitet ist (Koch & Stempfle, 2018, S.481-483).
+da sie einersetz nach der Zeit und anderseits nach dem Ort abgeleitet ist (Koch \& Stempfle, 2018, S.481-483).
 
 \subsubsection{Exponentialansatz}
 
@@ -60,7 +60,7 @@ Da das Ergebnis der Anwendung einer homogenen Differentialgleichung immer gleich
 \[ 0 = C_1*0+C_2*0\] 
 
 Dieses Prinzip ermöglicht es aus den einfachen Lösungen der linearen homogenen Differetntialgleichung eine Allgemeine lösung zu formulieren 
-(Koch & Stempfle, 2018, S.501)
+(Koch \& Stempfle, 2018, S.501)
 
 \subsubsection{Charakteristische Gleichung}
 Das Prinzip der Charakteristischen Gleichung wird beim lösen linearer homogener Differentialgleichungen mit konstanten Koeffizienten angwendet und erleichtert das Auflösen der Gleichung. Dabei wird der Exponentialansatz dazu genutzt: $Y(x) = e^{\lambda x}$
@@ -82,9 +82,9 @@ Y_{xx}(x)+2*Y_{x}-Y(x)= 0 \Rightarrow\ \lambda^2+2*\lambda-1 = 0
 
 
 Es gibt vier verschieden Arten von Eigenwerten, zwischen denen unterschieden werden muss. Es gibt einfache und mehrfache relle Eigenwerte sowie einfache komplexe und mehrfache komplexe Eigenwerte.
-Aus den Lösungen der einfachen oder mehrfache reelle Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1*e^{\lambda_1*x}+ ... + C_n*e^{\lambda_n*x}$ eingesetzt (Koch & Stempfle, 2018, S.506-512).
-Die Lösungen der komplexen Eigenwerte kommen mit einem komplexen so wie einem rellen anteil $\lambda = a \pm i*b$ dabei steht a für den rellen und i für die immaginäre Einheit welche b als den immaginären Anteil markiert (Koch & Stempfle, 2018, S.454).
-Die Lösungen der einfachen und mehrfachen koplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a*x}*C1*cos(b*x) + e^{a*x}*C2*sin(b*x)+ ... + e^{a*x}*Cn*cos(b*x)$ (Koch & Stempfle, 2018, S.509-512).
+Aus den Lösungen der einfachen oder mehrfache reelle Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1*e^{\lambda_1*x}+ ... + C_n*e^{\lambda_n*x}$ eingesetzt (Koch \& Stempfle, 2018, S.506-512).
+Die Lösungen der komplexen Eigenwerte kommen mit einem komplexen so wie einem rellen anteil $\lambda = a \pm i*b$ dabei steht a für den rellen und i für die immaginäre Einheit welche b als den immaginären Anteil markiert (Koch \& Stempfle, 2018, S.454).
+Die Lösungen der einfachen und mehrfachen koplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a*x}*C1*cos(b*x) + e^{a*x}*C2*sin(b*x)+ ... + e^{a*x}*Cn*cos(b*x)$ (Koch \& Stempfle, 2018, S.509-512).
 
 \[Y(x)= C_1*e^{0,9*x}+C_2*e^{-1,9x}\]  fehler in der logik hier beheben !!!!!!!!!!!!!!!!
 \[
@@ -101,15 +101,15 @@ $z = x +iy$ Beschreibt die Relle Zahl wobei man sich x, den Realteil und y, den 
 
 Die eulersche identität (entdeckt von Leonhard Euler) die für jede reele komplexe Zahl gilt. Beschreibt wie sich die Zahlen im Einheitskreis um den Nullpunkt drehen.
 $e^{i \phi} = \cos(\phi) + i sin(\phi)$
-$|e^{i \phi}| = 1$ das bedeuted das der Betrag der komplexen Zahlen, die die Form $e^{i \phi}$ haben, immer den Abstand 1 zum Nullpunkt des Koordinatensystems. Da sie sich auf dem Einheitskreis bewegen und dieser in jede richtung und in jedem winkel den selben Betrag hat ist. (Koch & Stempfle, 2018, S.451-456)
+$|e^{i \phi}| = 1$ das bedeuted das der Betrag der komplexen Zahlen, die die Form $e^{i \phi}$ haben, immer den Abstand 1 zum Nullpunkt des Koordinatensystems. Da sie sich auf dem Einheitskreis bewegen und dieser in jede richtung und in jedem winkel den selben Betrag hat ist. (Koch \& Stempfle, 2018, S.451-456)
 
 \subsection{Fourier-Reihen}
 
 Eine Fourier-Reihe stellt eine periodische mathematische Funktion, in sich wiederholenden Sinus- und Kosinus thermen dar. Das beduted die ergebnisse dieser Gleichungen wiederholen sich nach einer Periode $T$.
-Damit eine Funktion als periodisch gilt sollte sie $f(x+p)=f(x)$ sein, wobei die Periode $p > 0$ ist (Koch & Stempfle, 2018, S.191).
+Damit eine Funktion als periodisch gilt sollte sie $f(x+p)=f(x)$ sein, wobei die Periode $p > 0$ ist (Koch \& Stempfle, 2018, S.191).
 
-Eine Fourier-Reihe wird so definiert $f(t)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k\cos(kwt)+b_k\sin(kwt)\right),\qquad \omega=\frac{2\pi}{T}$. Dabei steht $\frac{a_0}{2}$ für den Mittelwert der Funktion über eine Periode. $a_k$ und $b_k$ sind die Fourier-Koeffizienten, sie bestimmen die Form der Schwingung der Reihe, ob sie eher Wellenförmig oder Eckig ist. $k$ indexiert die Frequenzteile der Reihe, sie kompensiert die die überschwingenden positiven und negativen Flächenanteile der Funktion und führt zu einem glettungs effekt des Ergebnis, je höher $k$ ist. $w$ die Kreisfrequenz die bestimmt wie schnell die Funktion innerhalb einer Periode schwingt und $t$ die Zeitvariable (Koch & Stempfle, 2018, S.578-581).
-Um die Fourier Koeffizienten $a_k$ und $b_k$ zu berechnen muss man wissen ob eine periodische Funktion gerade, also einen Kosinusanteil, oder ungerade, also einen Sinusanteil hat, ist. Ob eine funktion $f(t)$ ungerade oder gerade ist erkennt man wenn man sie auf Achsen symetrie prüft. Ist die funktion $f(-t) = f(t)$ dann ist sie Achsensymetrisch. Is die Funktion $f(-t) = -f(t)$ dann ist sie Punktsymetrisch und somit ungerade(Koch & Stempfle, 2018, S.188-189).
+Eine Fourier-Reihe wird so definiert $f(t)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k\cos(kwt)+b_k\sin(kwt)\right),\qquad \omega=\frac{2\pi}{T}$. Dabei steht $\frac{a_0}{2}$ für den Mittelwert der Funktion über eine Periode. $a_k$ und $b_k$ sind die Fourier-Koeffizienten, sie bestimmen die Form der Schwingung der Reihe, ob sie eher Wellenförmig oder Eckig ist. $k$ indexiert die Frequenzteile der Reihe, sie kompensiert die die überschwingenden positiven und negativen Flächenanteile der Funktion und führt zu einem glettungs effekt des Ergebnis, je höher $k$ ist. $w$ die Kreisfrequenz die bestimmt wie schnell die Funktion innerhalb einer Periode schwingt und $t$ die Zeitvariable (Koch \& Stempfle, 2018, S.578-581).
+Um die Fourier Koeffizienten $a_k$ und $b_k$ zu berechnen muss man wissen ob eine periodische Funktion gerade, also einen Kosinusanteil, oder ungerade, also einen Sinusanteil hat, ist. Ob eine funktion $f(t)$ ungerade oder gerade ist erkennt man wenn man sie auf Achsen symetrie prüft. Ist die funktion $f(-t) = f(t)$ dann ist sie Achsensymetrisch. Is die Funktion $f(-t) = -f(t)$ dann ist sie Punktsymetrisch und somit ungerade(Koch \& Stempfle, 2018, S.188-189).
 
 \[a_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\cos(k\omega t)\,dt, \qquad k = 0,1,2,\ldots\]
 \[b_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin(k\omega t)\,dt, \qquad k = 1,2,\ldots\]
@@ -260,8 +260,8 @@ U(x,t) = \frac{4}{\pi k}\,\sin(kx)\,e^{-a^2 k^2 t}
 \]
 
 \section{Gibbssches Phänomen}
-Das Gibbisch Phänomen, entdeckt von Josiah Willard Gibbbs, bezeichnet die Über- und Unterschwinger, die bei der Approximation einer Funktion durch ihre Fourier-Reihe in der Nähe einer Sprungstelle auftreten(Koch & Stempfle, 2018, S.581-582). Das kann man sich als einen abrupten Richtungswechsel in einem Graphen vorstellen(Koch & Stempfle, 2018, S.258). Zum Beipiel bei einer Rechteckfunktion, die linksseitig für $x < 1$ mit $f(x) = 1$ und rechtseitigen für als $x > 1$ mit$ f(x) = -1$ definiert ist, entsteht dort wo sich die Intervalle berühren bei $x = 1$ eine Sprungstelle.
-Das Gibbssche Phänomen ist eine feste größe und hat eine Abweichung von der Sptze des Überschwingers zur Spitze des Unterschwingers von ungefähr $18\%$. Durch das einbeziehen sehr vieler Sinus- und Kosinusglieder wird der Bereich in dem das Gibbssche Phänomen auftritt schmaler, jedoch wird die Abweichung Grenzbereich nicht unter $18\%$(Koch & Stempfle, 2018, S.581-582). 
+Das Gibbisch Phänomen, entdeckt von Josiah Willard Gibbbs, bezeichnet die Über- und Unterschwinger, die bei der Approximation einer Funktion durch ihre Fourier-Reihe in der Nähe einer Sprungstelle auftreten(Koch \& Stempfle, 2018, S.581-582). Das kann man sich als einen abrupten Richtungswechsel in einem Graphen vorstellen(Koch \& Stempfle, 2018, S.258). Zum Beipiel bei einer Rechteckfunktion, die linksseitig für $x < 1$ mit $f(x) = 1$ und rechtseitigen für als $x > 1$ mit$ f(x) = -1$ definiert ist, entsteht dort wo sich die Intervalle berühren bei $x = 1$ eine Sprungstelle.
+Das Gibbssche Phänomen ist eine feste größe und hat eine Abweichung von der Sptze des Überschwingers zur Spitze des Unterschwingers von ungefähr $18\%$. Durch das einbeziehen sehr vieler Sinus- und Kosinusglieder wird der Bereich in dem das Gibbssche Phänomen auftritt schmaler, jedoch wird die Abweichung Grenzbereich nicht unter $18\%$(Koch \& Stempfle, 2018, S.581-582). 
 
 Dieses Phänomen tritt besonders in Unstetigen Grenzregionen von Differeentilgleichungen auf und hat somit eine relevanz für die Wärmeleitglichung
 
