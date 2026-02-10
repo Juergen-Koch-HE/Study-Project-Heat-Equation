@@ -155,10 +155,10 @@ Um die lineare homgene Differentialgleichung in die Charakteristische Gleichung 
 Einsetzen von $\lambda_{1,2}$ und dadurch erzeugen der Eigenwertfnktionen für den Ortsteil der Wärmeleitgleichung. 
 \[X(x) = C_1 \cdot e^{x\cdot\sqrt{w}} + C_2 \cdot e^{-x \cdot \sqrt{w}}\]
 
-Ableiten nach der Zeit T(t)
+Ableiten nach der Zeit T(t).
 \[\frac{T_t(t)}{ a^2 \cdot T(t)} = q \]
 
-Umformen in die Charakteristische Gleichung
+Umformen in die Charakteristische Gleichung.
 \[T_t(t) = a^2 \cdot T(t) \cdot w\]
 \[0 = -T_t(t) + a^2 \cdot T(t)\cdot w\]
 \[0 = -\lambda + a^2 \cdot w\] 
@@ -167,75 +167,55 @@ Umformen in die Charakteristische Gleichung
 Einsetzen von $\lambda$ und dadurch erzeugen der Eigenwertfnktionen für den Zeitteil der Wärmeleitgleichung. 
 \[T(t) = C_3 \cdot e^{t \cdot a^2 \cdot w}\]
 
-Zusammen führen der separierten Gleichungen, Allgemeine Gleichunng
+Zusammen führen der separierten Gleichungen. Erzeugen der Allgemeinen Lösung.
 \[U(x,t)=(C_1 \cdot e^{x \cdot\sqrt{w}} + C_2\cdot e^{-x\cdot \sqrt{w}})\cdot C_3 \cdot e^{a^2 \cdot w}\]
 
-Einsetzen der Randbedingungen \[U(0,t) =  0\] 
-
-in, Ortsteil der Gleichungen 
-\[X(0) = C_1 \cdot e^{0 \cdot \sqrt{w}}+ C_2 \cdot e^{-0 \cdot \sqrt{w}} = 0 \]
-
-Einesetzen der Randbedingungen in in den Ortsteil der Gleichungen. 
+Einsetzen der Randbedingungen in Ortsteil der Gleichungen. 
 \[U(0,t) = u(\pi,t) = 0 \quad \Longrightarrow \quad X(0) = X(\pi) = 0 \]
-
-Aufgrund der Linearkombination kann C bestimmt werden. 
-\[X(0) = C_1 \cdot e^{0 \cdot \sqrt{w}} + C_2 \cdot e^{-0 \cdot \sqrt{w}} = C_1 \cdot 1 + C_2 \cdot 1 = 
-C_1 + C_2 = 0 => C_1 = -C_2 => |C_1| = |C_2| = c\]
-
-\[X(x) = C \cdot e^{x \cdot \sqrt{w}} - C\cdot e^{-x \cdot \sqrt{w}} = C( e^{x \cdot \sqrt{w}} - e^{-x \cdot \sqrt{w}}) \]
-
-\[X(0) = C_1 \cdot e^{0\sqrt{\omega}} + C_2 \cdot e^{-0\cdot \sqrt{\omega}}\]
+\[X(0) = C_1 \cdot e^{0\sqrt{w}} + C_2 \cdot e^{-0\cdot \sqrt{w}}\]
 \[X(0) = C_1 \cdot 1 + C_2 \cdot 1\]
 \[C_1 + C_2 = 0\]
 \[C_1 = -C_2\]
 \[C_1| = |C_2| = C\]
-\[X(x) = C \cdot e^{x\sqrt{\omega}} - C \cdot e^{-x\cdot \sqrt{\omega}}\]
+\[X(x) = C_1 \cdot e^{x \cdot \sqrt{w}} - C_2 \cdot e^{-x \cdot \sqrt{w}} = C \cdot ( e^{x \cdot \sqrt{w}} - e^{-x \cdot \sqrt{w}}) \]
+Aufgrund der Linearkombination von lösungen werden $C_1$ und $C_2$ zu $C$ zusammengefasst.
 
-
-\[X(\pi) = 0 = C \cdot ( e^{\pi \cdot \sqrt{w}} - e^{-\pi \cdot \sqrt{w}} )  C \cdot \neq 0\] 
+\[X(\pi) = C \cdot ( e^{\pi \cdot \sqrt{w}} - e^{-\pi \cdot \sqrt{w}} )\,   C \neq 0\] 
 \[\Rightarrow e^{\pi \cdot \sqrt{w}} - e^{-\pi \cdot \sqrt{w}} = 0\] 
-\[\Rightarrow e^{\pi \cdot \sqrt{w}} = e^{-\pi \cdot \sqrt{w}}\]
-\[\Rightarrow e^{2 \cdot \pi \cdot \sqrt{w}} = 1\]
+\[e^{\pi \cdot \sqrt{w}} = e^{-\pi \cdot \sqrt{w}}\]
+\[e^{2 \cdot \pi \cdot \sqrt{w}} = 1\]
 
-Wegen Gausscher Zahlenebene \[e^{2 \cdot \pi \cdot \sqrt{w}} = e^{i \cdot 2 \cdot \pi \cdot \sqrt{w}}\]    korregieren !!!!!
+Für die Exponentialfunktion gilt $e^{z} = 1$ daraus folgt $z=2\cdot \pi \cdot i \cdot k$
 
 \[\Rightarrow 2\cdot \pi \cdot \sqrt{w} = i \cdot 2 \cdot \pi \cdot k,\qquad k \in \mathbb{Z} \setminus \{0\}
 \]
-\[\Rightarrow \sqrt{w} = i \cdot k, \qquad k \in \mathbb{Z} \setminus \{0\}
+\[\Rightarrow \sqrt{w} = i \cdot k
 \]
-\[\Rightarrow w = -k^{2}, \qquad k \in \mathbb{Z} \setminus \{0\}
+\[\Rightarrow w = -k^{2}
 \]
 
+Einsetzen in  $\lambda = a \pm i \cdot b$  
+\[X(x) = e^{a\cdot x}  \cdot (C_1 \cdot \cos(bx) + C_2 \cdot \sin(bx))\]
 
-Einsetzen in  $\lambda = a \pm i b$  
-\[X(x) = e^{a\cdot x} + (C_1 \cdot cos(bx) + C_2 \cdot sin(bx))\]
-
-\[X(x) = C_1 \cdot cos(kx) + C_2 \cdot sin(kx) = C_1 \cdot \cos(kx) + C_2 \cdot \sin(kx) \]
-\[X(0) = C_1 \cdot cos(0) + C_2 \cdot sin(0) = C_1 \cdot 1 + C_2 \cdot 0 = C1 = 0 \]
+\[X(x) = C_1 \cdot \cos(k\cdot x) + C_2 \cdot \sin(k\cdot x) \]
 \[X(0) = C_1 \cdot \cos(0) + C_2 \cdot \sin(0) = C_1 \cdot 1 + C_2 \cdot 0 = C_1 = 0 \]
 
-\[X(x) = C_2 \cdot sin(kx)
- X(x) = C_2 \cdot \sin(kx) \]
-\[X(\pi) = C_2 \cdot sin(k \cdot \pi) = 0\]
-\[sin(k \cdot \pi) = 0, \qquad C_2 \neq 0,  \qquad k \in \mathbb{Z} \setminus \{0\} \]    ???? richtig 
-\[
-X(\pi) = C_2 \cdot \sin(k \cdot \pi) = 0, \qquad C_2 \neq 0, \qquad k \in \mathbb{Z} \setminus \{0\}
-\]
+\[X(x) = C_2 \cdot \sin(k\cdot x)\]
+\[X(\pi) = C_2 \cdot \sin(k \cdot \pi) = 0, \qquad C_2 \neq 0, \qquad k \in \mathbb{Z} \setminus \{0\}\]
+\[\sin(k \cdot \pi) = 0\]    
 
-Zusammenführung der Lösung mit Randbedingungen:
-\[U(x,t) = C_2\cdot sin(k \cdot x) \cdot C_3 \cdot e^{-a^2 \cdot k^2 \cdot t}, \qquad Ck = C_2 \cap C_3 = \text{Konst.} \]
+
+Bildung der Produktlösung.
+\[U(x,t) = C_2\cdot sin(k \cdot x) \cdot C_3 \cdot e^{-a^2 \cdot k^2 \cdot t}, \qquad C_k := C_2C_3= \text{Konst.} \]
 \[U(x,t) = C_k \cdot sin(k \cdot x) \cdot e^{-a^2 \cdot k^2 \cdot t}\]         
 \[ U(x,t) = C_2 \cdot \sin(k\cdot x)\, C_3 \cdot e^{-a^2 \cdot k^2\cdot t}\]
 
 Die Anfangsbedingung $U(x,0) = 1$ wird durch die Fourier-Analyse gelöst, um die Koeffizienten $C_k$ zu bestimmen.
-\[C_k = 2\cdot \pi \cdot \text{Integral von 0 bis } \pi \text{ von } U(x,0)*sin(kx) dx\]
-\[C_k = 2 \cdot \pi \cdot \text{Integral von 0 bis } \pi \text{ von }1*sin(kx) dx\]
 \[
 C_k = \frac{2}{\pi} \int_{0}^{\pi} U(x,0)\sin(k \cdot x)\,\mathrm{d}x\]
 \[
 C_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(k \cdot x)\,\mathrm{d}x
 \]
-\[ C_k = \frac{2}{\pi} \int_{0}^{\pi} \left( -\frac{1}{k} \cdot \cos(k \cdot x) \right) \,\mathrm{d}x \]
 
 \[ C_k = \frac{2\cdot \,(1-\cos(k \cdot \pi))}{\pi \cdot k} \]     \[ \cos(k \cdot \pi) = (-1)^k, \]
 \[ C_k = \frac{2\cdot \,(1-(-1)^k)}{\pi \cdot k} \]
@@ -258,9 +238,9 @@ Daraus folgt für ungerade $k$ gilt:
 und für gerade $k$:
  \[C_k = 0\]
 
-Die spezielle Lösung der Wärmeleitungsgleichung lautet somit:
+Die spezielle Lösung der Wärmeleitungsgleichung für $k=2n+1$ lautet somit.
 \[
-U(x,t) = \frac{4}{\pi \cdot k}\cdot \,\sin(k \cdot x)\cdot \,e^{-a^2 \cdot k^2 \cdot t}
+U(x,t) = \sum_{k=1}^{\infty} \frac{4}{\pi \cdot k}\cdot \,\sin(k \cdot x)\cdot \,e^{-a^2 \cdot k^2 \cdot t}
 \]
 
 \section{Gibbssches Phänomen}
