@@ -77,3 +77,86 @@ klassischen Wärmeleitungsgleichung
 \]
 wobei $\alpha$ als thermische Diffusivität bezeichnet wird.
 
+Als equivalent geltende Notationen sind:
+
+$$
+\frac{\partial u}{\partial t}=a^2\frac{\partial^2 u}{\partial x^2} 
+$$
+
+$$
+u_t(x,t) = a^2 u_{xx}(x,t)
+$$
+
+$$
+u_t = a^2 u_{xx}
+$$
+
+
+
+
+
+
+Die Wärmeleitungsgleichung lässt sich auch direkt aus der Energiebilanz in einem infinitesimalen Volumenelement herleiten.
+Dabei wird der Energieerhaltungssatz mit dem Fourier'schen Gesetz kombiniert, um die partielle Differentialgleichung für die Temperaturentwicklung abzuleiten.
+
+\subsubsection{Energieerhaltung}
+Betrachten wir ein kleines Stück eines Stabes im Intervall \([x, x + \Delta x]\).
+Die in diesem Stück gespeicherte thermische Energie \(E\) ist proportional zur Temperatur \(u(x,t)\):
+\[
+E = \rho \, c_p \, u(x,t) \, \Delta x
+\]
+wobei \(\rho\) die Dichte, \(c_p\) die spezifische Wärmekapazität und \(u(x,t)\) die Temperatur am Ort \(x\) zur Zeit \(t\) bezeichnet.
+
+\subsubsection{Wärmestrom nach Fourier}
+Der Wärmestrom \(I\) wird durch das Fourier'sche Gesetz beschrieben:
+\[
+I = -k \, u_x
+\]
+wobei \(k\) die Wärmeleitfähigkeit ist.
+
+\subsubsection{Netto-Wärmefluss und Energiebilanz}
+Der Netto-Wärmefluss in das Intervall \([x, x + \Delta x]\) ergibt sich aus der Differenz der Wärmeströme an den Grenzen:
+\[
+I(x) - I(x + \Delta x) \approx -I_x \Delta x
+\]
+Nach dem Energieerhaltungssatz ist die zeitliche Änderung der Energie im Volumenelement gleich dem Netto-Wärmefluss:
+\[
+\rho c_p u_t \Delta x = - I_x \Delta x
+\]
+Durch Kürzen von \(\Delta x\) erhält man:
+\[
+\rho c_p u_t = - I_x
+\]
+
+\subsubsection{Einsetzen des Fourier'schen Gesetzes}
+Setzt man das Fourier'sche Gesetz für \(I\) ein, ergibt sich:
+\[
+I = -k u_x
+\]
+
+\[
+I_x = - (k u_x)_x
+\]
+
+Damit wird die Energiebilanz zu:
+\[
+\rho c_p u_t = (k u_x)_x
+\]
+
+\subsubsection{Vereinfachung für homogene Materialien}
+Für homogene Materialien (konstante Wärmeleitfähigkeit \(k\)) vereinfacht sich die Gleichung zu:
+\[
+u_t = \frac{k}{\rho c_p} u_{xx}
+\]
+Die Konstante
+\[
+a^2 = \frac{k}{\rho c_p}
+\]
+wird als thermische Diffusivität bezeichnet. Die Wärmeleitungsgleichung lautet somit:
+\[
+u_t = a^2 u_{xx}
+\]
+
+
+So einfach ist Mathematik, Partielle Differentialgleichungen für Anwender.
+Springer, Abschnitte 2.1--2.3.
