@@ -4,7 +4,7 @@
 \newcommand{\titleemph}[1]{\textbf{#1}} % Hervorheben
 
 \begin{titlepage}
-	\companylogo \hfill \hslogo
+	\hslogo
 	\centering
 	\Large
 	\vfill
@@ -13,7 +13,8 @@
    \textbf{\thesistitle} \\
    \vlinespace{2}
    \Large
-   \studentname
+   \studentnameone  \\
+   \studentnametwo
    \vlinespace{3}
 
    \vlinespace{2}
@@ -27,16 +28,16 @@
    \vfill
    \raggedright
    \large
-   \titleemph{Period:} \thesisperiod \\ % Nur bei Abschluss-Arbeiten
+   \titleemph{Zeitraum:} \thesisperiod \\ % Nur bei Abschluss-Arbeiten
    %\titleemph{Date:} \workDatum \\ % Nur bei Studien-Arbeiten
-   \titleemph{Reviewer:} \thesisprofone \\
-   \titleemph{Second Reviewer:} \thesisproftwo \\ % Nur bei Abschluss-Arbeiten
+   \titleemph{1.Prüfer:} \thesisprofone \\
+   \titleemph{2.Prüfer:} \thesisproftwo \\ % Nur bei Abschluss-Arbeiten
    
    % Folgenden Abschnitt nur bei Industrie-Arbeiten darstellen
-   \vlinespace{1}
-   \HRule{13pt}{1pt} \\
-   \titleemph{Company:} \companyname \\
-   \titleemph{Supervisor:} \companysupervisor 
+   %\vlinespace{1}
+   %\HRule{13pt}{1pt} \\
+   %\titleemph{Company:} \companyname \\
+   %\titleemph{Supervisor:} \companysupervisor 
 \end{titlepage}
 
 
@@ -64,6 +65,11 @@ Sofern ich generative KI-Systeme über die Prüfung von Grammatik und Rechtschre
 \bigskip
 \bigskip
 
+
+\begin{tabbing}
+          Esslingen, den \thesisdate ~~	\= \rule{5cm}{0.3mm}\\
+                                                                                                    \> Unterschrift
+\end{tabbing}
 
 \begin{tabbing}
           Esslingen, den \thesisdate ~~	\= \rule{5cm}{0.3mm}\\
