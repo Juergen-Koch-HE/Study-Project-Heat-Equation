@@ -1,29 +1,29 @@
 \chapter{Implementation}
 
 \section{Technologiestack und Entwicklungsumgebung}
-Aufgrund gegebenen Laboren, wurde auf für dieses Labor auf Jupyter Notebook gesetzt als Webanwendung in der Python programmiert werden kann. Weitere Gründe für Jupyter Notebook sind die Einfachheit, in welcher jeder dieses Verwenden kann und keine lokale konfiguration stattfinden muss, die didaktisch gute Kombination von Python-Code, Text und LaTeX-Formeln, sowie das darstellen von Plots.
+Aufgrund gegebener Laboren wurde auch für dieses Labor auf Jupyter Notebook gesetzt, als Webanwendung, in der Python programmiert werden kann. Weitere Gründe für Jupyter Notebook sind die Einfachheit, in welcher jeder dieses verwenden kann und keine lokale Konfiguration stattfinden muss, die didaktisch gute Kombination von Python-Code, Text und LaTeX-Formeln sowie das Darstellen von Plots.
 
-Als Programmiersprache wurde Python gewählt, da diese sich hervorragend für Berechnungen und Simulationen eignet. Die Kombination mit den verwendeten Bibliotheken NumPy, Matplotlib und IPython.display eignet sich sehr gut für numerische Berechnungen und Visualisierung der Ergebnisse.  
+Als Programmiersprache wurde Python gewählt, da diese sich hervorragend für Berechnungen und Simulationen eignet. Die Kombination mit den verwendeten Bibliotheken NumPy, Matplotlib und IPython.display eignet sich sehr gut für numerische Berechnungen und die Visualisierung der Ergebnisse.  
 
 
 \section{Aufbau des Labors}
-Der Aufbau des Labors lehnt sich an dem Aufbau von dem Labor des Roboter-Arms. Das bedeutet zunächst folgt eine Einleitung in das Thema mit einem kleinen Video, gefolgt von einer mathematischen Einleitung in das Thema, ein paar Aufgaben, welche dann zum weiteren Verständnis mithilfe von Python und den genannten Bibliotheken visualisiert werden als Simulationen. Aufgrund dieser Simulationen soll tieferes Verständnis für die Wärmeleitungsgleichung in Festkörpern erzeugt werden. 
+Der Aufbau des Labors lehnt sich an dem Aufbau von dem Labor des Roboter-Arms an. Das bedeutet zunächst folgt eine Einleitung in das Thema mit einem kleinen Video, gefolgt von einer mathematischen Einleitung in das Thema, ein paar Aufgaben, welche dann zum weiteren Verständnis mithilfe von Python und den genannten Bibliotheken visualisiert werden als Simulationen. Aufgrund dieser Simulationen soll tieferes Verständnis für die Wärmeleitungsgleichung in Festkörpern erzeugt werden. 
 
 Der Aufbau ist wie folgt:
 \begin{enumerate}
 \item Imports: Sollen gleich bleiben, wie bei den anderen Laboren.
 
-\item Modelling: Als Einleitung zum Thema, wird ein Video eingefügt dieses Video beschreibt das Verhalten eines eindimensionalen Stabelements, wenn es an einer Seite durch eine Wärmequelle erhitzt wird. 
+\item Modelling: Als Einleitung zum Thema wird ein Video eingefügt. Dieses Video beschreibt das Verhalten eines eindimensionalen Stabelements, wenn es an einer Seite durch eine Wärmequelle erhitzt wird. 
 
 \item Derivation of the heat equation: Darauf folgt die Herleitung der Wärmeleitungsgleichung aus der Energiebilanz in einem infinitesimalen Volumenelement. 
 
-\item Numerical treatment: In diesem Kapitel muss der Student seine erste Aufgabe lösen, diese beinhaltet das Berechnen des Temperaturleitkoeffizienten. Die notwendigen Informationen sind entweder direkt oder durch Wikipedia Links bereitgestellt. Darauf folgend wird dann die Wärmeleitungsgleichung gelöst während Anfangs- und Randbedingungen beachtet werden.
+\item Numerical treatment: In diesem Kapitel muss der Student seine erste Aufgabe lösen. Diese beinhaltet das Berechnen des Temperaturleitkoeffizienten. Die notwendigen Informationen sind entweder direkt oder durch Wikipedia Links bereitgestellt. Darauf folgend wird dann die Wärmeleitungsgleichung gelöst, während Anfangs- und Randbedingungen beachtet werden.
 
-\item Implementation \& Visualization: Nach dem schaffen der Grundlagen werden dann Simulationen erstellt welche es möglich machen das erworbene Wissen praktisch anzuwenden. In diesen Python Programmen, wird durch ausfüllen der Lücken einzelne Schaubilder und Simulationen erstellt, welche auch selbst gesteuert werden können und die Studenten später die Möglichkeit haben einzelne Parameter anzupassen um beispielsweise verschiedene Materialien zu simulieren. 
+\item Implementation \& Visualization: Nach dem Schaffen der Grundlagen werden dann Simulationen erstellt, welche es möglich machen, das erworbene Wissen praktisch anzuwenden. In diesen Python-Programmen, wird durch Ausfüllen der Lücken einzelne Schaubilder und Simulationen erstellt, welche auch selbst gesteuert werden können und bei denen die Studenten später die Möglichkeit haben, einzelne Parameter anzupassen, um beispielsweise verschiedene Materialien zu simulieren. 
 \end{enumerate}
 
 \section{Funktionsgraphen und Simulationen}
-Die bereits angekündigten Schaubilder und Simulationen können nachfolgend als Bilder betrachtet werden. Für einen leichteren Einstieg geht es bei der ersten Implementierungs- und Visualisierungs-Aufgabe um eine simple Sinus Funktion. 
+Die bereits angekündigten Schaubilder und Simulationen können nachfolgend als Bilder betrachtet werden. Für einen leichteren Einstieg geht es bei der ersten Implementierungs- und Visualisierungs-Aufgabe um eine simple Sinusfunktion. 
 
 Die Lösung kann wie folgt aussehen:
 \begin{lstlisting}[caption={Python Code für einfachen Sinus}]
@@ -43,10 +43,10 @@ Dadurch entsteht dann folgendes Schaubild:
   \caption{Sinus Graph}
   \label{fig:heat-simulation}
 \end{figure}
-Hier ist die Entwicklung des Graphen klar zu sehen und wie sich dieser nach verstrichener Zeit der x-Achse näher, was auf die e-Funktion zurückzuführen ist, also den zeitlichen Teil der Gleichung.
+Hier ist die Entwicklung des Graphen klar zu sehen und wie sich dieser nach verstrichener Zeit der x-Achse nähert, was auf die e-Funktion zurückzuführen ist, also den zeitlichen Teil der Gleichung.
 
 
-In der nächsten Aufgabe geht es dann darum die erstellte Funktion aus der vorangegangenen Aufgabe zu nutzen. Über eine Schleife soll ein 2-Dimensionales Array gefüllt werden, mit den Werten dieser Funktion. Eine Mögliche Lösung kann so aussehen:
+In der nächsten Aufgabe geht es dann darum, die erstellte Funktion aus der vorangegangenen Aufgabe zu nutzen. Über eine Schleife soll ein 2-dimensionales Array gefüllt werden, mit den Werten dieser Funktion. Eine mögliche Lösung kann so aussehen:
 \begin{lstlisting}[caption={Python Code für einfachen Sinus - Heatmap}]
 # 1D "thermal camera" animation for the single sine mode
 # Create list of time steps for animation with dt_ms as time steps between the start and end which is anim_t_end_ms + dt_ms
@@ -66,7 +66,7 @@ Die dazugehörige Simulation:
 \end{figure}
 
 
-Nach dem erfolgreichen Abschluss der einfachen Sinus Funktion folgt die Definition von 3 Funktionen mit den Aufgaben, der Berechnungen des Fourier Koeffizienten $C_k$, der Berechnung der Temperatur $u(x,t)$ basierend auf der Fourier-Reihe und dem Speichern der Temperaturen in einem 2D Array. Auf Basis dieser 3 Funktionen lassen sich dann die beiden nachfolgenden Schaubilder erzeugen. Diese zeigen zum einen, wie sich der Graph der Anfangsbedingung $u(x,t)=1$ nähert, umso mehr Sinus-Wellen hinzugefügt werden. Zum anderen zeigen die Graphen, wie sich die Fourier-Reihe nach einer kurzen Zeit dem Verlauf der einfachen Sinus Funktion annähert.
+Nach dem erfolgreichen Abschluss der einfachen Sinusfunktion folgt die Definition von 3 Funktionen mit den Aufgaben, der Berechnung des Fourier-Koeffizienten $C_k$, der Berechnung der Temperatur $u(x,t)$ basierend auf der Fourier-Reihe und dem Speichern der Temperaturen in einem 2D-Array. Auf Basis dieser 3 Funktionen lassen sich dann die beiden nachfolgenden Schaubilder erzeugen. Diese zeigen zum einen, wie sich der Graph der Anfangsbedingung $u(x,t)=1$ nähert, umso mehr Sinuswellen hinzugefügt werden. Zum anderen zeigen die Graphen, wie sich die Fourier-Reihe nach einer kurzen Zeit dem Verlauf der einfachen Sinusfunktion annähert.
 
 Eine Mögliche Lösung bietet dieser Code-Abschnitt:
 \begin{lstlisting}[caption={Python Code für Fourier Graphen}]
@@ -111,7 +111,7 @@ def u_grid(x_grid, t_grid, a2, N):
 
 
 
-Zum Abschluss wird noch die Fourier Sinus Reihe als Simulation erstellt. Wie bereits der einfache Sinus wird die Reihe als Wärmebild dargestellt. Für diese Aufgabe wird eine zuvor erstellte Funktion verwendet um, wie bei der Sinus Funktion ein 2D Array mit dem Temperaturwerten zu füllen. Eine Möglichkeit das zu tun ist folgende:
+Zum Abschluss wird noch die Fourier-Sinusreihe als Simulation erstellt. Wie bereits der einfache Sinus wird die Reihe als Wärmebild dargestellt. Für diese Aufgabe wird eine zuvor erstellte Funktion verwendet, um, wie bei der Sinusfunktion ein 2D-Array mit den Temperaturwerten zu füllen. Eine Möglichkeit, das zu tun, ist folgende:
 
 \begin{lstlisting}[caption={Python Code für Fourier Wärmebild}]
 # Create list of time steps for animation with dt_ms as time steps between the start and end which is anim_t_end_ms + dt_ms
@@ -128,7 +128,7 @@ U_min, U_max = float(U.min()), float(U.max())   # Get global Maximum and Minimum
 \end{figure}
 
 
-Wie bereits erwähnt ähnelt auch die Fourier Sinus Reihe dem des einfachen Sinus, nach kurzer Zeit ($t=120$ ms), wie nachfolgend zu sehen ist.
+Wie bereits erwähnt ähnelt auch die Fourier-Sinusreihe dem des einfachen Sinus, nach kurzer Zeit ($t=120$ ms), wie nachfolgend zu sehen ist.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{content/figures/FourierSineModeHeatmapLater.png}
@@ -139,7 +139,7 @@ Wie bereits erwähnt ähnelt auch die Fourier Sinus Reihe dem des einfachen Sinu
 \FloatBarrier
 
 \subsection{Gibbsches Phänomen in der Simulation}
-Das Gibbsche Phänomen ist hier bei der Fourier Sinus Reihe zu sehen, es handelst sich hierbei um die beiden hellsten Stellen nahe $x=0$ und $x=\pi$. Ebenfalls zu erkennen ist es bei dem Graphen der Annäherung an die Anfangsbedingung. Deutlich wird das umso mehr Sinus-Wellen hinzugefügt werden, das Gibbsche Phänomen sich verkleinert, allerdings nicht aufhört zu existieren.
+Das Gibbsche Phänomen ist hier bei der Fourier-Sinusreihe zu sehen. Es handelt sich hierbei um die beiden hellsten Stellen nahe $x=0$ und $x=\pi$. Ebenfalls zu erkennen ist es bei dem Graphen der Annäherung an die Anfangsbedingung. Deutlich wird das, umso mehr Sinuswellen hinzugefügt werden sich das Gibbsche Phänomen verkleinert, allerdings nicht aufhört, zu existieren.
 
-\subsection{Überschwingungen Glätten}
-Da es sich bei der Anfangsbedingung $u(x,t)=1$ um eine waagerechte Funktion handelt, lassen sich die Überschwingungen recht deutlich erkennen. Gerade das Wärmebild zeigt zu Zeitpunkt $t=0$ ms die einzelnen Sinuswellen, also die Überschwingungen. Denn das Ziel ist es ja mit Fourier die Anfangsbedingung so gut wie möglich zu erfüllen. Diesem Ziel kommt man immer näher, umso mehr Sinus-Wellen hinzugefügt werden, also wenn man N entsprechend hoch wählt glättet man die Überschwingungen. Dies kann man auch bei der Simulation einfach anpassen, dadurch verlängert sich aber auch die benötigte Zeit zur Berechnung.
+\subsection{Überschwingungen glätten}
+Da es sich bei der Anfangsbedingung $u(x,t)=1$ um eine waagerechte Funktion handelt, lassen sich die Überschwingungen recht deutlich erkennen. Gerade das Wärmebild zeigt zu Zeitpunkt $t=0$ ms die einzelnen Sinuswellen, also die Überschwingungen. Denn das Ziel ist es ja, mit Fourier die Anfangsbedingung so gut wie möglich zu erfüllen. Diesem Ziel kommt man immer näher, umso mehr Sinuswellen hinzugefügt werden, also wenn man N entsprechend hoch wählt, glättet man die Überschwingungen. Dies kann man auch bei der Simulation einfach anpassen. Dadurch verlängert sich aber auch die benötigte Zeit zur Berechnung.

@@ -3,7 +3,7 @@
 Die Herleitung der Wärmeleitungsgleichung basiert auf dem Energieerhaltungssatz von Mayer, Joule und Helmholtz.
 Dieser besagt, dass sich die im Inneren eines Körpers gespeicherte Energie
 nur dadurch ändern kann, dass Energie über dessen Rand hinein- oder hinausfließt.
-Zur Anwendung dieses Prinzips wird ein 1D Stabelement betrachtet,
+Zur Anwendung dieses Prinzips wird ein eindimensionales Stabelement betrachtet,
 das ein Intervall von $[x-\Delta x,\,x+\Delta x]$ hat.
 Die Temperaturverteilung im Stab wird durch die Funktion $u(x,t)$ beschrieben.
 
@@ -21,8 +21,7 @@ c\rho \int_{x-\Delta x}^{x+\Delta x}
 \]
 beschrieben werden.
 Dieser Ausdruck stellt die Energiebilanz des Stabelements dar und entspricht der
-Anwendung des Energieerhaltungssatzes auf das betrachtete Kontrollvolumen
-(vgl.\ Cannon, Section~1.1).
+Anwendung des Energieerhaltungssatzes auf das betrachtete Kontrollvolumen.
 
 Der Wärmetransport im Stab erfolgt durch Wärmeleitung und wird durch das
 Fourier'sche Gesetz beschrieben.
@@ -59,7 +58,7 @@ klassischen Wärmeleitungsgleichung
 \]
 wobei $\alpha$ als thermische Diffusivität bezeichnet wird.
 
-Als equivalent geltende Notationen sind:
+Als äquivalent geltende Notationen sind:
 
 $$
 \frac{\partial u}{\partial t}=a^2\frac{\partial^2 u}{\partial x^2} 
@@ -79,7 +78,7 @@ $$
 
 
 Die Wärmeleitungsgleichung lässt sich auch direkt aus der Energiebilanz in einem infinitesimalen Volumenelement herleiten \cite[S.~15--28]{langemann2018so}.
-Dabei wird der Energieerhaltungssatz mit dem Fourier'schen Gesetz kombiniert, um die partielle Differentialgleichung für die Temperaturentwicklung abzuleiten.
+Dabei wird der Energieerhaltungssatz mit dem Fourierschen Gesetz kombiniert, um die partielle Differentialgleichung für die Temperaturentwicklung abzuleiten.
 
 \subsubsection{Energieerhaltung}
 Betrachten wir ein kleines Stück eines Stabes im Intervall \([x, x + \Delta x]\).
@@ -90,7 +89,7 @@ E = \rho \, c_p \, u(x,t) \, \Delta x
 wobei \(\rho\) die Dichte, \(c_p\) die spezifische Wärmekapazität und \(u(x,t)\) die Temperatur am Ort \(x\) zur Zeit \(t\) bezeichnet.
 
 \subsubsection{Wärmestrom nach Fourier}
-Der Wärmestrom \(I\) wird durch das Fourier'sche Gesetz beschrieben:
+Der Wärmestrom \(I\) wird durch das Fouriersche Gesetz beschrieben:
 \[
 I = -k \, u_x
 \]
@@ -111,7 +110,7 @@ Durch Kürzen von \(\Delta x\) erhält man:
 \]
 
 \subsubsection{Einsetzen des Fourier'schen Gesetzes}
-Setzt man das Fourier'sche Gesetz für \(I\) ein, ergibt sich:
+Setzt man das Fouriersche Gesetz für \(I\) ein, ergibt sich:
 \[
 I = -k u_x
 \]
