@@ -1,0 +1,72 @@
+\usepackage[a4paper,width=150mm,top=25mm,bottom=30mm]{geometry}
+%\usepackage[a4paper,width=150mm,top=25mm,bottom=30mm,bindingoffset=15mm]{geometry}
+
+%\usepackage[english]{babel}
+\usepackage[ngerman]{babel}
+
+\usepackage{placeins}
+\usepackage{fontspec}
+\usepackage[normalem]{ulem}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{todonotes}
+\usepackage{enumitem}
+\usepackage{xurl}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb,amsfonts}
+%\usepackage{algorithmic}
+\usepackage{algorithm}
+\numberwithin{algorithm}{chapter}
+\usepackage{algpseudocode}
+\usepackage{amsmath,amsthm}
+\usepackage{siunitx}
+\usepackage{amssymb}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{makecell}      
+\usepackage[table]{xcolor} 
+\sisetup{group-separator = {,}, group-minimum-digits=3}
+
+\usepackage[acronym, toc, nopostdot, nonumberlist]{glossaries-extra}
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+\setabbreviationstyle[acronym]{long-short}
+\makeglossaries
+\loadglsentries{content/acronyms.tex}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{listings}
+\definecolor{codeBackgroundColor}{HTML}{FFFFFF}
+\definecolor{codeForegroundColor}{HTML}{000000}
+\definecolor{codeKeywordColor}{HTML}{800000}
+\definecolor{codeAttributeColor}{HTML}{B90000}
+\definecolor{codeValueColor}{HTML}{0000B9}
+\definecolor{codeCommentColor}{HTML}{008000}
+\definecolor{tblRowColor}{HTML}{DDDDDD}
+\lstset{
+    basicstyle = \ttfamily\linespread{1}%
+        \lst@ifdisplaystyle\footnotesize\fi, % Use text font size in case of lstinline, else footnotesize
+    captionpos = b,
+    frame = tblr,
+    breaklines = true,
+    aboveskip = 2em,
+    postbreak=\mbox{{$\hookrightarrow$}\space},
+    numberstyle = \color{gray},
+    numbers = left,
+    backgroundcolor=\color{codeBackgroundColor},
+	identifierstyle=\color{codeForegroundColor},
+	keywordstyle=\color{codeKeywordColor},
+	ndkeywordstyle=\color{codeAttributeColor},
+	stringstyle=\color{codeValueColor},
+	commentstyle=\color{codeCommentColor},
+}

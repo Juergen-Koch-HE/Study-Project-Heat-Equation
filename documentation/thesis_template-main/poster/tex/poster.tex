@@ -1,0 +1,93 @@
+\documentclass[20pt]{beamer}
+\input{template/preamble}
+
+\bibliography{literature.bib}
+\mode<presentation>{\usetheme{poster}}
+
+\title[CryptoWatch]{CryptoWatch}
+\subtitle{Analyzing the Diversity of Cryptographic Algorithms of \\[.4em]Internet-Connected Services}
+\author{Stud Ent - \textit{sten42@hs-esslingen.de} - University of Esslingen}
+\institute{Supervisors: Prof. Dr. Tobias Heer, Nils Lohmiller \{tobias.heer, nils.lohmiller\}@hs-esslingen.de}
+
+\begin{document}
+    % change the following line to "ngerman" for German style date and logos
+    \selectlanguage{english}
+
+    \begin{frame}
+        \begin{blockwithcontent}{1. Motivation: State of Cryptography}
+            \justifying
+            \begin{wrapfigure}{r}{0.5\textwidth}
+                \centering
+                \includegraphics[width=0.5\textwidth]{images/infrastructure.png}
+                \caption{Internet Infrastructure Visualization~\cite{Infrastruc}}
+                \label{fig:Infrastructure}
+            \end{wrapfigure}
+            Internet-connected services use different cryptographic \textbf{algorithms} and \textbf{key lengths} to secure their communication.
+            Services that implement TLS use \textbf{certificates}.  
+            Over time, these certificates, algorithms, and key lengths change. 
+            For example, since 2020, browsers require a shorter certificate validity period of at most one year.
+            Cryptographic algorithms will be replaced if more efficient ones become available or if those become insecure.
+            Services that use asymmetric algorithms are threatened by quantum computers.
+            Therefore, \textbf{Post-Quantum Cryptography (PQC)} emerges to protect these systems in the future.
+
+            However, not only will systems need to be protected in the future, current systems already need protection mechanisms. 
+            One possible attack scenario is \textit{\textbf{save now decrypt later}}.
+            In this scenario, an attacker stores asymmetrically encrypted data and assumes that he can decrypt it with the help of quantum computers in the future.
+            Such attacks can only be prevented by considering which algorithms will still be secure in the future.
+            A transition of all asymmetric algorithms to pure PQC or a combination of PQC and classical asymmetric cryptography takes time.
+            The sooner the transition to PQC begins, the better~\cite{CCC}.
+        \end{blockwithcontent}
+
+        \begin{blockwithcontent}{2. Research Idea: How do Cryptographic Algorithms Change over Time?}
+            \parallelminipages{.35\textwidth}{
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=\textwidth]{images/OpenSSH.pdf}
+                    \caption{OpenSSH versions change over time, along with them different cryptographic algorithms are used}
+                    \label{SSH}
+                \end{figure}
+            }{
+                \justifying
+                \begin{itemize}
+                    \item Due to the reduced validity period of the certificates, they have to be renewed more frequently
+                    \item We will investigate whether the \textbf{algorithms change during the renewal of certificates}
+                    \item Are there any \textbf{regional differences/inconsistencies}?
+                    \item Figure~\ref{SSH} shows how OpenSSH versions change over time. We will do the same but for certificates and cryptographic algorithms.
+                    \item The transition towards PQC poses new challenges
+                    \item Google and Cloudflare have shown the practical use of hybrid PQC and asymmetric cryptography~\cite{CloudflarePQC}.
+                    \item We examine whether there are Internet services that \textit{already support PQC algorithms}
+                \end{itemize}
+            }
+        \end{blockwithcontent}
+    
+        \begin{blockwithcontent}{3. Key Research Challenges}
+            \parallelminipages{.65\textwidth}{
+                \justifying
+                \begin{itemize}
+                    \item What should a \textbf{scanning pipeline} look like?
+                    \item What is the \textbf{current state} of cryptographic algorithms?
+                    
+                    \begin{itemize}
+                        \item Which cryptographic algorithms are commonly used?
+                        \item Which key lengths are often used?
+                        \item Have PQC algorithms already been implemented?
+                    \end{itemize}
+
+                    \item What changes after \textbf{certificate renewals}?
+                    \item Are there regional differences?
+                \end{itemize}
+            }{
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=\linewidth]{images/Scanning.pdf}
+                    \caption{Scanning Pipeline}
+                \end{figure}
+            }
+        \end{blockwithcontent}
+
+        \begin{blockwithcontent}{4. References}
+            \AtNextBibliography{\small}
+            \printbibliography
+        \end{blockwithcontent}
+    \end{frame}
+\end{document}

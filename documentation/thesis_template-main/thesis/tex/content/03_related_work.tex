@@ -1,0 +1,143 @@
+\chapter{Herleitung der Wärmeleitungsgleichung}
+
+Die Herleitung der Wärmeleitungsgleichung basiert auf dem Energieerhaltungssatz von Mayer, Joule und Helmholtz.
+Dieser besagt, dass sich die im Inneren eines Körpers gespeicherte Energie
+nur dadurch ändern kann, dass Energie über dessen Rand hinein- oder hinausfließt.
+Zur Anwendung dieses Prinzips wird ein eindimensionales Stabelement betrachtet,
+das ein Intervall von $[x-\Delta x,\,x+\Delta x]$ hat.
+Die Temperaturverteilung im Stab wird durch die Funktion $u(x,t)$ beschrieben.
+
+Die innere Energie pro Volumen ist proportional zur Temperatur und ergibt sich zu
+$\rho c u(x,t)$, wobei $\rho$ die Dichte des Materials und $c$ die spezifische
+Wärmekapazität bezeichnet.
+Die gesamte innere Energie des betrachteten Stabelements erhält man daher durch
+Integration über das Volumen.
+
+Die zeitliche Änderung der inneren Energie über ein Zeitintervall $2\Delta t$ \cite[S.~13--16]{cannon1984one}
+kann somit durch
+\[
+c\rho \int_{x-\Delta x}^{x+\Delta x}
+\bigl(u(\xi,t+\Delta t)-u(\xi,t-\Delta t)\bigr)\,\mathrm{d}\xi
+\]
+beschrieben werden.
+Dieser Ausdruck stellt die Energiebilanz des Stabelements dar und entspricht der
+Anwendung des Energieerhaltungssatzes auf das betrachtete Kontrollvolumen.
+
+Der Wärmetransport im Stab erfolgt durch Wärmeleitung und wird durch das
+Fourier'sche Gesetz beschrieben.
+In eindimensionaler Form lautet dieses
+\[
+q(x,t) = -k\,\frac{\partial u}{\partial x}(x,t),
+\]
+wobei $q(x,t)$ den Wärmestrom und $k$ die Wärmeleitfähigkeit des Materials bezeichnet.
+Das negative Vorzeichen drückt aus, dass Wärme stets in Richtung abnehmender
+Temperatur fließt.
+
+Der Netto-Wärmestrom in das Stabelement ergibt sich aus der Differenz der
+Wärmestrome an den Randpunkten $x-\Delta x$ und $x+\Delta x$.
+Setzt man diesen Wärmestrom in die Energiebilanz ein und lässt die Größen
+$\Delta x$ und $\Delta t$ gegen null gehen, so erhält man eine lokale
+Differentialgleichung für die Temperaturentwicklung:
+\[
+\rho c\,\frac{\partial u}{\partial t}
+=
+\frac{\partial}{\partial x}
+\left(
+k\,\frac{\partial u}{\partial x}
+\right).
+\]
+
+Für konstante Materialparameter vereinfacht sich diese Gleichung zur
+klassischen Wärmeleitungsgleichung
+\[
+\frac{\partial u}{\partial t}
+=
+\alpha\,\frac{\partial^2 u}{\partial x^2},
+\qquad
+\alpha = \frac{k}{\rho c},
+\]
+wobei $\alpha$ als thermische Diffusivität bezeichnet wird.
+
+Als äquivalent geltende Notationen sind:
+
+$$
+\frac{\partial u}{\partial t}=a^2\frac{\partial^2 u}{\partial x^2} 
+$$
+
+$$
+u_t(x,t) = a^2 u_{xx}(x,t)
+$$
+
+$$
+u_t = a^2 u_{xx}
+$$
+
+
+
+
+
+
+Die Wärmeleitungsgleichung lässt sich auch direkt aus der Energiebilanz in einem infinitesimalen Volumenelement herleiten \cite[S.~15--28]{langemann2018so}.
+Dabei wird der Energieerhaltungssatz mit dem Fourierschen Gesetz kombiniert, um die partielle Differentialgleichung für die Temperaturentwicklung abzuleiten.
+
+\subsubsection{Energieerhaltung}
+Betrachten wir ein kleines Stück eines Stabes im Intervall \([x, x + \Delta x]\).
+Die in diesem Stück gespeicherte thermische Energie \(E\) ist proportional zur Temperatur \(u(x,t)\):
+\[
+E = \rho \, c_p \, u(x,t) \, \Delta x
+\]
+wobei \(\rho\) die Dichte, \(c_p\) die spezifische Wärmekapazität und \(u(x,t)\) die Temperatur am Ort \(x\) zur Zeit \(t\) bezeichnet.
+
+\subsubsection{Wärmestrom nach Fourier}
+Der Wärmestrom \(I\) wird durch das Fouriersche Gesetz beschrieben:
+\[
+I = -k \, u_x
+\]
+wobei \(k\) die Wärmeleitfähigkeit ist.
+
+\subsubsection{Netto-Wärmefluss und Energiebilanz}
+Der Netto-Wärmefluss in das Intervall \([x, x + \Delta x]\) ergibt sich aus der Differenz der Wärmeströme an den Grenzen:
+\[
+I(x) - I(x + \Delta x) \approx -I_x \Delta x
+\]
+Nach dem Energieerhaltungssatz ist die zeitliche Änderung der Energie im Volumenelement gleich dem Netto-Wärmefluss:
+\[
+\rho c_p u_t \Delta x = - I_x \Delta x
+\]
+Durch Kürzen von \(\Delta x\) erhält man:
+\[
+\rho c_p u_t = - I_x
+\]
+
+\subsubsection{Einsetzen des Fourier'schen Gesetzes}
+Setzt man das Fouriersche Gesetz für \(I\) ein, ergibt sich:
+\[
+I = -k u_x
+\]
+
+\[
+I_x = - (k u_x)_x
+\]
+
+Damit wird die Energiebilanz zu:
+\[
+\rho c_p u_t = (k u_x)_x
+\]
+
+\subsubsection{Vereinfachung für homogene Materialien}
+Für homogene Materialien (konstante Wärmeleitfähigkeit \(k\)) vereinfacht sich die Gleichung zu:
+\[
+u_t = \frac{k}{\rho c_p} u_{xx}
+\]
+Die Konstante
+\[
+a^2 = \frac{k}{\rho c_p}
+\]
+wird als thermische Diffusivität bezeichnet. Die Wärmeleitungsgleichung lautet somit:
+\[
+u_t = a^2 u_{xx}
+\]
+
+
+%So einfach ist Mathematik, Partielle Differentialgleichungen für Anwender. Springer, Abschnitte 2.1--2.3.
+

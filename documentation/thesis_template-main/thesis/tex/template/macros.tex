@@ -1,0 +1,32 @@
+\newcommand{\marktext}[1]{\textcolor{red}{#1}}
+\newcommand{\redbf}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand{\theadstyle}{\bfseries\color{blue!60!black}}
+\renewcommand\arraystretch{1.35}
+
+\newcommand{\todoinline}[1]{\todo[inline, color=blue!40]{#1 \textit{(\studentshortname)}}}
+\newcommand{\todonote}[1]{\todo[color=blue!40]{#1 \textit{(\studentshortname)}}}
+\newcommand{\review}{\todo[inline, color=green!40]{REVIEW}}
+\newcommand{\feedback}[1]{\todo[inline, color=purple!40]{FEEDBACK #1}}
+\newcommand{\suggest}[2]{
+        \textcolor{red}{\sout{#1}}
+        \textcolor{olive}{#2}
+}
+
+
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+\newtheoremstyle{goalStyle}% name of the style to be used
+  {\topsep}% measure of space to leave above the theorem. E.g.: 3pt
+  {\topsep}% measure of space to leave below the theorem. E.g.: 3pt
+  {\itshape}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {}% punctuation between head and body
+  {5pt plus 1pt minus 1pt}% space after theorem head; " " = normal interword space
+  {\thmname{#1 }\thmnumber{(G#2)}\thmnote{ (#3)}}
+\theoremstyle{goalStyle}
+\newtheorem{goal}{Goal}
+\newcommand{\refgoal}[2]{\hyperref[#1]{(#2 G\ref{#1})}}

@@ -1,0 +1,19 @@
+\chapter*{Abstract}
+As a first step towards your successful thesis, you need to evaluate a few things.
+First, is the topic of value for you and do you feel motivated to work on this project for either three or six months?
+This does not only mean that you work in a specific field for this period, but before you start, you already have a clear vision on how to start.
+Of course, things change over time, and it would be boring, if you would already know everything in advance.
+However, prepare yourself with research and discussions with your supervisor to be on top of the topic.
+Second, you need to document your thesis in a way that \textbf{people can follow your thoughts and understand decisions} you had to take on the way.
+This includes \textbf{clear writing} in a useful structure, where your supervisor will help you with.
+But it also includes the choice of language: English or German? (others are not accepted)
+Of course, English is preferred, as it fits best to the scientific environment where you will position yourself with this thesis.
+But you can still choose German to create a document without loosing time if your English is not fluent or too stable.
+In this document, you need to set the selected language at two different positions:
+\sloppypar
+\begin{enumerate}[label=\Alph*)]
+    \item In the files \emph{template/title.tex} and \emph{template/metadata.tex}, you need to adjust the information on your thesis to generate a proper front page.
+    \item In \emph{template/packages.tex} you need to set the correct option for the \emph{babel} package by either using \textbf{\textbackslash usepackage[english]\{babel\}} for english or \textbf{\textbackslash usepackage[ngerman]\{babel\}} for german.
+    If you want to use umlauts with e.\,g. packages like hyphenat you should use a font encoding with good support of accents. To do this, put \textbf{\textbackslash usepackage[T1]\{fontenc\}} above the \textbf{\textbackslash usepackage[ngerman]\{babel\}} command.
+    \item In \emph{thesis.tex} you need to change the strings starting with "List of" to german and add  \textbf{\textbackslash renewcommand\{\textbackslash listalgorithmname\}\{Algorithmusverzeichnis\}} above \textbf{\textbackslash addcontentsline\{toc\}\{chapter\}\{\textbackslash listalgorithmname\}}.
+\end{enumerate}
