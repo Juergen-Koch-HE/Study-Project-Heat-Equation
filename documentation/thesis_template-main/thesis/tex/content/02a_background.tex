@@ -2,161 +2,28 @@
 In diesem Abschnitt werden Theoretische Grundlagen geschaffen, auf denen die späteren Kapitel aufbauen.
 
 \section{Wärmeleitung als physikalisches Phänomen}
-Das Phänomen der Wärmeleitung beschreibt den Wärmefluss in einem Körper, als Wärmetransport von warmen zu kälteren Bereichen. Es beschreibt, wie sich die Wärmeenergie ohne Bewegung der Teilchen (Konvektion) des Körpers in diesem ausbreitet. Aus-gegangen von einem isotropen homogenen Material, strahlt dabei die Wärme immer gleichmäßig vom Wärmsten zum kältesten Punkt des Körpers und sorgt so dafür, dass das Material sich gleichmäßig temperiert. Die Temperatur, die dadurch an einem Ort $x$ zu einer Zeit $t$ in diesem Material entsteht, wird $U$ genannt. Daraus ergibt sich folgende Gleichung $U(x,t)$ mit $t \geqq 0$ und $x> Rand_{min}$ $x<= Rand_{max}$, sie beschreibt für jeden Punkt zu jeder Zeit die jeweilige Temperatur. Die Ränder des Materials sind gesondert zu betrachten. Sie können entsprechend der Situation angepasst werden, sie sind für den Wärmeabfluss entweder durchlässig oder nicht. Das bedeutet das der Körper seine Wärme an die Umgebung, in der er sich befinden entweder abstrahlen kann oder nicht. Realistisch ist, dass der Körper seine Wärme abstrahlt, jedoch kann in der Mathematik auch mit perfekt gedämmten Rändern gearbeitet werden. Im Großen und Ganzen gibt es drei Rändertypen für die Wärmeleitgleichung. Beginnend mit der Dirichlet-Randbedingung, des Mathematikers Johann Peter Gustav Lejeune Dirichlet, sie be-schreibt den Rand als Netz aus Koordinaten Punkten, das sich um den Körper spannt. Auch hier kann zu jeder Zeit an jedem Ort in diesem Netz die Temperatur des Randes festgelegt werden, als $Q(x,t)$ oder der Einfachheit halber kann ein fester Wert für das gesamte Netz angenommen werden, zum Beispiel 20° Celsius. Dies Könnte der Raum-temperatur entsprechen, in der sich der Körper befindet. Nachfolgend die Neumann-Randbedingung des Mathematikers Carl Gottfried Neumann, sie gib anstatt der Außen-temperatur den Wärmestrom $-I(x,t)$ an, über den die Wärme des Körpers über seine Ränder abgestrahlt wird, und seinen Normalvektor $N$ welcher die Abstrahlrichtung be-stimmt. Daraus ergibt sich dann die Gleichung $P(x,t)= -I*N$. Zum Schluss die Robin-Randbedingung des Mathematikers Victor Gustave Robin. Sie ist die realistischste Randbedingung, denn Sie kombiniert Eigenschaften der Dirichlet- und Neuman-Randbedingung. In der Robin-Randbedingung wird der Wärmestrom $I(x,t)$ berücksichtig und eine Temperaturdifferenz zwischen der Randtemperatur $Q(x,t)$ und der Temperatur im Körper $U(x,t)$ berechnet. Außerdem beinhaltet sie noch eine Weiter Komponente den Wärmeübergangskoeffizient $β(x)$, welcher beschreibt wie gut die Wärme zwischen dem Körper und der Umgebung um ihn gleitet. Zum Beispiel würde der Wärmekoeffizient einer Thermoskanne mit Tee bestimmen, wie schnell die Wärme des Tees über die Außenwand der Thermoskanne seine Wärme abgibt. Daraus ergibt sich folgende Gleichung $I(t,x)*N = β(x)* [U(t,x) - Q(t,x)]$(So einfach ist Mathematik, xxxx, S.12-27)
+Das Phänomen der Wärmeleitung beschreibt den Wärmefluss in einem Körper als Wärmetransport von warmen zu kälteren Bereichen \cite[S.~12--27]{langemann2018so}. Es beschreibt, wie sich die Wärmeenergie ohne Bewegung der Teilchen (Konvektion), die sich in diesem ausbreitet. Ausgehend von einem isotropen homogenen Material strahlt dabei die Wärme immer gleichmäßig vom wärmsten zum kältesten Punkt des Körpers und sorgt so dafür, dass das Material sich gleichmäßig temperiert. Die Temperatur, die dadurch an einem Ort $x$ zu einer Zeit $t$ in diesem Material entsteht, wird $U$ genannt. Daraus ergibt sich folgende Gleichung $U(x,t)$ mit $t \geqq 0$ und $x> Rand_{min}$ $x<= Rand_{max}$, sie beschreibt für jeden Punkt zu jeder Zeit die jeweilige Temperatur. Die Ränder des Materials sind gesondert zu betrachten. Sie können entsprechend der Situation angepasst werden, sie sind für den Wärmeabfluss entweder durchlässig oder nicht. Das bedeutet, dass der Körper seine Wärme an die Umgebung, in der er sich befindet entweder abstrahlen kann oder nicht. Realistisch ist, dass der Körper seine Wärme abstrahlt. Jedoch kann in der Mathematik auch mit perfekt gedämmten Rändern gearbeitet werden. Im Großen und Ganzen gibt es drei Rändertypen für die Wärmeleitgleichung. Beginnend mit der Dirichlet-Randbedingung, des Mathematikers Johann Peter Gustav Lejeune Dirichlet. Sie beschreibt den Rand als Netz aus Koordinatenpunkten, das sich um den Körper spannt. Auch hier kann zu jeder Zeit an jedem Ort in diesem Netz die Temperatur des Randes festgelegt werden, als $Q(x,t)$ oder der Einfachheit halber kann ein fester Wert für das gesamte Netz angenommen werden, zum Beispiel 20°C. Dies könnte der Raumtemperatur entsprechen, in der sich der Körper befindet. Nachfolgend die Neumann-Randbedingung des Mathematikers Carl Gottfried Neumann, sie gibt anstatt der Außentemperatur den Wärmestrom $-I(x,t)$ an, über den die Wärme des Körpers über seine Ränder abgestrahlt wird, und seinen Normalvektor $N$, welcher die Abstrahlrichtung bestimmt. Daraus ergibt sich dann die Gleichung $P(x,t)= -I*N$. Zum Schluss die Robin-Randbedingung des Mathematikers Victor Gustave Robin. Sie ist die realistischste Randbedingung, denn sie kombiniert Eigenschaften der Dirichlet- und Neuman-Randbedingung. In der Robin-Randbedingung wird der Wärmestrom $I(x,t)$ berücksichtigt und eine Temperaturdifferenz zwischen der Randtemperatur $Q(x,t)$ und der Temperatur im Körper $U(x,t)$ berechnet. Außerdem beinhaltet sie noch eine weitere Komponente, den Wärmeübergangskoeffizienten $β(x)$, welcher beschreibt, wie gut die Wärme zwischen dem Körper und der Umgebung um ihn gleitet. Zum Beispiel würde der Temperaturleitkoeffizient einer Thermoskanne mit Tee bestimmen, wie schnell die Wärme des Tees über die Außenwand der Thermoskanne seine Wärme abgibt. Daraus ergibt sich folgende Gleichung: $I(t,x)*N = β(x)* [U(t,x) - Q(t,x)]$.
+%(So einfach ist Mathematik, xxxx, S.12-27).
 
 \section{Modellannahme und physikalische Größen}
+Konkret befasst sich diese Arbeit mit einem eindimensionalen Stabelement, dessen Wärmestrom ausschließlich entlang der X-Achse verläuft. Das Material des Stabelements wird als homogen vorausgesetzt, sodass die Stoffwerte ortsunabhängig sind. Es gibt weder externe noch interne Wärmequellen. Es herrschen Dirichlet-Randbedingungen mit einer einheitlich konstanten Temperatur von 0°C. In diesem Fall beschreibt die Gleichung ein eindimensionales Stabelement in einer perfekten Laborumgebung beim Erkalten. Sie soll dem Betrachter in der Simulation später visuell vermitteln, wie sich das Material im Labor verhalten würde. Um diese Probleme zu lösen, wurde die allgemeine Wärmeleitungsgleichung ohne Wärmequelle \cite[S.~15]{cannon1984one} herangezogen: \[u_t = a^2\,u_{xx}\]
 
-1D-Stab
+Dabei steht $u_t$ für den nach der Zeit abgeleiteten Teil der Gleichung und $u_{xx}$ für den nach dem Ort abgeleiteten Teil der Gleichung. $a^2$ beschreibt in dieser Gleichung den spezifischen Temperaturleitkoeffizient, der beschreibt, wie gut oder schlecht das Material Wärme leitet. 
 
-Kontinuumsannahme
-
-$\rho$, $\alpha$, $\beta$
-$\rho$, $\alpha$, $\beta$
-
-
-keine Quellen / Senken
-
-
-\section{Herleitung der Wärmeleitungsgleichung}
-Die Herleitung der Wärmeleitungsgleichung basiert auf dem Energieerhaltungssatz von Mayer, Joule und Helmholtz.
-Dieser besagt, dass sich die im Inneren eines Körpers gespeicherte Energie
-nur dadurch ändern kann, dass Energie über dessen Rand hinein- oder hinausfließt.
-Zur Anwendung dieses Prinzips wird ein 1D Stabelement betrachtet,
-das ein Intervall von $[x-\Delta x,\,x+\Delta x]$ hat.
-Die Temperaturverteilung im Stab wird durch die Funktion $u(x,t)$ beschrieben.
-
-Die innere Energie pro Volumen ist proportional zur Temperatur und ergibt sich zu
-$\rho c u(x,t)$, wobei $\rho$ die Dichte des Materials und $c$ die spezifische
-Wärmekapazität bezeichnet.
-Die gesamte innere Energie des betrachteten Stabelements erhält man daher durch
-Integration über das Volumen.
-
-Die zeitliche Änderung der inneren Energie über ein Zeitintervall $2\Delta t$
-kann somit durch
-\[
-c\rho \int_{x-\Delta x}^{x+\Delta x}
-\bigl(u(\xi,t+\Delta t)-u(\xi,t-\Delta t)\bigr)\,\mathrm{d}\xi
-\]
-beschrieben werden.
-Dieser Ausdruck stellt die Energiebilanz des Stabelements dar und entspricht der
-Anwendung des Energieerhaltungssatzes auf das betrachtete Kontrollvolumen
-(vgl.\ Cannon, Section~1.1).
-
-Der Wärmetransport im Stab erfolgt durch Wärmeleitung und wird durch das
-Fourier'sche Gesetz beschrieben.
-In eindimensionaler Form lautet dieses
-\[
-q(x,t) = -k\,\frac{\partial u}{\partial x}(x,t),
-\]
-wobei $q(x,t)$ den Wärmestrom und $k$ die Wärmeleitfähigkeit des Materials bezeichnet.
-Das negative Vorzeichen drückt aus, dass Wärme stets in Richtung abnehmender
-Temperatur fließt.
-
-Der Netto-Wärmestrom in das Stabelement ergibt sich aus der Differenz der
-Wärmestrome an den Randpunkten $x-\Delta x$ und $x+\Delta x$.
-Setzt man diesen Wärmestrom in die Energiebilanz ein und lässt die Größen
-$\Delta x$ und $\Delta t$ gegen null gehen, so erhält man eine lokale
-Differentialgleichung für die Temperaturentwicklung:
-\[
-\rho c\,\frac{\partial u}{\partial t}
-=
-\frac{\partial}{\partial x}
-\left(
-k\,\frac{\partial u}{\partial x}
-\right).
-\]
-
-Für konstante Materialparameter vereinfacht sich diese Gleichung zur
-klassischen Wärmeleitungsgleichung
-\[
-\frac{\partial u}{\partial t}
-=
-\alpha\,\frac{\partial^2 u}{\partial x^2},
-\qquad
-\alpha = \frac{k}{\rho c},
-\]
-wobei $\alpha$ als thermische Diffusivität bezeichnet wird.
-
-Als equivalent geltende Notationen sind:
-
-$$
-\frac{\partial u}{\partial t}=a^2\frac{\partial^2 u}{\partial x^2} 
-$$
-
-$$
-u_t(x,t) = a^2 u_{xx}(x,t)
-$$
-
-$$
-u_t = a^2 u_{xx}
-$$
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|c|p{4cm}|X|c|}
+\hline
+\textbf{Symbol} & \textbf{Bezeichnung} & \textbf{Einheit} & \textbf{Bedeutung} \\ \hline
+$u(x, t)$ & Temperatur & K oder $^\circ$C & Gesuchte Größe über Ort und Zeit \\ \hline
+$\alpha$ oder $a²$ & Temperaturleitkoeffizient & m$^2$/s oder mm$^2$/s& Maß für die thermische Dynamik \\ \hline
+$\lambda$ & Wärmeleitfähigkeit & W/(m$\cdot$K) & Fähigkeit zum Wärmetransport \\ \hline
+$\rho$ & Dichte & kg/m$^3$ & Masse pro Volumeneinheit \\ \hline
+$c_p$ & Spez. Wärmekapazität & J/(kg$\cdot$K) & Thermische Speicherfähigkeit \\ \hline
+\end{tabularx}
+\caption{Verwendete physikalische Größen}
+\label{tab:phys_groessen}
+\end{table}
 
 
-
-
-
-
-Die Wärmeleitungsgleichung lässt sich auch direkt aus der Energiebilanz in einem infinitesimalen Volumenelement herleiten.
-Dabei wird der Energieerhaltungssatz mit dem Fourier'schen Gesetz kombiniert, um die partielle Differentialgleichung für die Temperaturentwicklung abzuleiten.
-
-\subsubsection{Energieerhaltung}
-Betrachten wir ein kleines Stück eines Stabes im Intervall \([x, x + \Delta x]\).
-Die in diesem Stück gespeicherte thermische Energie \(E\) ist proportional zur Temperatur \(u(x,t)\):
-\[
-E = \rho \, c_p \, u(x,t) \, \Delta x
-\]
-wobei \(\rho\) die Dichte, \(c_p\) die spezifische Wärmekapazität und \(u(x,t)\) die Temperatur am Ort \(x\) zur Zeit \(t\) bezeichnet.
-
-\subsubsection{Wärmestrom nach Fourier}
-Der Wärmestrom \(I\) wird durch das Fourier'sche Gesetz beschrieben:
-\[
-I = -k \, u_x
-\]
-wobei \(k\) die Wärmeleitfähigkeit ist.
-
-\subsubsection{Netto-Wärmefluss und Energiebilanz}
-Der Netto-Wärmefluss in das Intervall \([x, x + \Delta x]\) ergibt sich aus der Differenz der Wärmeströme an den Grenzen:
-\[
-I(x) - I(x + \Delta x) \approx -I_x \Delta x
-\]
-Nach dem Energieerhaltungssatz ist die zeitliche Änderung der Energie im Volumenelement gleich dem Netto-Wärmefluss:
-\[
-\rho c_p u_t \Delta x = - I_x \Delta x
-\]
-Durch Kürzen von \(\Delta x\) erhält man:
-\[
-\rho c_p u_t = - I_x
-\]
-
-\subsubsection{Einsetzen des Fourier'schen Gesetzes}
-Setzt man das Fourier'sche Gesetz für \(I\) ein, ergibt sich:
-\[
-I = -k u_x
-\]
-
-\[
-I_x = - (k u_x)_x
-\]
-
-Damit wird die Energiebilanz zu:
-\[
-\rho c_p u_t = (k u_x)_x
-\]
-
-\subsubsection{Vereinfachung für homogene Materialien}
-Für homogene Materialien (konstante Wärmeleitfähigkeit \(k\)) vereinfacht sich die Gleichung zu:
-\[
-u_t = \frac{k}{\rho c_p} u_{xx}
-\]
-Die Konstante
-\[
-a^2 = \frac{k}{\rho c_p}
-\]
-wird als thermische Diffusivität bezeichnet. Die Wärmeleitungsgleichung lautet somit:
-\[
-u_t = a^2 u_{xx}
-\]
-
-
-So einfach ist Mathematik, Partielle Differentialgleichungen für Anwender.
-Springer, Abschnitte 2.1--2.3.

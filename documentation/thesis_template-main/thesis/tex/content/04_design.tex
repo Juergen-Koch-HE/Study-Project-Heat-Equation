@@ -1,26 +1,23 @@
 \chapter{Analyse und Methodik}\label{sec:design}
-Konkret befasst sich diese Arbeit mit einer homogenen eindimensionalen Wärmeleitgleichung, welche keine Wärmequelle hat und deren Ränder eine einheitlich konstante Temperatur haben. Das bedeutet, dass diese Gleichung einen Körper, in diesem beschriebenem Fall eine infinitesimal dünne Metallschiene, beim Erkalten in einem perfekten Laborumfeld beschreibt. 
-Allgemeine Wärmeleitgleichung ohne Wärmequelle: \[u_t = a^2 \cdot u_{xx}\]
-Dabei steht $u_t$ für den nach der Zeit abgeleiteten Teil der Gleichung und $u_{xx}$ für den nach dem Ort abgeleiteten Teil der Gleichung, $a$ beschreibt in dieser Gleichung den spezifischen Temperaturleitungskoeffizient, der angibt, wie gut oder schlecht das Material Wärme leitet.
-Auf dieser Basis aufbauend wurden Dirichlet-Randbedingungen von 0 Grad Celsius angenommen. 
-
 
 \section{Mathematische Grundlagen}
 Bevor die Wärmeleitgleichung aufgestellt wird, werden in diesem Abschnitt einige wichtige mathematische Grundlagen behandelt, die einzelne Vorgänge auf dem Lösungsweg in der Analytischen Lösung genauer beschreiben. 
 
 \subsection{Differenzialgleichungen}
-Eine Differenzialgleichung ist eine Gleichung, deren Lösung eine Fuktion ist. Sie hat außer der unbekannten Funktion auch mindestens eine Ableitung dieser Funktion in sich.
-So könnte eine gewöhnliche Differenzialgleichung aussehen $f(x) = f'(x)+1$. Es gibt außer der gewöhnlichen auch noch andere Gleichungsarten. Eine für dieses Projekt wichtige, ist die partielle Differenzialgleichung. Sie beinhaltet im Gegensatz zur ggewöhnlichen mehrere Veränderliche. 
+Eine Differenzialgleichung ist eine Gleichung, deren Lösung eine Funktion ist \cite[S.~481--483]{koch2015mathematik}. Sie hat außer der unbekannten Funktion auch mindestens eine Ableitung dieser Funktion in sich.
+So könnte eine gewöhnliche Differenzialgleichung aussehen $f(x) = f'(x)+1$. Es gibt außer der gewöhnlichen auch noch andere Gleichungsarten. Eine für dieses Projekt wichtige, ist die partielle Differenzialgleichung. Sie beinhaltet im Gegensatz zur gewöhnlichen mehrere Veränderliche. 
 Ein Beispiel für eine partielle Differenzialgleichung ist $2 \cdot f(x,y) = f_{yy}(x,y)$. Auch die Wärmeleitgleichung ist eine partielle Differenzialgleichung 
-da sie einerseits nach der Zeit und andererseits nach dem Ort abgeleitet ist (Koch \& Stempfle, 2018, S.481-483).
+da sie einerseits nach der Zeit und andererseits nach dem Ort abgeleitet ist.
+%(Koch \& Stempfle, 2018, S.481-483)
 
 \subsubsection{Linearkombination von Lösungen}
-Das Prinzip der Linearkombination von Lösungen, linearer homogener Differenzialgleichungen, besagt, dass sobald diese mindestens zwei Lösungenn hat, diese mit beliebigen Konstanten multipliziert und dann addiert werden dürfen und dass sich daraus dann wieder eine Lösung ergibt. 
+Das Prinzip der Linearkombination von Lösungen, linearer homogener Differenzialgleichungen, besagt, dass sobald diese mindestens zwei Lösungen hat, diese mit beliebigen Konstanten multipliziert und dann addiert werden dürfen und dass sich daraus dann wieder eine Lösung ergibt \cite[S.~501]{koch2015mathematik}. 
 Durch die Linearkombination der Lösungen von $Y_1$ und $Y_2$ ergibt sich folgendes Phänomen:
 \[ Y(x) = C_1 \cdot Y_1(x)+C_2 \cdot Y_2(x)\]
 Da das Ergebnis einer homogenen Differenzialgleichung immer gleich null sein muss, sonst wäre sie nicht homogen, ergibt sich durch die Linearität auch, dass die Teillösungen $Y_1$ und $Y_2$ beim Einsetzen in die Gleichung für $Y(x)$ gleich null ergeben.
 \[ 0 = C_1 \cdot 0+C_2 \cdot 0\] 
-Dieses Prinzip ermöglicht es, aus den einfachen Lösungen der linearen homogenen Differenzialgleichung eine allgemeine Lösung zu formulieren (Koch \& Stempfle, 2018, S.501).
+Dieses Prinzip ermöglicht es, aus den einfachen Lösungen der linearen homogenen Differenzialgleichung eine allgemeine Lösung zu formulieren.
+%(Koch \& Stempfle, 2018, S.501)
 
 \subsubsection{Charakteristische Gleichung}
 Das Prinzip der Charakteristischen Gleichung wird beim Lösen linearer homogener Differenzialgleichungen mit konstanten Koeffizienten angewendet und erleichtert das Auflösen der Gleichung. Dabei wird der Exponentialansatz dazu genutzt: $Y(x) = e^{\lambda x}$ 
@@ -40,25 +37,25 @@ Y_{xx}(x)+2\cdot Y_{x}-Y(x)= 0 \Rightarrow\ \lambda^2+2 \cdot \lambda-1 = 0
 \[Y(x)= C_1 \cdot e^{(-1 + \sqrt{2}) \cdot x}+C_2 \cdot e^{(-1 - \sqrt{2}) \cdot x}\]  
 
 Es gibt vier verschiedene Arten von Eigenwerten, zwischen denen unterschieden werden muss. Es gibt einfache und mehrfache reelle Eigenwerte sowie einfache komplexe und mehrfache komplexe Eigenwerte.
-Aus den Lösungen der einfachen oder mehrfachen reelle Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1 \cdot e^{\lambda_1 \cdot x}+ ... + C_n \cdot e^{\lambda_n \cdot x}$ eingesetzt (Koch \& Stempfle, 2018, S.506-512).
-Die Lösungen der komplexen Eigenwerte kommen mit einem komplexen so wie einem reellen Anteil $\lambda = a \pm i*b$ dabei steht $a$ für den reellen Teil, $i$ für die imaginäre Einheit und $b$ für den Faktor des imaginären teils (Koch \& Stempfle, 2018, S.454).
-Die Lösungen der einfachen und mehrfachen komplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a\cdot x} \cdot C_1 \cdot cos(b \cdot x) + e^{a \cdot x} \cdot C_2 \cdot sin(b \cdot x)+ ... + e^{a \cdot x} \cdot C_n \cdot cos(b \cdot x)$ (Koch \& Stempfle, 2018, S.509-512).
+Aus den Lösungen der einfachen oder mehrfachen reelle Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1 \cdot e^{\lambda_1 \cdot x}+ ... + C_n \cdot e^{\lambda_n \cdot x}$ eingesetzt \cite[S.~506--512]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.506-512)
+Die Lösungen der komplexen Eigenwerte kommen mit einem komplexen so wie einem reellen Anteil $\lambda = a \pm i*b$ dabei steht $a$ für den reellen Teil, $i$ für die imaginäre Einheit und $b$ für den Faktor des imaginären teils \cite[S.~454]{koch2015mathematik}. % (Koch \& Stempfle, 2018, S.454)
+Die Lösungen der einfachen und mehrfachen komplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a\cdot x} \cdot C_1 \cdot cos(b \cdot x) + e^{a \cdot x} \cdot C_2 \cdot sin(b \cdot x)+ ... + e^{a \cdot x} \cdot C_n \cdot cos(b \cdot x)$ \cite[S.~509--512]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.509-512)
 
 
 \subsection{Gausche Zahlenebene} 
-Die Gausche Zahlenebene beschreibt die komplexen Zahlen. Eine komplexe Zahl besteht aus einem reellen und imaginären mit der Einheit $i$ Teil.
-$z = x +i \cdot y$ beschreibt die komplexe Zahl wobei man sich $x$, den Realteil, und $y$, den Imaginärteil, als zwei Koordinaten eines Punktes in einem kartesischen Koordinatensystem vorstellen muss. Wobei die horizontale Achse den Realteil und die vertikale Achse den Imaginärteil beschreibt. Die komplexen Zahlen können in verschiedenen Formen geschrieben werden, hier wird im folgenden die Exponentialform besprochen. Diese sieht folgendermaßen aus $ z = r\cdot e^{i \cdot \phi}$, $r$ beschreibt die länge des Vektors und $\phi$ den Phasenwinkel, dadurch bewegt sich eine komplexe zahl immer im Kreis um den Nullpunkt des Koordinatensystems. Das einzige, das sich durch das Rechnen mit diesen Zahlen verändern kann, ist der Abstand zum Zentrum des Koordinatensystems, die komplexe Zahl wird immer nur ziwschen den Quadranten wandern. 
+Die Gausche Zahlenebene beschreibt die komplexen Zahlen \cite[S.~451-456]{koch2015mathematik}. Eine komplexe Zahl besteht aus einem reellen und imaginären mit der Einheit $i$ Teil.
+$z = x +i \cdot y$ beschreibt die komplexe Zahl wobei man sich $x$, den Realteil, und $y$, den Imaginärteil, als zwei Koordinaten eines Punktes in einem kartesischen Koordinatensystem vorstellen muss. Wobei die horizontale Achse den Realteil und die vertikale Achse den Imaginärteil beschreibt. Die komplexen Zahlen können in verschiedenen Formen geschrieben werden, hier wird im folgenden die Exponentialform besprochen. Diese sieht folgendermaßen aus $ z = r\cdot e^{i \cdot \phi}$, $r$ beschreibt die Länge des Vektors und $\phi$ den Phasenwinkel, dadurch bewegt sich eine komplexe zahl immer im Kreis um den Nullpunkt des Koordinatensystems. Das einzige, das sich durch das Rechnen mit diesen Zahlen verändern kann, ist der Abstand zum Zentrum des Koordinatensystems, die komplexe Zahl wird immer nur zwischen den Quadranten wandern. 
 
-Die eulersche Identität, entdeckt von Leonhard Euler, beschreibt, wie sich die Zahlen der Form $e^{i \cdot \phi}$ auf dem Einheitskreis um den Nullpunkt drehen.
+Die eulersche Identität, entdeckt von Leonhard Euler, beschreibt, wie sich die Zahlen der Form $e^{i \cdot \phi}$ auf dem Einheitskreis um den Nullpunkt drehen \cite[S.~451-456]{koch2015mathematik}.
 $e^{i \cdot \phi} = \cos(\phi) + i \cdot sin(\phi)$
-$|e^{i \cdot \phi}| = 1$ das bedeutet, das der Betrag der komplexen Zahlen, die die Form $e^{i\cdot \phi}$ haben, immer den Abstand 1 zum Nullpunkt des Koordinatensystems hat. Da sie sich auf dem Einheitskreis bewegen und dieser in jede Richtung und in jedem Winkel den selben Betrag hat ist. (Koch \& Stempfle, 2018, S.451-456)
+$|e^{i \cdot \phi}| = 1$ das bedeutet, das der Betrag der komplexen Zahlen, die die Form $e^{i\cdot \phi}$ haben, immer den Abstand 1 zum Nullpunkt des Koordinatensystems hat. Da sie sich auf dem Einheitskreis bewegen und dieser in jede Richtung und in jedem Winkel den selben Betrag hat ist. %(Koch \& Stempfle, 2018, S.451-456)
 
 
 \subsection{Fourier-Reihen}
-Eine Fourier-Reihe stellt eine periodische mathematische Funktion, in sich wiederholenden Sinus- und Kosinus Termen dar. Das bedeutet die Ergebnisse dieser Gleichungen wiederholen sich nach einer Periode $T$.
-Damit eine Funktion als periodisch gilt, sollte sie $f(x+p)=f(x)$ sein, wobei die Periode $p > 0$ ist (Koch \& Stempfle, 2018, S.191).
-Eine Fourier-Reihe wird so definiert, $f(t)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k \cdot \cos(k\cdot w \cdot t)+b_k \cdot \sin(k\cdot w\cdot t)\right),\qquad w =\frac{2\pi}{T}$. Dabei steht $\frac{a_0}{2}$ für den Mittelwert der Funktion über eine Periode. $a_k$ und $b_k$ sind die Fourier-Koeffizienten, sie bestimmen die Form der Schwingung der Reihe, ob sie eher wellenförmig oder eckig ist. $k$ indexiert die Frequenzteile der Reihe, sie kompensiert die überschwingenden positiven und negativen Flächenanteile der Funktion und führt zu einem Glättungseffekt des Ergebnisses, je höher $k$ ist. $w$ die Kreisfrequenz, die bestimmt, wie schnell die Funktion innerhalb einer Periode schwingt, und $t$ die Zeitvariable (Koch \& Stempfle, 2018, S.578-581).
-Um die Fourier Koeffizienten $a_k$ und $b_k$ zu berechnen, muss man wissen, ob eine periodische Funktion gerade, also einen Kosinusanteil, oder ungerade, also einen Sinusanteil hat, ist. Ob eine Funktion $f(t)$ ungerade oder gerade ist, erkennt man, wenn man sie auf Achsen symetrie prüft. Ist die Funktion $f(-t) = f(t)$, dann ist sie achsensymetrisch. Ist die Funktion $f(-t) = -f(t)$, dann ist sie punktsymetrisch und somit ungerade (Koch \& Stempfle, 2018, S.188-189).
+Eine Fourier-Reihe stellt eine periodische mathematische Funktion, in sich wiederholenden Sinus- und Kosinus Termen dar \cite[S.~577-581]{koch2015mathematik}. Das bedeutet die Ergebnisse dieser Gleichungen wiederholen sich nach einer Periode $T$.
+Damit eine Funktion als periodisch gilt, sollte sie $f(x+p)=f(x)$ sein, wobei die Periode $p > 0$ ist \cite[S.~191]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.191)
+Eine Fourier-Reihe wird so definiert, $f(t)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k \cdot \cos(k\cdot w \cdot t)+b_k \cdot \sin(k\cdot w\cdot t)\right),\qquad w =\frac{2\pi}{T}$ \cite[S.~577-581]{koch2015mathematik}. Dabei steht $\frac{a_0}{2}$ für den Mittelwert der Funktion über eine Periode. $a_k$ und $b_k$ sind die Fourier-Koeffizienten, sie bestimmen die Form der Schwingung der Reihe, ob sie eher wellenförmig oder eckig ist. $k$ indexiert die Frequenzteile der Reihe, sie kompensiert die überschwingenden positiven und negativen Flächenanteile der Funktion und führt zu einem Glättungseffekt des Ergebnisses, je höher $k$ ist. $w$ die Kreisfrequenz, die bestimmt, wie schnell die Funktion innerhalb einer Periode schwingt, und $t$ die Zeitvariable. %(Koch \& Stempfle, 2018, S.578-581)
+Um die Fourier Koeffizienten $a_k$ und $b_k$ zu berechnen, muss man wissen, ob eine periodische Funktion gerade, also einen Kosinusanteil, oder ungerade, also einen Sinusanteil hat, ist. Ob eine Funktion $f(t)$ ungerade oder gerade ist, erkennt man, wenn man sie auf Achsen symetrie prüft. Ist die Funktion $f(-t) = f(t)$, dann ist sie achsensymetrisch. Ist die Funktion $f(-t) = -f(t)$, dann ist sie punktsymetrisch und somit ungerade \cite[S.~188-189]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.188-189)
 
 \[a_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cdot \cos(k\cdot w \cdot t)\,dt, \qquad k = 0,1,2,\ldots\]
 \[b_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cdot \sin(k\cdot w \cdot t)\,dt, \qquad k = 1,2,\ldots\]
@@ -74,7 +71,7 @@ U(0,t)=0 \;\text{und}\; U(\pi,t)=0, \qquad t \ge 0,\; 0 < x < \pi
 Anfangswert 
 \[U(x,0) = 1,  \]
 
-Es wurde der der Produktansatz gewählt um die Wärmeleitgleichung aufzustellen. Beginnend mit der Separation der Variablen, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und sie können nach der jeweiligen Unbekannten aufgelöst werden. 
+Es wurde der der Produktansatz gewählt um die Wärmeleitgleichung aufzustellen \cite[S.~105-107]{langemann2018so}. Beginnend mit der Separation der Variablen, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und sie können nach der jeweiligen Unbekannten aufgelöst werden. 
 Wärmeleitgleichung: \[U_t= a^2 \cdot U_{xx}\]
 
 Ableiten nach der Zeit. 
@@ -86,13 +83,13 @@ Ableiten nach dem Ort.
 Einsetzen in die Wärmeleitgleichung. 
 \[X(x) \cdot T_t(t) = a^2 \cdot X_{xx}(x) \cdot T(t)\]
 
-Durch die Separation der Variablen entstehen zwei unabhängige Gleichgungsteile, nach dem Ort $x$ und der Zeit $t$. Dadurch könnte man den Ort verändern und würde keinen Einfluss auf die Zeit nehmen und umgekehrt. Das bedeutet mathematisch, dass man beide Gleichungen getrennt betrachten kann und damit die Gleichungen für alle $x$ und $t$ erfüllt sind, Konstanten eingesetzt werden nüssen. In diesem Fall die Konstante $w$. Das bringt den Vorteil, dass die Wärmeleitgleichung, welche eine partielle Differenzialgleichung ist, in zwei gewöhnliche Differenzialgleichungen geteilt wird. Die einmal nach dem Ort und einmal nach der Zeit getrennt sind (Mathematik ..., xxxx, S.105-107).
+Durch die Separation der Variablen entstehen zwei unabhängige Gleichgungsteile, nach dem Ort $x$ und der Zeit $t$. Dadurch könnte man den Ort verändern und würde keinen Einfluss auf die Zeit nehmen und umgekehrt. Das bedeutet mathematisch, dass man beide Gleichungen getrennt betrachten kann und damit die Gleichungen für alle $x$ und $t$ erfüllt sind, Konstanten eingesetzt werden nüssen. In diesem Fall die Konstante $w$. Das bringt den Vorteil, dass die Wärmeleitgleichung, welche eine partielle Differenzialgleichung ist, in zwei gewöhnliche Differenzialgleichungen geteilt wird. Die einmal nach dem Ort und einmal nach der Zeit getrennt sind. %(Mathematik ..., xxxx, S.105-107)
 \[\frac{ X_{xx}(x)}{ X(x)}  = \frac{T_t(t)}{ a^2 \cdot T(t) } = w \qquad   w = Konst.\] 
 
 Auflösen der Wärmeleitgleichung nach dem Ort X(x)
 \[\frac{X_{xx}(x)}{X(x)} = w\]  
 
-Um die lineare homogene Differenzialgleichung in die charakteristische Gleichung umzuformen, wird der Exponentialansatz \[X(x) = e^{\lambda*x}\] genutzt (Koch \& Stempfle, 2018, S.505).
+Um die lineare homogene Differenzialgleichung in die charakteristische Gleichung umzuformen, wird der Exponentialansatz \[X(x) = e^{\lambda*x}\] genutzt \cite[S.~505]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.505)
 \[0 = -X_{xx}(x) + w \cdot  X(x)\]
 \[0 = -\lambda^2\cdot e^{\lambda x} + w\cdot e^{\lambda x} \]
 \[0 = -\lambda^2 + w \]            
@@ -191,13 +188,12 @@ U(x,t) = \sum_{k=1}^{\infty} \frac{4}{\pi \cdot k}\cdot \,\sin(k \cdot x)\cdot \
 
 
 \section{Gibbssches Phänomen}
-Das Gibbssche Phänomen, entdeckt von Josiah Willard Gibbs, bezeichnet die Über- und Unterschwingungen, die bei der Approximation einer Funktion durch ihre Fourier-Reihe in der Nähe einer Sprungstelle auftreten (Koch \& Stempfle, 2018, S.581-582). Das kann man sich als einen abrupten Richtungswechsel in einem Graphen vorstellen (Koch \& Stempfle, 2018, S.258). Zum Beispiel bei einer Rechteckfunktion, die linksseitig für $x < 1$ mit $f(x) = 1$ und rechtseitig für als $x > 1$ mit$ f(x) = -1$ definiert ist, entsteht dort wo sich die Intervalle berühren bei $x = 1$ eine Sprungstelle.
-Das Gibbssche Phänomen ist eine feste Größe und hat eine Abweichung von der Sptze des Überschwingers zur Spitze des Unterschwingers von ungefähr $18\%$. Durch das Einbeziehen sehr vieler Sinus- und Kosinusglieder wird der Bereich in dem das Gibbssche Phänomen auftritt schmaler, jedoch sinkt die Abweichung Grenzbereich nicht unter $18\%$ (Koch \& Stempfle, 2018, S.581-582). 
+Das Gibbssche Phänomen, entdeckt von Josiah Willard Gibbs, bezeichnet die Über- und Unterschwingungen, die bei der Approximation einer Funktion durch ihre Fourier-Reihe in der Nähe einer Sprungstelle auftreten \cite[S.~581-582]{koch2015mathematik} % (Koch \& Stempfle, 2018, S.581-582)
+Das kann man sich als einen abrupten Richtungswechsel in einem Graphen vorstellen. \cite[S.~258]{koch2015mathematik} % (Koch \& Stempfle, 2018, S.258) 
+Zum Beispiel bei einer Rechteckfunktion, die linksseitig für $x < 1$ mit $f(x) = 1$ und rechtseitig für als $x > 1$ mit$ f(x) = -1$ definiert ist, entsteht dort wo sich die Intervalle berühren bei $x = 1$ eine Sprungstelle.
+Das Gibbssche Phänomen \cite[S.~581-582]{koch2015mathematik} ist eine feste Größe und hat eine Abweichung von der Spitze des Überschwingers zur Spitze des Unterschwingers von ungefähr $18\%$. Durch das Einbeziehen sehr vieler Sinus- und Kosinusglieder wird der Bereich in dem das Gibbssche Phänomen auftritt schmaler, jedoch sinkt die Abweichung Grenzbereich nicht unter $18\%$. %(Koch \& Stempfle, 2018, S.581-582)
 
-Dieses Phänomen tritt besonders in Unstetigen Grenzregionen von Differenzialgleichungen auf und hat somit eine relevanz für die Wärmeleitglichung
+Dieses Phänomen tritt besonders in Unstetigen Grenzregionen von Differenzialgleichungen auf und hat somit eine relevanz für die Wärmeleitungsgleichung.
 
-
-\section{Momentaner Forschungstand zur Wärmeleitung}
-Ein Experiment des Helmholtz-Zentrums Dresden-Rossendorf, der Universität Bonn und des Centre national de la recherche scientifique hat sich mit der Wärmeleitfähigkeit von Halbmetallen befasst. Es wurde ein Halbmetall, Zirkonium-Pentatellurid (ZrTe5), einer Temperatur in der Nähe des absoluten Nullpunkts –273,15 °C und einm sehr hohen Magnetfeld ausgesetzt. Das führte im Gegensatz zur Annahme der Forscher dazu, dass sich die Schwingung der Phononen und die Bewegung der Elektronen koppelte und so der Wärmeleitwert für das Halbmetall anfing periodisch stark im Magnetfeld zu oszillieren (B. Bermond, 2025, xxx). 
 
 
