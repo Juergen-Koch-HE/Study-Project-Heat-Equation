@@ -66,10 +66,13 @@ Um die Fourier Koeffizienten $a_k$ und $b_k$ zu berechnen, muss man wissen, ob e
 
 \subsection{Analytisches Lösungsverfahren}
  
-Es wurden die Dirichlet-Randbedingungen $U(0,t)=0$ und $U(\pi,t)=0$ mit $t \ge 0$ angenommen. Die Werte wurden gewählt, da sie beim auflösen der Wärmelitgleichung,  nach dem Ortsteil, eine einfache Eigenwertfunktion erzeugt. Dadurch das der Cosinusanteil der Gleichung elliminiert wird. 
+Es wurden die Dirichlet-Randbedingungen $U(0,t)=0$ und $U(\pi,t)=0$ mit $t \ge 0$ angenommen. Die Werte wurden gewählt, da sie beim auflösen der Wärmelitgleichung, nach dem Ortsteil, eine einfache Eigenwertfunktion erzeugt. Dadurch das der Cosinusanteil der Gleichung elliminiert wird. 
 
-Anfangswert 
-\[U(x,0) = \qquad \begin{cases} 1, 0 < x < \pi, \\ 0, x=0 \text{ oder } x=\pi \end{cases}\] 
+Als Anfangswert wurde ein konstanter Wert von $1$ im Inneren ausgewählt, so entsteht in Kombination mit den Randbedingungen von $U(0,t)=U(\pi,t)=0$ ein Gefälle aus dem inneren des Körpers zum Rand hin.
+Der Anfangswert wurde als Konstante gewählt, da so die Berechnung des Fourier-Koeffizienten $b_k$ unkomplizierter ist. Außerdem ist das Gibbssche Phänomen nahe der Sprungstellen zu beobachten ist.
+Der Anfangswert ist stückweise definiert, damit an den Rändern keine Widersprüche entstehen.
+\[U(x,0) = \qquad \begin{cases} 1, 0 < x < \pi, \\ 0, x=0, \text{ oder } x=\pi. \end{cases}\] 
+
 
 Es wurde der der Produktansatz gewählt um die Wärmeleitgleichung aufzustellen. Dadurch wird angenommen das man die Lösung der Gleichung in der Form $U(x,t)=X(x) \cdot T(t)$ schreiben kann. Beginnend mit der Separation der Variablen, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und sie können nach der jeweiligen Unbekannten aufgelöst werden.
 
