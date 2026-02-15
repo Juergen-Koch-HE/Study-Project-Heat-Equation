@@ -55,14 +55,14 @@ Der Anfangswert ist stückweise definiert, damit an den Rändern keine Widerspr�
 \[U(x,0) = \qquad \begin{cases} 1, 0 < x < \pi, \\ 0, x=0, \text{ oder } x=\pi. \end{cases}\] 
 
 
-Es wurde der der Produktansatz gewählt um die Wärmeleitungsgleichung aufzustellen. Dadurch wird angenommen das man die Lösung der Gleichung in der Form $U(x,t)=X(x) \cdot T(t)$ schreiben kann. Beginnend mit der Separation der Variablen, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und sie können nach der jeweiligen Unbekannten aufgelöst werden.
+Es wurde der der Produktansatz gewählt um die Wärmeleitungsgleichung aufzustellen. Dadurch wird angenommen das man die Lösung der Gleichung in der Form $u(x,t)=X(x) \cdot T(t)$ schreiben kann. Beginnend mit der Separation der Variablen, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und sie können nach der jeweiligen Unbekannten aufgelöst werden.
 
-Wärmeleitungsgleichung hat die Form $U_t= a^2 \cdot U_{xx}$ um diese Form aus dem Produktansatz zu erzeugen,
+Wärmeleitungsgleichung hat die Form $u_t= a^2 \cdot u_{xx}$ um diese Form aus dem Produktansatz zu erzeugen,
 wird der Produktansatz einmal nach der Zeit ableiten:  
-\[U(x,t) = X(x) \cdot T(t) \Rightarrow  U_t(x,t) = X(x) \cdot T_t(t)\]
+\[u(x,t) = X(x) \cdot T(t) \Rightarrow  u_t(x,t) = X(x) \cdot T_t(t)\]
 
 Und einmal nach dem Ort ableiten:
-\[U(x,t) = X(x) \cdot T(t) \Rightarrow U_{xx}(x,t) = X_{xx}(x) \cdot T(t)\] 
+\[u(x,t) = X(x) \cdot T(t) \Rightarrow u_{xx}(x,t) = X_{xx}(x) \cdot T(t)\] 
 
 Die Gleichungen die durch das Ableiten nach dem Ort und der Zeit entstehen, werden nun in die Wärmeleitungsgleichung eingesetzt:
 \[X(x) \cdot T_t(t) = a^2 \cdot X_{xx}(x) \cdot T(t)\]
@@ -98,10 +98,10 @@ Einsetzen von $\lambda$ und dadurch erzeugen der Eigenwertfunktionen für den Ze
 \[T(t) = C_3 \cdot e^{t \cdot a^2 \cdot w}\]
 
 Zusammenführen der separierten Gleichungen. Erzeugen der allgemeinen Lösung.
-\[U(x,t)=(C_1 \cdot e^{x \cdot\sqrt{w}} + C_2\cdot e^{-x\cdot \sqrt{w}})\cdot C_3 \cdot e^{a^2 \cdot w}\]
+\[u(x,t)=(C_1 \cdot e^{x \cdot\sqrt{w}} + C_2\cdot e^{-x\cdot \sqrt{w}})\cdot C_3 \cdot e^{a^2 \cdot w}\]
 
 Einsetzen der Randbedingungen in den Ortsteil der Gleichungen. 
-\[U(0,t) = U(\pi,t) = 0 \quad \Longrightarrow \quad X(0) = X(\pi) = 0 \]
+\[u(0,t) = u(\pi,t) = 0 \quad \Longrightarrow \quad X(0) = X(\pi) = 0 \]
 \[X(0) = C_1 \cdot e^{0\sqrt{w}} + C_2 \cdot e^{-0\cdot \sqrt{w}}\]
 \[X(0) = C_1 \cdot 1 + C_2 \cdot 1\]
 \[C_1 + C_2 = 0\]
@@ -136,13 +136,13 @@ Einsetzen in  $\lambda = a \pm i \cdot b$.
 
 
 Bildung der Produktlösung.
-\[U(x,t) = C_2\cdot sin(k \cdot x) \cdot C_3 \cdot e^{-a^2 \cdot k^2 \cdot t}, \qquad C_k := C_2C_3= \text{Konst.} \]
-\[U(x,t) = C_k \cdot sin(k \cdot x) \cdot e^{-a^2 \cdot k^2 \cdot t}\]         
-\[ U(x,t) = C_2 \cdot \sin(k\cdot x)\, C_3 \cdot e^{-a^2 \cdot k^2\cdot t}\]
+\[u(x,t) = C_2\cdot sin(k \cdot x) \cdot C_3 \cdot e^{-a^2 \cdot k^2 \cdot t}, \qquad C_k := C_2C_3= \text{Konst.} \]
+\[u(x,t) = C_k \cdot sin(k \cdot x) \cdot e^{-a^2 \cdot k^2 \cdot t}\]         
+\[ u(x,t) = C_2 \cdot \sin(k\cdot x)\, C_3 \cdot e^{-a^2 \cdot k^2\cdot t}\]
 
-Die Anfangsbedingung $U(x,0) = 1$ wird durch die Fourier-Analyse behandelt, um die Koeffizienten $C_k$ zu bestimmen.
+Die Anfangsbedingung $u(x,0) = 1$ wird durch die Fourier-Analyse behandelt, um die Koeffizienten $C_k$ zu bestimmen.
 \[
-C_k = \frac{2}{\pi} \int_{0}^{\pi} U(x,0)\sin(k \cdot x)\,\mathrm{d}x\]
+C_k = \frac{2}{\pi} \int_{0}^{\pi} u(x,0)\sin(k \cdot x)\,\mathrm{d}x\]
 \[
 C_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(k \cdot x)\,\mathrm{d}x
 \]
@@ -170,7 +170,7 @@ Für gerade $k$:
 
 Die spezielle Lösung der Wärmeleitungsgleichung für $k=2n+1$ lautet somit.
 \[
-U(x,t) = \sum_{k=1}^{\infty} \frac{4}{\pi \cdot k}\cdot \,\sin(k \cdot x)\cdot \,e^{-a^2 \cdot k^2 \cdot t}
+u(x,t) = \sum_{k=1}^{\infty} \frac{4}{\pi \cdot k}\cdot \,\sin(k \cdot x)\cdot \,e^{-a^2 \cdot k^2 \cdot t}
 \]
 
 
