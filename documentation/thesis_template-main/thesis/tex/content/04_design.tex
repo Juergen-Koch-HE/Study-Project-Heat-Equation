@@ -7,14 +7,14 @@ Bevor die Wärmeleitungsgleichung aufgestellt wird, werden in diesem Abschnitt e
 Eine Differenzialgleichung ist eine Gleichung, deren Lösung eine Fuktion ist. Sie hat außer der unbekannten Funktion auch mindestens eine Ableitung dieser Funktion in sich.
 Es gibt außer gewöhnlichen auch noch andere Gleichungsarten. Eine für dieses Projekt wichtige, ist die partielle Differenzialgleichung. Sie beinhaltet im Gegensatz zur gewöhnlichen mehrere Veränderliche. 
 Die Wärmeleitungsgleichung ist eine partielle Differenzialgleichung 
-da sie einerseits nach der Zeit und andererseits nach dem Ort abgeleitet ist (Koch \& Stempfle, 2018, S.481-483).
+da sie einerseits nach der Zeit und andererseits nach dem Ort abgeleitet ist \cite[S.~481--483]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.481-483).
 
 \subsubsection{Linearkombination von Lösungen}
 Das Prinzip der Linearkombination von Lösungen, linearer homogener Differenzialgleichungen, besagt, dass sobald diese mindestens zwei Lösungenn hat, diese mit beliebigen Konstanten multipliziert und dann addiert werden dürfen und dass sich daraus dann wieder eine Lösung ergibt. 
 Durch die Linearkombination der Lösungen von $y_1$ und $y_2$ ergibt sich folgendes Phänomen:
 \[ y(x) = C_1 \cdot y_1(x)+C_2 \cdot y_2(x)\]
 
-Dieses Prinzip ermöglicht es, aus Lösungen der linearen homogenen Differenzialgleichung die allgemeine Lösung zu formulieren (Koch \& Stempfle, 2018, S.501).
+Dieses Prinzip ermöglicht es, aus Lösungen der linearen homogenen Differenzialgleichung die allgemeine Lösung zu formulieren \cite[S.~501]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.501).
 
 \subsubsection{Charakteristische Gleichung}
 Das Prinzip der Charakteristischen Gleichung wird beim Lösen linearer homogener Differenzialgleichungen mit konstanten Koeffizienten angewendet und erleichtert das Auflösen der Gleichung. Dabei wird der Exponentialansatz dazu genutzt: $y(x) = e^{\lambda x}$ 
@@ -23,27 +23,30 @@ Dabei gilt, dass $y^0(x) = \lambda^0 = 1 $ und $y^1(x)=\lambda$ ist.
 Hat die Gleichung nun den Grad n, entsteht ein charakteristisches Polynom. Dieses muss aufgelöst werden, um die Eigenwerte für $\lambda_1$ bis $\lambda_n$ zu berechnen.
 
 Es gibt vier verschiedene Arten von Eigenwerten, zwischen denen unterschieden werden muss. Es gibt einfache und mehrfache reelle Eigenwerte sowie einfache komplexe und mehrfache komplexe Eigenwerte.
-Aus den Lösungen der einfachen oder mehrfachen reelle Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1 \cdot e^{\lambda_1 \cdot x}+ ... + C_n \cdot e^{\lambda_n \cdot x}$ eingesetzt (Koch \& Stempfle, 2018, S.506-512).
+Aus den Lösungen der einfachen oder mehrfachen reelle Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1 \cdot e^{\lambda_1 \cdot x}+ ... + C_n \cdot e^{\lambda_n \cdot x}$ eingesetzt \cite[S.~506--512]{koch2015mathematik}.
+%(Koch \& Stempfle, 2018, S.506-512).
 Die Lösungen der komplexen Eigenwerte kommen mit einem komplexen so wie einem reellen Anteil $\lambda = a \pm i*b$ dabei steht $a$ für den reellen Teil, $i$ für die imaginäre Einheit und $b$ für den Faktor des imaginären teils (Koch \& Stempfle, 2018, S.454).
-Die Lösungen der einfachen und mehrfachen komplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a\cdot x} \cdot C_1 \cdot cos(b \cdot x) + e^{a \cdot x} \cdot C_2 \cdot sin(b \cdot x)+ ... + e^{a \cdot x} \cdot C_n \cdot cos(b \cdot x)$ (Koch \& Stempfle, 2018, S.509-512).
+Die Lösungen der einfachen und mehrfachen komplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a\cdot x} \cdot C_1 \cdot cos(b \cdot x) + e^{a \cdot x} \cdot C_2 \cdot sin(b \cdot x)+ ... + e^{a \cdot x} \cdot C_n \cdot cos(b \cdot x)$ \cite[S.~509--512]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.509-512).
 
 
 \subsection{Fourier-Reihen}
 Eine Fourier-Reihe stellt eine periodische mathematische Funktion, in sich wiederholenden Sinus- und Kosinus Termen dar. Das bedeutet die Ergebnisse dieser Gleichungen wiederholen sich nach einer Periode $T$.
-Damit eine Funktion als periodisch gilt, sollte sie $f(x+p)=f(x)$ sein, wobei die Periode $p > 0$ ist (Koch \& Stempfle, 2018, S.191).
+Damit eine Funktion als periodisch gilt, sollte sie $f(x+p)=f(x)$ sein, wobei die Periode $p > 0$ ist \cite[S.~191]{koch2015mathematik}. 
+%(Koch \& Stempfle, 2018, S.191).
 Eine Fourier-Reihe wird so definiert: 
 
 $$f(t)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k \cdot \cos(k\cdot w \cdot t)+b_k \cdot \sin(k\cdot w\cdot t)\right),\qquad w =\frac{2\pi}{T}$$ 
 
-Dabei steht $\frac{a_0}{2}$ für den Mittelwert der Funktion über eine Periode. $a_k$ und $b_k$ sind die Fourier-Koeffizienten. $k$ indexiert die Frequenzteile der Reihe, sie kompensiert die überschwingenden positiven und negativen Flächenanteile der Funktion und führt zu einem Glättungseffekt des Ergebnisses, je höher $k$ ist. $w$ die Kreisfrequenz, die bestimmt, wie schnell die Funktion innerhalb einer Periode schwingt, und $t$ die Zeitvariable (Koch \& Stempfle, 2018, S.578-581).
-Um die Fourier Koeffizienten $a_k$ und $b_k$ zu berechnen, muss man wissen, ob eine periodische Funktion gerade, also einen Kosinusanteil, oder ungerade, also einen Sinusanteil hat, ist. Ob eine Funktion $f(t)$ ungerade oder gerade ist, erkennt man, wenn man sie auf Achsen symetrie prüft. Ist die Funktion $f(-t) = f(t)$, dann ist sie achsensymetrisch. Ist die Funktion $f(-t) = -f(t)$, dann ist sie punktsymetrisch und somit ungerade (Koch \& Stempfle, 2018, S.188-189).
+Dabei steht $\frac{a_0}{2}$ für den Mittelwert der Funktion über eine Periode. $a_k$ und $b_k$ sind die Fourier-Koeffizienten. $k$ indexiert die Frequenzteile der Reihe, sie kompensiert die überschwingenden positiven und negativen Flächenanteile der Funktion und führt zu einem Glättungseffekt des Ergebnisses, je höher $k$ ist. $w$ die Kreisfrequenz, die bestimmt, wie schnell die Funktion innerhalb einer Periode schwingt, und $t$ die Zeitvariable \cite[S.~578--581]{koch2015mathematik}. 
+%(Koch \& Stempfle, 2018, S.578-581).
+Um die Fourier Koeffizienten $a_k$ und $b_k$ zu berechnen, muss man wissen, ob eine periodische Funktion gerade, also einen Kosinusanteil, oder ungerade, also einen Sinusanteil hat, ist. Ob eine Funktion $f(t)$ ungerade oder gerade ist, erkennt man, wenn man sie auf Achsen symetrie prüft. Ist die Funktion $f(-t) = f(t)$, dann ist sie achsensymetrisch. Ist die Funktion $f(-t) = -f(t)$, dann ist sie punktsymetrisch und somit ungerade \cite[S.~188--189]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.188-189).
 
 \[a_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cdot \cos(k\cdot w \cdot t)\,dt, \qquad k = 0,1,2,\ldots\]
 \[b_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cdot \sin(k\cdot w \cdot t)\,dt, \qquad k = 1,2,\ldots\]
 
 
 \subsection{Analytisches Lösungsverfahren}
- 
+
 Es wurden die Dirichlet-Randbedingungen $U(0,t)=0$ und $U(\pi,t)=0$ mit $t \ge 0$ angenommen. Diese Wahl verienfacht die die Lösung des Ortsteils im weitern Verlauf, da aus $U(0,t)=0$ die Bedinugn $X(0)= 0$ folgt und dadurch in der allgemeinen Ortslösung der Cosinusanteil verschwindet. $U(\pi,t)=0$ führt zu $X(\pi)=0$ und damit auf einfache Eigenwerte, da $\sin(k\cdot \pi)=0$ für $k \in \mathbb{N}$ gilt.
 
 Als Anfangswert wurde ein konstanter Wert von $1$ im Inneren ausgewählt, so entsteht in Kombination mit den Randbedingungen von $U(0,t)=U(\pi,t)=0$ ein Gefälle aus dem inneren des Körpers zum Rand hin.
@@ -54,7 +57,7 @@ Der Anfangswert ist stückweise definiert, damit an den Rändern keine Widerspr�
 
 Es wurde der der Produktansatz gewählt um die Wärmeleitungsgleichung aufzustellen. Dadurch wird angenommen das man die Lösung der Gleichung in der Form $U(x,t)=X(x) \cdot T(t)$ schreiben kann. Beginnend mit der Separation der Variablen, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und sie können nach der jeweiligen Unbekannten aufgelöst werden.
 
-Wärmeleitungsgleichunghat die Form $U_t= a^2 \cdot U_{xx}$ um diese Form aus dem Produktansatz zu erzeugen,
+Wärmeleitungsgleichung hat die Form $U_t= a^2 \cdot U_{xx}$ um diese Form aus dem Produktansatz zu erzeugen,
 wird der Produktansatz einmal nach der Zeit ableiten:  
 \[U(x,t) = X(x) \cdot T(t) \Rightarrow  U_t(x,t) = X(x) \cdot T_t(t)\]
 
@@ -64,7 +67,7 @@ Und einmal nach dem Ort ableiten:
 Die Gleichungen die durch das Ableiten nach dem Ort und der Zeit entstehen, werden nun in die Wärmeleitungsgleichung eingesetzt:
 \[X(x) \cdot T_t(t) = a^2 \cdot X_{xx}(x) \cdot T(t)\]
 
-Um die Seperation der Variablen durchzuführen, muss dises Gleichung so umgeformt werden, das alle Terme, die von der Zeit $t$ abhängen, auf einer Seite stehen und alle Terme, die vom Ort $x$ abhängen, auf der anderen Seite. Das wird erreicht, in dem diese Gleichung durch den Term $X(x) \cdot T(t) \cdot a^2$ geteilt wird. Es kürzen sich der jeweilige Orts und Zeit Term aus einer Seite und es entsteht die folgende Gleichung:
+Um die Seperation der Variablen durchzuführen, muss diese Gleichung so umgeformt werden, das alle Terme, die von der Zeit $t$ abhängen, auf einer Seite stehen und alle Terme, die vom Ort $x$ abhängen, auf der anderen Seite. Das wird erreicht, in dem diese Gleichung durch den Term $X(x) \cdot T(t) \cdot a^2$ geteilt wird. Es kürzen sich der jeweilige Orts und Zeit Term aus einer Seite und es entsteht die folgende Gleichung:
 \[\frac{ X_{xx}(x)}{ X(x)}  =  \frac{T_t(t)}{a^2 \cdot T(t) }\]
 
 Durch die Separation der Variablen entstehen zwei unabhängige Gleichgungsteile, nach dem Ort $\frac{ X_{xx}(x)}{ X(x)}$ und der Zeit $\frac{T_t(t)}{a^2 \cdot T(t) }$. Dadurch könnte man den Ort verändern und würde keinen Einfluss auf die Zeit nehmen und umgekehrt. Das bedeutet mathematisch, dass der linke Term nur vom Ort x und der rechte Term nur von der Zeit t abhängt. Damit die Gleichheit für alle $x$ und $t$ gilt, müssen beide Terme gleich derselben Konstante $w$ sei. Das bringt den Vorteil, dass die Wärmeleitungsgleichung, welche eine partielle Differenzialgleichung ist, in zwei gewöhnliche Differenzialgleichungen geteilt wird. Die einmal nach dem Ort und einmal nach der Zeit getrennt sind \cite[S.~105--107]{langemann2018so}. %(Mathematik ..., xxxx, S.105-107)
@@ -173,12 +176,10 @@ U(x,t) = \sum_{k=1}^{\infty} \frac{4}{\pi \cdot k}\cdot \,\sin(k \cdot x)\cdot \
 
 \section{Gibbssches Phänomen}
 Das Gibbssche Phänomen, entdeckt von Josiah Willard Gibbs, bezeichnet die Über- und Unterschwingungen, die bei der Approximation einer Funktion durch ihre Fourier-Reihe in der Nähe einer Sprungstelle auftreten (Koch \& Stempfle, 2018, S.581-582). Das kann man sich als einen abrupten Richtungswechsel in einem Graphen vorstellen (Koch \& Stempfle, 2018, S.258). Zum Beispiel bei einer Rechteckfunktion, die linksseitig für $x < 1$ mit $f(x) = 1$ und rechtseitig für als $x > 1$ mit$ f(x) = -1$ definiert ist, entsteht dort wo sich die Intervalle berühren bei $x = 1$ eine Sprungstelle.
-Das Gibbssche Phänomen ist eine feste Größe und hat eine Abweichung von der Sptze des Überschwingers zur Spitze des Unterschwingers von ungefähr $18\%$. Durch das Einbeziehen sehr vieler Sinus- und Kosinusglieder wird der Bereich in dem das Gibbssche Phänomen auftritt schmaler, jedoch sinkt die Abweichung Grenzbereich nicht unter $18\%$ (Koch \& Stempfle, 2018, S.581-582). 
+Das Gibbssche Phänomen ist eine feste Größe und hat eine Abweichung von der Sptze des Überschwingers zur Spitze des Unterschwingers von ungefähr $18\%$. Durch das Einbeziehen sehr vieler Sinus- und Kosinusglieder wird der Bereich in dem das Gibbssche Phänomen auftritt schmaler, jedoch sinkt die Abweichung Grenzbereich nicht unter $18\%$ \cite[S.~581--582]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.581-582). 
 
 Dieses Phänomen tritt besonders in Unstetigen Grenzregionen von Differenzialgleichungen auf und hat somit eine relevanz für die Wärmeleitglichung
 
 
-\section{Momentaner Forschungstand zur Wärmeleitung}
-Ein Experiment des Helmholtz-Zentrums Dresden-Rossendorf, der Universität Bonn und des Centre national de la recherche scientifique hat sich mit der Wärmeleitfähigkeit von Halbmetallen befasst. Es wurde ein Halbmetall, Zirkonium-Pentatellurid (ZrTe5), einer Temperatur in der Nähe des absoluten Nullpunkts –273,15 °C und einm sehr hohen Magnetfeld ausgesetzt. Das führte im Gegensatz zur Annahme der Forscher dazu, dass sich die Schwingung der Phononen und die Bewegung der Elektronen koppelte und so der Wärmeleitwert für das Halbmetall anfing periodisch stark im Magnetfeld zu oszillieren (B. Bermond, 2025, xxx). 
 
 
