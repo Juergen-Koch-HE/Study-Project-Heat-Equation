@@ -46,26 +46,6 @@ Dadurch entsteht dann folgendes Schaubild:
 Hier ist die Entwicklung des Graphen klar zu sehen und wie sich dieser nach verstrichener Zeit der x-Achse nähert, was auf die e-Funktion zurückzuführen ist, also den zeitlichen Teil der Gleichung.
 
 
-In der nächsten Aufgabe geht es dann darum, die erstellte Funktion aus der vorangegangenen Aufgabe zu nutzen. Über eine Schleife soll ein 2-dimensionales Array gefüllt werden, mit den Werten dieser Funktion. Eine mögliche Lösung kann so aussehen:
-\begin{lstlisting}[caption={Python Code für einfachen Sinus - Heatmap}]
-# 1D "thermal camera" animation for the single sine mode
-# Create list of time steps for animation with dt_ms as time steps between the start and end which is anim_t_end_ms + dt_ms
-t_vals = np.arange(0, anim_t_end_ms + dt_ms, dt_ms) / 1000.0    
-U_sin = np.empty((len(t_vals), len(x_vals)))    # Allocate empty 2D array with the length of t_vals and x_vals
-for i, t in enumerate(t_vals):  # Loops over all the time steps, with index i and time step from t_vals
-    U_sin[i, :] = u_sin_xt(x_vals, t, a2)   # Fill the row i, all columns with the temperature values at time t in the table U_sin
-
-U_min, U_max = float(U_sin.min()), float(U_sin.max())   # Get global Maximum and Minimum from U_sin
-\end{lstlisting}
-Die dazugehörige Simulation:
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\textwidth]{content/figures/SingleSineModeHeatmap.png}
-  \caption{Sinus Graph Wärmebild}
-  \label{fig:heat-simulation1}
-\end{figure}
-
-
 Nach dem erfolgreichen Abschluss der einfachen Sinusfunktion folgt die Definition von 3 Funktionen mit den Aufgaben, der Berechnung des Fourier-Koeffizienten $C_k$, der Berechnung der Temperatur $u(x,t)$ basierend auf der Fourier-Reihe und dem Speichern der Temperaturen in einem 2D-Array. Auf Basis dieser 3 Funktionen lassen sich dann die beiden nachfolgenden Schaubilder erzeugen. Diese zeigen zum einen, wie sich der Graph der Anfangsbedingung $u(x,t)=1$ nähert, umso mehr Sinuswellen hinzugefügt werden. Zum anderen zeigen die Graphen, wie sich die Fourier-Reihe nach einer kurzen Zeit dem Verlauf der einfachen Sinusfunktion annähert.
 
 Eine Mögliche Lösung bietet dieser Code-Abschnitt:
@@ -107,33 +87,6 @@ def u_grid(x_grid, t_grid, a2, N):
   \includegraphics[width=0.8\textwidth]{content/figures/TruncatedFourierSineSolution.png}
   \caption{Zeitlicher Verlauf der Fourier Sinus Reihe}
   \label{fig:heat-simulation2}
-\end{figure}
-
-
-
-Zum Abschluss wird noch die Fourier-Sinusreihe als Simulation erstellt. Wie bereits der einfache Sinus wird die Reihe als Wärmebild dargestellt. Für diese Aufgabe wird eine zuvor erstellte Funktion verwendet, um, wie bei der Sinusfunktion ein 2D-Array mit den Temperaturwerten zu füllen. Eine Möglichkeit, das zu tun, ist folgende:
-
-\begin{lstlisting}[caption={Python Code für Fourier Wärmebild}]
-# Create list of time steps for animation with dt_ms as time steps between the start and end which is anim_t_end_ms + dt_ms
-t_vals = np.arange(0, anim_t_end_ms + dt_ms, dt_ms) / 1000.0
-U = u_grid(x_vals, t_vals, a2, N)
-U_min, U_max = float(U.min()), float(U.max())   # Get global Maximum and Minimum from U_sin
-\end{lstlisting}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\textwidth]{content/figures/FourierSineModeHeatmapBeginning.png}
-  \caption{Fourier Sinus Reihe bei $t=0$ ms}
-  \label{fig:heat-simulation4}
-\end{figure}
-
-
-Wie bereits erwähnt ähnelt auch die Fourier-Sinusreihe dem des einfachen Sinus, nach kurzer Zeit ($t=120$ ms), wie nachfolgend zu sehen ist.
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\textwidth]{content/figures/FourierSineModeHeatmapLater.png}
-  \caption{Fourier Sinus Reihe bei $t=120$ ms}
-  \label{fig:heat-simulation5}
 \end{figure}
 
 \FloatBarrier
