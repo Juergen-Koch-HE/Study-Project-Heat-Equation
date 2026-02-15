@@ -1,12 +1,12 @@
 \chapter{Analyse und Methodik}\label{sec:design}
 
 \section{Mathematische Grundlagen}
-Bevor die Wärmeleitgleichung aufgestellt wird, werden in diesem Abschnitt einige wichtige mathematische Grundlagen behandelt, die einzelne Vorgänge auf dem Lösungsweg in der analytischen Lösung genauer beschreiben. 
+Bevor die Wärmeleitungsgleichung aufgestellt wird, werden in diesem Abschnitt einige wichtige mathematische Grundlagen behandelt, die einzelne Vorgänge auf dem Lösungsweg in der analytischen Lösung genauer beschreiben. 
 
 \subsection{Differenzialgleichungen}
 Eine Differenzialgleichung ist eine Gleichung, deren Lösung eine Funktion ist \cite[S.~481--483]{koch2015mathematik}. Sie hat außer der unbekannten Funktion auch mindestens eine Ableitung dieser Funktion in sich.
 So könnte eine gewöhnliche Differenzialgleichung aussehen: $f(x) = f'(x)+1$. Es gibt außer der gewöhnlichen auch noch andere Gleichungsarten. Eine für dieses Projekt wichtige ist die partielle Differenzialgleichung. Sie beinhaltet im Gegensatz zur gewöhnlichen mehrere Veränderliche. 
-Ein Beispiel für eine partielle Differenzialgleichung ist $2 \cdot f(x,y) = f_{yy}(x,y)$. Auch die Wärmeleitgleichung ist eine partielle Differenzialgleichung 
+Ein Beispiel für eine partielle Differenzialgleichung ist $2 \cdot f(x,y) = f_{yy}(x,y)$. Auch die Wärmeleitungsgleichung ist eine partielle Differenzialgleichung 
 da sie einerseits nach der Zeit und andererseits nach dem Ort abgeleitet ist.
 %(Koch \& Stempfle, 2018, S.481-483)
 
@@ -71,8 +71,8 @@ U(0,t)=0 \;\text{und}\; U(\pi,t)=0, \qquad t \ge 0,\; 0 < x < \pi
 Anfangswert 
 \[U(x,0) = 1,  \]
 
-Es wurde der Produktansatz gewählt, um die Wärmeleitgleichung aufzustellen \cite[S.~105-107]{langemann2018so}. Beginnend mit der Separation der Variablen, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und sie können nach der jeweiligen Unbekannten aufgelöst werden. 
-Wärmeleitgleichung: \[U_t= a^2 \cdot U_{xx}\]
+Es wurde der Produktansatz gewählt, um die Wärmeleitungsgleichung aufzustellen \cite[S.~105-107]{langemann2018so}. Beginnend mit der Separation der Variablen, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und sie können nach der jeweiligen Unbekannten aufgelöst werden. 
+Wärmeleitungsgleichung: \[U_t= a^2 \cdot U_{xx}\]
 
 Ableiten nach der Zeit. 
 \[U(x,t) = X(x) \cdot T(t) \Rightarrow  U_t(x,t) = X(x) \cdot T_t(t)\]
@@ -80,13 +80,13 @@ Ableiten nach der Zeit.
 Ableiten nach dem Ort.
 \[U(x,t) = X(x) \cdot T(t) \Rightarrow U_{xx}(x,t) = X_{xx}(x) \cdot T(t)\] 
 
-Einsetzen in die Wärmeleitgleichung. 
+Einsetzen in die Wärmeleitungsgleichung. 
 \[X(x) \cdot T_t(t) = a^2 \cdot X_{xx}(x) \cdot T(t)\]
 
-Durch die Separation der Variablen entstehen zwei unabhängige Gleichungsteile, nach dem Ort $x$ und der Zeit $t$. Dadurch könnte man den Ort verändern und würde keinen Einfluss auf die Zeit nehmen und umgekehrt. Das bedeutet mathematisch, dass man beide Gleichungen getrennt betrachten kann und damit die Gleichungen für alle $x$ und $t$ erfüllt sind, Konstanten eingesetzt werden müssen. In diesem Fall die Konstante $w$. Das bringt den Vorteil, dass die Wärmeleitgleichung, welche eine partielle Differenzialgleichung ist, in zwei gewöhnliche Differenzialgleichungen geteilt wird. Die einmal nach dem Ort und einmal nach der Zeit getrennt sind. %(Mathematik ..., xxxx, S.105-107)
+Durch die Separation der Variablen entstehen zwei unabhängige Gleichungsteile, nach dem Ort $x$ und der Zeit $t$. Dadurch könnte man den Ort verändern und würde keinen Einfluss auf die Zeit nehmen und umgekehrt. Das bedeutet mathematisch, dass man beide Gleichungen getrennt betrachten kann und damit die Gleichungen für alle $x$ und $t$ erfüllt sind, Konstanten eingesetzt werden müssen. In diesem Fall die Konstante $w$. Das bringt den Vorteil, dass die Wärmeleitungsgleichung, welche eine partielle Differenzialgleichung ist, in zwei gewöhnliche Differenzialgleichungen geteilt wird. Die einmal nach dem Ort und einmal nach der Zeit getrennt sind. %(Mathematik ..., xxxx, S.105-107)
 \[\frac{ X_{xx}(x)}{ X(x)}  = \frac{T_t(t)}{ a^2 \cdot T(t) } = w \qquad   w = Konst.\] 
 
-Auflösen der Wärmeleitgleichung nach dem Ort X(x)
+Auflösen der Wärmeleitungsgleichung nach dem Ort X(x)
 \[\frac{X_{xx}(x)}{X(x)} = w\]  
 
 Um die lineare homogene Differenzialgleichung in die charakteristische Gleichung umzuformen, wird der Exponentialansatz \[X(x) = e^{\lambda*x}\] genutzt \cite[S.~505]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.505)
@@ -95,7 +95,7 @@ Um die lineare homogene Differenzialgleichung in die charakteristische Gleichung
 \[0 = -\lambda^2 + w \]            
 \[\lambda_{1,2} = \pm \sqrt{w}\]
 
-Einsetzen von $\lambda_{1,2}$ und dadurch erzeugen der Eigenwertfunktionen für den Ortsteil der Wärmeleitgleichung. 
+Einsetzen von $\lambda_{1,2}$ und dadurch erzeugen der Eigenwertfunktionen für den Ortsteil der Wärmeleitungsgleichung. 
 \[X(x) = C_1 \cdot e^{x\cdot\sqrt{w}} + C_2 \cdot e^{-x \cdot \sqrt{w}}\]
 
 Ableiten nach der Zeit T(t).
@@ -107,7 +107,7 @@ Umformen in die Charakteristische Gleichung.
 \[0 = -\lambda + a^2 \cdot w\] 
 \[\lambda = a^2 \cdot w\]
 
-Einsetzen von $\lambda$ und dadurch erzeugen der Eigenwertfunktionen für den Zeitteil der Wärmeleitgleichung. 
+Einsetzen von $\lambda$ und dadurch erzeugen der Eigenwertfunktionen für den Zeitteil der Wärmeleitungsgleichung. 
 \[T(t) = C_3 \cdot e^{t \cdot a^2 \cdot w}\]
 
 Zusammenführen der separierten Gleichungen. Erzeugen der allgemeinen Lösung.
