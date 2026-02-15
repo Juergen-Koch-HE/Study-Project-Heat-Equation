@@ -39,7 +39,10 @@ $$f(t)=\frac{a_0}{2}+\sum_{k=1}^{\infty}\left(a_k \cdot \cos(k\cdot w \cdot t)+b
 
 Dabei steht $\frac{a_0}{2}$ für den Mittelwert der Funktion über eine Periode. $a_k$ und $b_k$ sind die Fourier-Koeffizienten. $k$ indexiert die Frequenzteile der Reihe, sie kompensiert die überschwingenden positiven und negativen Flächenanteile der Funktion und führt zu einem Glättungseffekt des Ergebnisses, je höher $k$ ist. $w$ die Kreisfrequenz, die bestimmt, wie schnell die Funktion innerhalb einer Periode schwingt, und $t$ die Zeitvariable \cite[S.~578--581]{koch2015mathematik}. 
 %(Koch \& Stempfle, 2018, S.578-581).
-Um die Fourier Koeffizienten $a_k$ und $b_k$ zu berechnen, muss man wissen, ob eine periodische Funktion gerade, also einen Kosinusanteil, oder ungerade, also einen Sinusanteil hat, ist. Ob eine Funktion $f(t)$ ungerade oder gerade ist, erkennt man, wenn man sie auf Achsen symetrie prüft. Ist die Funktion $f(-t) = f(t)$, dann ist sie achsensymetrisch. Ist die Funktion $f(-t) = -f(t)$, dann ist sie punktsymetrisch und somit ungerade \cite[S.~188--189]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.188-189).
+
+Die Fourier-Reihe funktioniert für Funktionen, die auf dem betrachteten Intervall stückweise stetig sind. Dort wo die Funktion stetig ist, konvergiert die Fourier-Reihe dann gegen den Funktionswert. An Sprungstellen hingegen konvergiert sie gegen den Mittelwert der links- und rechtsseitigen Grenzwerte \cite[S.~577--582]{koch2015mathematik}.
+
+Ob eine Funktion $f(t)$ ungerade oder gerade ist, erkennt man, wenn man sie auf Achsen symetrie prüft. Ist die Funktion $f(-t) = f(t)$, dann ist sie achsensymetrisch. Ist die Funktion $f(-t) = -f(t)$, dann ist sie punktsymetrisch und somit ungerade \cite[S.~188--189]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.188-189).
 
 \[a_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cdot \cos(k\cdot w \cdot t)\,dt, \qquad k = 0,1,2,\ldots\]
 \[b_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cdot \sin(k\cdot w \cdot t)\,dt, \qquad k = 1,2,\ldots\]
@@ -139,7 +142,7 @@ Bildung der Produktlösung.
 \[u(x,t) = C_2\cdot sin(k \cdot x) \cdot C_3 \cdot e^{-a^2 \cdot k^2 \cdot t}, \qquad C_k := C_2C_3= \text{Konst.} \]
 \[u(x,t) = C_k \cdot sin(k \cdot x) \cdot e^{-a^2 \cdot k^2 \cdot t}\]         
 
-\subsection{Übergang von der Produktlösung zur Fourier-Reihe}
+\subsection{Von der Produktlösung zur Fourier-Reihe}
 Aufgrund der homogenen Dirichlet-Randbedingungen 
 $u(0,t)=u(\pi,t)=0$ ergeben sich als Eigenfunktionen des
 Ortsteils ausschließlich Sinusfunktionen. Cosinusfunktionen können die Randbedingungen nicht erfüllen. Aus gegebenem Grund wird nur der Sinus-Koeffizient $b_k$ beachtet, währen der Cosinus-Koeffizient $a_k$ entfällt.
