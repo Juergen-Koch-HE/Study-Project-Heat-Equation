@@ -66,13 +66,6 @@ def u_xt(x, t, a2, N):
     u_flat = terms.sum(axis=0)  # Add all the fourier terms together for each x to get the temperature u(x,t) at time t
     return u_flat.reshape(x_arr.shape)  # Reshape the flat array back to the original shape of x_arr (reshape important, when function is called with plt.plot)
 
-# Calculates u(x,t) for all positions x and time steps t and stores the results in a 2D array
-def u_grid(x_grid, t_grid, a2, N):
-    U = np.empty((len(t_grid), len(x_grid)), dtype=float)   # Allocate empty 2D array for the results based on the length of t_grid and x_grid
-    # Loop over all time steps with index i and time t from t_grid, and fill the row i and all columns with the temperature values 
-    for i, t in enumerate(t_grid):
-        U[i, :] = u_xt(x_grid, t, a2, N)
-    return U
 \end{lstlisting}
 
 \begin{figure}[htbp]
