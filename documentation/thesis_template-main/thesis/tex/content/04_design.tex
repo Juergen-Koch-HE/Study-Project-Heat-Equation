@@ -138,40 +138,46 @@ Einsetzen in  $\lambda = a \pm i \cdot b$.
 Bildung der Produktlösung.
 \[u(x,t) = C_2\cdot sin(k \cdot x) \cdot C_3 \cdot e^{-a^2 \cdot k^2 \cdot t}, \qquad C_k := C_2C_3= \text{Konst.} \]
 \[u(x,t) = C_k \cdot sin(k \cdot x) \cdot e^{-a^2 \cdot k^2 \cdot t}\]         
-\[ u(x,t) = C_2 \cdot \sin(k\cdot x)\, C_3 \cdot e^{-a^2 \cdot k^2\cdot t}\]
 
-Die Anfangsbedingung $u(x,0) = 1$ wird durch die Fourier-Analyse behandelt, um die Koeffizienten $C_k$ zu bestimmen.
+\subsection{Übergang von der Produktlösung zur Fourier-Reihe}
+Aufgrund der homogenen Dirichlet-Randbedingungen 
+$u(0,t)=u(\pi,t)=0$ ergeben sich als Eigenfunktionen des
+Ortsteils ausschließlich Sinusfunktionen. Cosinusfunktionen können die Randbedingungen nicht erfüllen. Aus gegebenem Grund wird nur der Sinus-Koeffizient $b_k$ beachtet, währen der Cosinus-Koeffizient $a_k$ entfällt.
+
+Die Anfangsbedingung $u(x,0) = 1$ wird durch die Fourier-Analyse behandelt, um den Koeffizienten $b_k$ zu bestimmen.
 \[
-C_k = \frac{2}{\pi} \int_{0}^{\pi} u(x,0)\sin(k \cdot x)\,\mathrm{d}x\]
+b_k = \frac{2}{\pi} \int_{0}^{\pi} u(x,0)\sin(k \cdot x)\,\mathrm{d}x\]
 \[
-C_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(k \cdot x)\,\mathrm{d}x
+b_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(k \cdot x)\,\mathrm{d}x
 \]
 
-\[ C_k = \frac{2\cdot \,(1-\cos(k \cdot \pi))}{\pi \cdot k} \]     \[ \cos(k \cdot \pi) = (-1)^k, \]
-\[ C_k = \frac{2\cdot \,(1-(-1)^k)}{\pi \cdot k} \]
+\[ b_k = \frac{2\cdot \,(1-\cos(k \cdot \pi))}{\pi \cdot k} \]     \[ \cos(k \cdot \pi) = (-1)^k, \]
+\[ b_k = \frac{2\cdot \,(1-(-1)^k)}{\pi \cdot k} \]
 
 Einsetzen von geraden und ungeraden Zahlen $k = 2$ und $k = 3$. 
 \[
-C_k    = \frac{2\cdot \,(1-(-1)^2)}{\pi\cdot 2}
+b_k    = \frac{2\cdot \,(1-(-1)^2)}{\pi\cdot 2}
        = \frac{2\cdot \,(1-1)}{2 \cdot \pi}
        = 0,
 \]
 \[
-  C_k = \frac{2\cdot \,(1-(-1)^3)}{\pi\cdot 3}
+  b_k = \frac{2\cdot \,(1-(-1)^3)}{\pi\cdot 3}
       = \frac{2\cdot \,(1+1)}{3 \cdot \pi}
       = \frac{4}{3 \cdot \pi}.
 \]
 
 Daraus folgt, für ungerade $k$ gilt:
- \[C_k = 4/(pi \cdot k)\]
+ \[b_k = 4/(\pi \cdot k)\]
 
 Für gerade $k$:
- \[C_k = 0\]
+ \[b_k = 0\]
 
-Die spezielle Lösung der Wärmeleitungsgleichung für $k=2n+1$ lautet somit.
+Die spezielle Lösung der Wärmeleitungsgleichung mit Fourier-Reihe für $k=2n+1$ lautet somit:
 \[
 u(x,t) = \sum_{k=1}^{\infty} \frac{4}{\pi \cdot k}\cdot \,\sin(k \cdot x)\cdot \,e^{-a^2 \cdot k^2 \cdot t}
 \]
+
+
 
 
 \section{Gibbssches Phänomen}
