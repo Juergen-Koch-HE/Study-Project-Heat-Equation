@@ -6,7 +6,7 @@ Dabei wird der Energieerhaltungssatz mit dem Fourierschen Gesetz kombiniert, um 
 Betrachten wir ein kleines Stück eines Stabes im Intervall \([x, x + \Delta x]\).
 Die in diesem Stück gespeicherte thermische Energie \(E\) ist proportional zur Temperatur \(u(x,t)\):
 \[
-E = \rho \, c_p \, u(x,t) \, \Delta x
+E = \rho \, c \, u(x,t) \, \Delta x
 \]
 
 
@@ -23,11 +23,11 @@ I(x) - I(x + \Delta x) \approx -I_x \Delta x
 \]
 Nach dem Energieerhaltungssatz ist die zeitliche Änderung der Energie im Volumenelement gleich dem Netto-Wärmefluss:
 \[
-\rho c_p u_t \Delta x = - I_x \Delta x
+\rho c u_t \Delta x = - I_x \Delta x
 \]
 Durch Kürzen von \(\Delta x\) erhält man:
 \[
-\rho c_p u_t = - I_x
+\rho c u_t = - I_x
 \]
 
 \subsubsection{Einsetzen des Fourier'schen Gesetzes}
@@ -42,17 +42,17 @@ I_x = - (k u_x)_x
 
 Damit wird die Energiebilanz zu:
 \[
-\rho c_p u_t = (k u_x)_x
+\rho c u_t = (k u_x)_x
 \]
 
 \subsubsection{Vereinfachung für homogene Materialien}
 Für homogene Materialien (konstante Wärmeleitfähigkeit \(k\)) vereinfacht sich die Gleichung zu:
 \[
-u_t = \frac{k}{\rho c_p} u_{xx}
+u_t = \frac{k}{\rho c} u_{xx}
 \]
 Die Konstante
 \[
-a^2 = \frac{k}{\rho c_p}
+a^2 = \frac{k}{\rho c}
 \]
 wird als thermische Diffusivität bezeichnet. Die Wärmeleitungsgleichung lautet somit:
 \[
