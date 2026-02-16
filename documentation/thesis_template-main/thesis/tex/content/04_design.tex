@@ -22,11 +22,39 @@ Dabei gilt beim Lösen der Gleichung für die Ableitung wird  $y^k(x) = \lambda^
 Dabei gilt, dass $y^0(x) = \lambda^0 = 1 $ und $y^1(x)=\lambda$ ist.
 Hat die Gleichung nun den Grad n, entsteht ein charakteristisches Polynom. Dieses muss aufgelöst werden, um die Eigenwerte für $\lambda_1$ bis $\lambda_n$ zu berechnen.
 
-Es gibt vier verschiedene Arten von Eigenwerten, zwischen denen unterschieden werden muss. Es gibt einfache und mehrfache reelle Eigenwerte sowie einfache komplexe und mehrfache komplexe Eigenwerte.
-Aus den Lösungen der einfachen oder mehrfachen reelle Eigenwerte werden Eigenwertfunktionen. Die  Werte von $\lambda_1$ bis $\lambda_n$ werden in die Eigenwertfunktion $C_1 \cdot e^{\lambda_1 \cdot x}+ ... + C_n \cdot e^{\lambda_n \cdot x}$ eingesetzt \cite[S.~506--512]{koch2015mathematik}.
-%(Koch \& Stempfle, 2018, S.506-512).
-Die Lösungen der komplexen Eigenwerte kommen mit einem komplexen so wie einem reellen Anteil $\lambda = a \pm i*b$ dabei steht $a$ für den reellen Teil, $i$ für die imaginäre Einheit und $b$ für den Faktor des imaginären teils \cite[S.~454]{langemann2018so}. %(Koch \& Stempfle, 2018, S.454).
-Die Lösungen der einfachen und mehrfachen komplexen Eigenwerte werden für $\lambda_1$ bis $\lambda_n$ in diese Eigenwertfunktionen $e^{a\cdot x} \cdot C_1 \cdot cos(b \cdot x) + e^{a \cdot x} \cdot C_2 \cdot sin(b \cdot x)+ ... + e^{a \cdot x} \cdot C_n \cdot cos(b \cdot x)$ \cite[S.~509--512]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.509-512).
+Es gibt vier verschiedene Arten von Eigenwerten, zwischen denen unterschieden werden muss. 
+Es gibt einfache und mehrfache reelle Eigenwerte sowie einfache und mehrfache komplexe Eigenwerte.
+
+Aus den Lösungen der einfachen reellen Eigenwerte werden Eigenwertfunktionen der Form 
+$C \cdot e^{\lambda x}$. 
+Die Werte von $\lambda_1$ bis $\lambda_n$ werden in die allgemeine Lösung:
+\[
+C_1 \cdot e^{\lambda_1 x}+ ... + C_n \cdot e^{\lambda_n x}
+\]
+eingesetzt \cite[S.~506--512]{koch2015mathematik}.
+
+Bei mehrfachen reellen Eigenwerten treten zusätzlich Faktoren der Form 
+$x^m e^{\lambda x}$ auf.
+
+Die Lösungen der komplexen Eigenwerte treten paarweise in der Form 
+$\lambda = a \pm i b$ auf. Dabei steht $a$ für den reellen Teil, 
+$i$ für die imaginäre Einheit und $b$ für den Faktor des imaginären Teils 
+\cite[S.~454]{langemann2018so}.
+
+Für einfache komplexe Eigenwerte ergibt sich die Lösung \cite[S.~509--512]{koch2015mathematik}:
+\[
+e^{a x} \left(C_1 \cos(bx) + C_2 \sin(bx)\right)
+\]
+
+
+Bei mehrfachen komplexen Eigenwerten treten zusätzlich Faktoren der Form
+\[
+x^m e^{a x}\left(C_1 \cos(bx) + C_2 \sin(bx)\right)
+\]
+auf.
+
+
+
 
 
 \subsection{Fourier-Reihen}
