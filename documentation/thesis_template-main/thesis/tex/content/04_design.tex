@@ -168,8 +168,8 @@ Einsetzen der Randbedingung $X(\pi)=0$
 
 
 Bildung der Produktlösung.
-\[u(x,t) = C_2\cdot sin(k \cdot x) \cdot C_3 \cdot e^{-a^2 \cdot k^2 \cdot t}, \qquad C_k := C_2C_3= \text{Konst.} \]
-\[u(x,t) = C_k \cdot sin(k \cdot x) \cdot e^{-a^2 \cdot k^2 \cdot t}\]         
+\[u(x,t) = C_2\cdot sin(k \cdot x) \cdot C_3 \cdot e^{-a^2 \cdot k^2 \cdot t}, \qquad b_k := C_2C_3= \text{Konst.} \]
+\[u(x,t) = b_k \cdot sin(k \cdot x) \cdot e^{-a^2 \cdot k^2 \cdot t}\]         
 
 \subsection{Von der Produktlösung zur Fourier-Reihe}
 Aufgrund der homogenen Dirichlet-Randbedingungen 
@@ -177,14 +177,20 @@ $u(0,t)=u(\pi,t)=0$ ergeben sich als Eigenfunktionen des
 Ortsteils ausschließlich Sinusfunktionen. Cosinusfunktionen können die Randbedingungen nicht erfüllen. Aus gegebenem Grund wird nur der Sinus-Koeffizient $b_k$ beachtet, währen der Cosinus-Koeffizient $a_k$ entfällt.
 
 Die Anfangsbedingung $u(x,0) = 1$ wird durch die Fourier-Analyse behandelt, um den Koeffizienten $b_k$ zu bestimmen.
+Um $b_k$ zu bestimmen, muss $u(x) = b_k \cdot sin(k \cdot x) \cdot$ als Fourier-Reihe dargestellt werden.
+
 \[
-b_k = \frac{2}{\pi} \int_{0}^{\pi} u(x,0)\sin(k \cdot x)\,\mathrm{d}x\]
-\[
-b_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(k \cdot x)\,\mathrm{d}x
+u(x) = \sum_{k=1}^{\infty} b_k \cdot \sin(k \cdot x) \rightarrow b_k = \frac{2}{\pi} \int_{0}^{\pi} u(x) \cdot \sin(k \cdot x)\,\mathrm{d}x
 \]
 
-\[ b_k = \frac{2\cdot \,(1-\cos(k \cdot \pi))}{\pi \cdot k} \]     \[ \cos(k \cdot \pi) = (-1)^k \]
-\[ b_k = \frac{2\cdot \,(1-(-1)^k)}{\pi \cdot k} \]
+Einsetzen von $u(x,0) = 1$ in die Formel für $b_k$.
+\[b_k = \frac{2}{\pi} \int_{0}^{\pi} 1 \cdot \sin(k \cdot x)\,\mathrm{d}x\]
+\[b_k = \frac{2}{\pi} \cdot  \left[  \left[ -\frac{1}{k}\cos(kx) \right]_{\pi} - \left[ -\frac{1}{k}\cos(kx) \right]_{0} \right]\]
+\[b_k = \frac{2}{\pi} \cdot  \left[  -\frac{1}{k}\cos(k \cdot \pi) + \frac{1}{k}\cos(0) \right]\]
+\[b_k = \frac{2}{\pi} \cdot  \left[  -\frac{\cos(k \cdot \pi)}{k} + \frac{1}{k} \right]\]
+\[b_k = \frac{2}{\pi} \cdot  \left[\frac{1- \cos(k \cdot \pi)}{k} \right]\]
+\[b_k = \frac{2\cdot \,(1-\cos(k \cdot \pi))}{\pi \cdot k} \]     \[ \cos(k \cdot \pi) = (-1)^k \]
+\[b_k = \frac{2\cdot \,(1-(-1)^k)}{\pi \cdot k} \]
 
 Einsetzen von geraden und ungeraden Zahlen $k = 2$ und $k = 3$. 
 \[
