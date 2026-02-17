@@ -178,7 +178,7 @@ Ortsteils ausschließlich Sinusfunktionen. Cosinusfunktionen können die Randbed
 
 Die Anfangsbedingung $u(x,0) = 1$ wird durch die Fourier-Analyse behandelt, um den Koeffizienten $b_k$ zu bestimmen.
 Um $b_k$ zu bestimmen, muss $u(x) = b_k \cdot \sin(k \cdot x) \cdot$ als Fourier-Reihe dargestellt werden.
-
+Dabei wird $e^{-a^2 \cdot k^2 \cdot t} = 1$ gesetzt, da die Anfangsbedingung für $t=0$ gilt. Es entsteht die folgende Gleichung:
 \[
 u(x) = \sum_{k=1}^{\infty} b_k \cdot \sin(k \cdot x) \rightarrow b_k = \frac{2}{\pi} \int_{0}^{\pi} u(x) \cdot \sin(k \cdot x)\,\mathrm{d}x
 \]
