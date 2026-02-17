@@ -1,10 +1,10 @@
 \chapter{Herleitung der Wärmeleitungsgleichung}
-Die Wärmeleitungsgleichung lässt sich auch direkt aus der Energiebilanz in einem infinitesimalen Volumenelement herleiten \cite[S.~15--28]{langemann2018so}.
+Die Wärmeleitungsgleichung lässt sich direkt aus der Energiebilanz eines infinitesimalen Volumenelement herleiten \cite[S.~15--28]{langemann2018so}.
 Dabei wird der Energieerhaltungssatz mit dem Fourierschen Gesetz kombiniert, um die partielle Differenzialgleichung für die Temperaturentwicklung abzuleiten.
 
 \subsubsection{Energieerhaltung}
 Betrachten wir ein kleines Stück eines Stabes im Intervall \([x, x + \Delta x]\).
-Die in diesem Stück gespeicherte thermische Energie \(E\) ist proportional zur Temperatur \(u(x,t)\):
+Die in diesem Stück gespeicherte thermische Energie \(E\) ist proportional zur Temperatur \(u(x,t)\),
 \[
 E = \rho \, c \, u(x,t) \, \Delta x
 \]
@@ -33,7 +33,7 @@ Durch Kürzen von \(\Delta x\) erhält man:
 \rho c u_t = - I_x
 \]
 
-\subsubsection{Einsetzen des Fourier'schen Gesetzes}
+\subsubsection{Einsetzen des Fourierschen Gesetzes}
 Setzt man das Fouriersche Gesetz für \(I\) ein, ergibt sich:
 \[
 I = -k u_x
@@ -57,7 +57,7 @@ Die Konstante
 \[
 a^2 = \frac{k}{\rho c}
 \]
-wird als thermische Diffusivität bezeichnet. Die Wärmeleitungsgleichung lautet somit:
+wird als Temperaturleitkoeffizienten bezeichnet. Die Wärmeleitungsgleichung lautet somit:
 \[
 u_t(x,t) = a^2 \cdot u_{xx}(x,t)
 \]
