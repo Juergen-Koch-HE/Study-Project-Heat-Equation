@@ -138,7 +138,7 @@ Einsetzen der Randbedingungen in den Ortsteil der Gleichungen.
 \[C_1 + C_2 = 0\]
 \[C_1 = -C_2\]
 \[|C_1| = |C_2| = C\]
-\[X(x) = C_1 \cdot e^{x \cdot \sqrt{w}} - C_2 \cdot e^{-x \cdot \sqrt{w}} = C \cdot ( e^{x \cdot \sqrt{w}} - e^{-x \cdot \sqrt{w}}) \]
+\[X(x) = C_1 \cdot e^{x \cdot \sqrt{w}} - C_2 \cdot e^{-x \cdot \sqrt{w}} \Rightarrow C \cdot ( e^{x \cdot \sqrt{w}} - e^{-x \cdot \sqrt{w}}) \]
 Aufgrund der Linearkombination von Lösungen werden $C_1$ und $C_2$ zu $C$ zusammengefasst.
 
 \[X(\pi) = C \cdot ( e^{\pi \cdot \sqrt{w}} - e^{-\pi \cdot \sqrt{w}} )\, \qquad  C \neq 0\] 
@@ -146,22 +146,23 @@ Aufgrund der Linearkombination von Lösungen werden $C_1$ und $C_2$ zu $C$ zusam
 \[e^{\pi \cdot \sqrt{w}} = e^{-\pi \cdot \sqrt{w}}\]
 \[e^{2 \cdot \pi \cdot \sqrt{w}} = 1\]
 
-Für die Exponentialfunktion gilt $e^{z} = 1$ daraus folgt $z=2\cdot \pi \cdot i \cdot k$.
+Für die Exponentialfunktion gilt $e^{z} = 1$ daraus folgt $z=2\cdot \pi \cdot i \cdot k$ mit $k \in \mathbb{Z} \setminus \{0\}$.
 
-\[\Rightarrow 2\cdot \pi \cdot \sqrt{w} = i \cdot 2 \cdot \pi \cdot k,\qquad k \in \mathbb{Z} \setminus \{0\}
+\[\Rightarrow 2\cdot \pi \cdot \sqrt{w} = i \cdot 2 \cdot \pi \cdot k
 \]
 \[\Rightarrow \sqrt{w} = i \cdot k
 \]
 \[\Rightarrow w = -k^{2}
 \]
 
-Einsetzen in  $\lambda = a \pm i \cdot b$.  
+Damit gilt  $\lambda = \pm \sqrt{w} = \pm ik$ also a = 0 und b = k. diese Werte werden in die Eigenwertfunktion eingesetzt.  
 \[X(x) = e^{a\cdot x}  \cdot (C_1 \cdot \cos(bx) + C_2 \cdot \sin(bx))\]
-
 \[X(x) = C_1 \cdot \cos(k\cdot x) + C_2 \cdot \sin(k\cdot x) \]
-\[X(0) = C_1 \cdot \cos(0) + C_2 \cdot \sin(0) = C_1 \cdot 1 + C_2 \cdot 0 = C_1 = 0 \]
 
+Einsetzen der Randbedingung $X(0)=0$
+\[X(0) = C_1 \cdot \cos(0) + C_2 \cdot \sin(0) = C_1 \cdot 1 + C_2 \cdot 0 = C_1 = 0 \]
 \[X(x) = C_2 \cdot \sin(k\cdot x)\]
+Einsetzen der Randbedingung $X(\pi)=0$
 \[X(\pi) = C_2 \cdot \sin(k \cdot \pi) = 0, \qquad C_2 \neq 0, \qquad k \in \mathbb{Z} \setminus \{0\}\]
 \[\sin(k \cdot \pi) = 0\]    
 
