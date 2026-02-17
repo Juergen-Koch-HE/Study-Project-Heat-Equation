@@ -9,29 +9,17 @@ Als Programmiersprache wurde Python gewählt, da diese sich hervorragend für Be
 \section{Aufbau des Labors}
 Der Aufbau des Labors lehnt sich an dem Aufbau von dem Labor des Roboter-Arms an. Das bedeutet zunächst folgt eine Einleitung in das Thema mit einem kleinen Video, gefolgt von einer mathematischen Einleitung in das Thema, ein paar Aufgaben, welche dann zum weiteren Verständnis mithilfe von Python und den genannten Bibliotheken visualisiert werden als Simulationen. Aufgrund dieser Simulationen soll tieferes Verständnis für die Wärmeleitungsgleichung in Festkörpern erzeugt werden. 
 
-Der Aufbau ist wie folgt:
-\begin{enumerate}
-\item Imports: Sollen gleich bleiben, wie bei den anderen Laboren.
-
-\item Modelling: Als Einleitung zum Thema wird ein Video eingefügt. Dieses Video beschreibt das Verhalten eines eindimensionalen Stabelements, wenn es an einer Seite durch eine Wärmequelle erhitzt wird. 
-
-\item Derivation of the heat equation: Darauf folgt die Herleitung der Wärmeleitungsgleichung aus der Energiebilanz in einem infinitesimalen Volumenelement. 
-
-\item Numerical treatment: In diesem Kapitel muss der Student seine erste Aufgabe lösen. Diese beinhaltet das Berechnen des Temperaturleitkoeffizienten. Die notwendigen Informationen sind entweder direkt oder durch Wikipedia Links bereitgestellt. Darauf folgend wird dann die Wärmeleitungsgleichung gelöst, während Anfangs- und Randbedingungen beachtet werden.
-
-\item Implementation \& Visualization: Nach dem Schaffen der Grundlagen werden dann Simulationen erstellt, welche es möglich machen, das erworbene Wissen praktisch anzuwenden. In diesen Python-Programmen, wird durch Ausfüllen der Lücken einzelne Schaubilder und Simulationen erstellt, welche auch selbst gesteuert werden können und bei denen die Studenten später die Möglichkeit haben, einzelne Parameter anzupassen, um beispielsweise verschiedene Materialien zu simulieren. 
-\end{enumerate}
 
 \section{Funktionsgraphen und Simulationen}
 Die bereits angekündigten Schaubilder und Simulationen können nachfolgend als Bilder betrachtet werden. Für einen leichteren Einstieg geht es bei der ersten Implementierungs- und Visualisierungs-Aufgabe um eine simple Sinusfunktion. 
 
 Die Lösung kann wie folgt aussehen:
 \begin{lstlisting}[caption={Python Code für einfachen Sinus}]
-# Simple One sine mode (k=1): u(x,t) = sin(x) * exp(-a^2 t)
-def u_sin_xt(x, t, a2):
-    # Single sine mode with homogeneous Dirichlet Boundary conditions
+# Simple One sine (k=1): u(x,t) = sin(x) * exp(-a^2*k^2*t)
+def u_sin_xt(x, t, a2, k2):
+    # Single sine with homogeneous Dirichlet Boundary conditions
     # Initial graph meets exponential decay time factor
-    return np.sin(x) * np.exp(-a2 * t)  
+    return np.sin(x) * np.exp(-a2 * k2* t)  
 \end{lstlisting}
 
 
@@ -39,7 +27,7 @@ Dadurch entsteht dann folgendes Schaubild:
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{content/figures/SingleSineModeDiagram.png}
+  \includegraphics[width=0.8\textwidth]{content/figures/SingleSineDiagram.png}
   \caption{Sinus Graph}
   \label{fig:heat-simulation}
 \end{figure}
