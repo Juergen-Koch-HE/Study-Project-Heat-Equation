@@ -1,16 +1,16 @@
 \chapter{Analyse und Methodik}\label{sec:design}
 
 \section{Mathematische Grundlagen}
-Bevor die Wärmeleitungsgleichung aufgestellt wird, werden in diesem Abschnitt einige wichtige mathematische Grundlagen behandelt, die einzelne Vorgänge auf dem Lösungsweg in der analytischen Lösung genauer beschreiben. 
+Bevor die Wärmeleitungsgleichung gelöst wird, werden in diesem Abschnitt einige wichtige mathematische Grundlagen behandelt, die einzelne Vorgänge auf dem Lösungsweg in der analytischen Lösung genauer beschreiben. 
 
 \subsection{Differenzialgleichungen}
-Eine Differenzialgleichung ist eine Gleichung, deren Lösung eine Fuktion ist und die neben der unbekanten Funktion auch mindestens eine Ableitung dieser Funktion enthält.
+Eine Differenzialgleichung ist eine Gleichung, deren Lösung eine Funktion ist und die neben der unbekannten Funktion auch mindestens eine Ableitung dieser Funktion enthält.
 Es gibt außer gewöhnlichen auch noch andere Gleichungsarten. Die für dieses Projekt wichtige, ist die partielle Differenzialgleichung, bei der die gesuchte Funktion von mehreren Variablen abhängig ist und partielle Ableitungen enthält.  
 Die Wärmeleitungsgleichung ist eine partielle Differenzialgleichung, 
 da sie partielle Ableitungen nach der Zeit und nach dem Ort enthält \cite[S.~481--483]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.481-483).
 
 \subsubsection{Linearkombination von Lösungen}
-Das Prinzip der Linearkombination von Lösungen, linearer homogener Differenzialgleichungen, besagt, dass sobald diese mindestens zwei Lösungenn hat, diese mit beliebigen Konstanten multipliziert und dann addiert werden dürfen und dass sich daraus dann wieder eine Lösung ergibt. 
+Das Prinzip der Linearkombination von Lösungen, linearer homogener Differenzialgleichungen, besagt, dass sobald diese mindestens zwei Lösungen hat, diese mit beliebigen Konstanten multipliziert und dann addiert werden dürfen und dass sich daraus dann wieder eine Lösung ergibt. 
 Durch die Linearkombination der Lösungen von $y_1$ und $y_2$ ergibt sich folgendes Phänomen:
 \[ y(x) = C_1 \cdot y_1(x)+C_2 \cdot y_2(x)\]
 
@@ -18,7 +18,7 @@ Dieses Prinzip ermöglicht es, aus Lösungen der linearen homogenen Differenzial
 
 \subsubsection{Charakteristische Gleichung}
 Das Prinzip der Charakteristischen Gleichung wird beim Lösen linearer homogener Differenzialgleichungen mit konstanten Koeffizienten angewendet und erleichtert das Auflösen der Gleichung. Dabei wird der Exponentialansatz dazu genutzt: $y(x) = e^{\lambda x}$ 
-Dabei gilt beim Lösen der Gleichung für die Ableitung wird  $y^k(x) = \lambda^k \cdot e^{\lambda x}$. Dabei kann man den gemeinsamen Faktor kürzen, so dass $y^k(x) = \lambda^k$ entsteht.
+Hierbei gilt beim Lösen der Gleichung für die Ableitung wird  $y^k(x) = \lambda^k \cdot e^{\lambda x}$. Den gemeinsamen Faktor kann man kürzen, so dass $y^k(x) = \lambda^k$ entsteht.
 Dabei gilt, dass $y^0(x) = \lambda^0 = 1 $ und $y^1(x)=\lambda \cdot e^{\lambda x}$ ist.
 Hat die Gleichung nun den Grad n, entsteht ein charakteristisches Polynom. Dieses muss aufgelöst werden, um die Eigenwerte für $\lambda_1$ bis $\lambda_n$ zu berechnen.
 
@@ -59,7 +59,7 @@ auf.
 
 \subsection{Fourier-Reihen}
 Eine Fourier-Reihe stellt eine periodische mathematische Funktion, in sich wiederholenden Sinus- und Kosinus Termen dar. Das bedeutet die Ergebnisse dieser Gleichungen wiederholen sich nach einer Periode $T$.
-Damit eine Funktion als periodisch gilt, sollte sie $f(x+p)=f(x)$ sein, wobei die Periode $p > 0$ ist \cite[S.~191]{koch2015mathematik}. 
+Damit eine Funktion als periodisch gilt, sollte sie $f(x+T)=f(x)$ sein, wobei die Periode $T > 0$ ist \cite[S.~191]{koch2015mathematik}. 
 %(Koch \& Stempfle, 2018, S.191).
 Eine Fourier-Reihe wird so definiert: 
 
@@ -70,7 +70,7 @@ Dabei steht $\frac{a_0}{2}$ für den Mittelwert der Funktion über eine Periode.
 
 Die Fourier-Reihe funktioniert für Funktionen, die auf dem betrachteten Intervall stückweise stetig sind. Dort wo die Funktion stetig ist, konvergiert die Fourier-Reihe dann gegen den Funktionswert. An Sprungstellen hingegen konvergiert sie gegen den Mittelwert der links- und rechtsseitigen Grenzwerte \cite[S.~577--582]{koch2015mathematik}.
 
-Ob eine Funktion $f(t)$ ungerade oder gerade ist, erkennt man, wenn man sie auf Achsen symetrie prüft. Ist die Funktion $f(-t) = f(t)$, dann ist sie achsensymetrisch. Ist die Funktion $f(-t) = -f(t)$, dann ist sie punktsymetrisch und somit ungerade \cite[S.~188--189]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.188-189).
+Ob eine Funktion $f(t)$ ungerade oder gerade ist, erkennt man, wenn man sie auf Achsen Symmetrie prüft. Ist die Funktion $f(-t) = f(t)$, dann ist sie achsensymmetrisch. Ist die Funktion $f(-t) = -f(t)$, dann ist sie punktsymmetrisch und somit ungerade \cite[S.~188--189]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.188-189).
 
 \[a_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cdot \cos(k\cdot w \cdot t)\,dt, \qquad k = 0,1,2,\ldots\]
 \[b_k = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cdot \sin(k\cdot w \cdot t)\,dt, \qquad k = 1,2,\ldots\]
@@ -78,15 +78,15 @@ Ob eine Funktion $f(t)$ ungerade oder gerade ist, erkennt man, wenn man sie auf 
 
 \subsection{Analytisches Lösungsverfahren}
 
-Es wurden die Dirichlet-Randbedingungen $U(0,t)=0$ und $U(\pi,t)=0$ mit $t \ge 0$ angenommen. Diese Wahl verienfacht die die Lösung des Ortsteils im weitern Verlauf, da aus $U(0,t)=0$ die Bedinugn $X(0)= 0$ folgt und dadurch in der allgemeinen Ortslösung der Cosinusanteil verschwindet. $U(\pi,t)=0$ führt zu $X(\pi)=0$ und damit auf einfache Eigenwerte, da $\sin(k\cdot \pi)=0$ für $k \in \mathbb{N}$ gilt.
+Es wurden die Dirichlet-Randbedingungen $u(0,t)=0$ und $u(\pi,t)=0$ mit $t \ge 0$ angenommen. Diese Wahl vereinfacht die Lösung des Ortsteils im weiteren Verlauf, da aus $u(0,t)=0$ die Bedingung $X(0)= 0$ folgt und dadurch in der allgemeinen Ortslösung der Cosinusanteil verschwindet. $u(\pi,t)=0$ führt zu $X(\pi)=0$ und damit auf einfache Eigenwerte, da $\sin(k\cdot \pi)=0$ für $k \in \mathbb{N}$ gilt.
 
-Als Anfangswert wurde ein konstanter Wert von $1$ im Inneren ausgewählt, so entsteht in Kombination mit den Randbedingungen von $U(0,t)=U(\pi,t)=0$ ein Gefälle aus dem inneren des Körpers zum Rand hin.
+Als Anfangswert wurde ein konstanter Wert von $1$ im Inneren ausgewählt, so entsteht in Kombination mit den Randbedingungen von $u(0,t)=u(\pi,t)=0$ ein Gefälle aus dem Inneren des Körpers zum Rand hin.
 Der Anfangswert wurde als Konstante gewählt, da so die Berechnung des Fourier-Koeffizienten $b_k$ unkompliziert ist. Außerdem ist das Gibbssche Phänomen nahe der Sprungstellen zu beobachten.
 Der Anfangswert ist stückweise definiert, damit an den Rändern keine Widersprüche entstehen.
-\[U(x,0) = \qquad \begin{cases} 1, 0 < x < \pi, \\ 0, x=0, \text{ oder } x=\pi. \end{cases}\] 
+\[u(x,0) = \qquad \begin{cases} 1, 0 < x < \pi, \\ 0, x=0, \text{ oder } x=\pi. \end{cases}\] 
 
 
-Es wurde der der Produktansatz gewählt um die Wärmeleitungsgleichung aufzustellen. Dadurch wird angenommen das man die Lösung der Gleichung in der Form $u(x,t)=X(x) \cdot T(t)$ schreiben kann. Beginnend mit der Separation der Variablen, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und diese können nach der jeweiligen Unbekannten aufgelöst werden.
+Es wurde der der Produktansatz gewählt um die Wärmeleitungsgleichung zu lösen. Dadurch wird angenommen das man die Lösung der Gleichung in der Form $u(x,t)=X(x) \cdot T(t)$ schreiben kann. Beginnend mit der Separation der Variablen, um den Ort $X(x)$ und die Zeit $T(t)$ zu trennen. Dadurch wird die Gleichung in zwei Bereiche aufgeteilt und diese können nach der jeweiligen Unbekannten aufgelöst werden.
 
 Wärmeleitungsgleichung hat die Form $u_t(x,t)= a^2 \cdot u_{xx}$ um diese Form aus dem Produktansatz zu erzeugen,
 wird der Produktansatz einmal nach der Zeit ableiten:  
@@ -98,10 +98,10 @@ Und zweimal nach dem Ort ableiten:
 Die Gleichungen die durch das Ableiten nach dem Ort und der Zeit entstehen, werden nun in die Wärmeleitungsgleichung eingesetzt:
 \[X(x) \cdot T_t(t) = a^2 \cdot X_{xx}(x) \cdot T(t)\]
 
-Um die Seperation der Variablen durchzuführen, muss diese Gleichung so umgeformt werden, das alle Terme, die von der Zeit $t$ abhängen, auf einer Seite stehen und alle Terme, die vom Ort $x$ abhängen, auf der anderen Seite. Das wird erreicht, in dem diese Gleichung durch den Term $X(x) \cdot T(t) \cdot a^2$ geteilt wird. Es kürzen sich der jeweilige Orts und Zeit Term aus einer Seite und es entsteht die folgende Gleichung:
+Um die Separation der Variablen durchzuführen, muss diese Gleichung so umgeformt werden, dass alle Terme, die von der Zeit $t$ abhängen, auf einer Seite stehen und alle Terme, die vom Ort $x$ abhängen, auf der anderen Seite. Das wird erreicht, in dem diese Gleichung durch den Term $X(x) \cdot T(t) \cdot a^2$ geteilt wird. Es kürzen sich der jeweilige Orts und Zeit Term aus einer Seite und es entsteht die folgende Gleichung:
 \[\frac{ X_{xx}(x)}{ X(x)}  =  \frac{T_t(t)}{a^2 \cdot T(t) }\]
 
-Durch die Separation der Variablen entstehen zwei unabhängige Gleichgungsteile, nach dem Ort $\frac{ X_{xx}(x)}{ X(x)}$ und der Zeit $\frac{T_t(t)}{a^2 \cdot T(t) }$. Dadurch könnte man den Ort verändern und würde keinen Einfluss auf die Zeit nehmen und umgekehrt. Das bedeutet mathematisch, dass der linke Term nur vom Ort x und der rechte Term nur von der Zeit t abhängt. Damit die Gleichheit für alle $x$ und $t$ gilt, müssen beide Terme gleich derselben Konstante $w$ sei. Das bringt den Vorteil, dass die Wärmeleitungsgleichung, welche eine partielle Differenzialgleichung ist, in zwei gewöhnliche Differenzialgleichungen geteilt wird. Die einmal nach dem Ort und einmal nach der Zeit getrennt sind \cite[S.~105--107]{langemann2018so}. %(Mathematik ..., xxxx, S.105-107)
+Durch die Separation der Variablen entstehen zwei unabhängige Gleichungsteile, nach dem Ort $\frac{ X_{xx}(x)}{ X(x)}$ und der Zeit $\frac{T_t(t)}{a^2 \cdot T(t) }$. Dadurch könnte man den Ort verändern und würde keinen Einfluss auf die Zeit nehmen und umgekehrt. Das bedeutet mathematisch, dass der linke Term nur vom Ort x und der rechte Term nur von der Zeit t abhängt. Damit die Gleichheit für alle $x$ und $t$ gilt, müssen beide Terme gleich derselben Konstante $w$ sei. Das bringt den Vorteil, dass die Wärmeleitungsgleichung, welche eine partielle Differenzialgleichung ist, in zwei gewöhnliche Differenzialgleichungen geteilt wird. Die einmal nach dem Ort und einmal nach der Zeit getrennt sind \cite[S.~105--107]{langemann2018so}. %(Mathematik ..., xxxx, S.105-107)
 \[\frac{ X_{xx}(x)}{ X(x)}  =  \frac{T_t(t)}{a^2 \cdot T(t) } = w \qquad   w = Konst.\] 
 
 Auflösen des Ortsteils X(x) der Wärmeleitungsgleichung.
@@ -155,7 +155,7 @@ Für die Exponentialfunktion gilt $e^{z} = 1$ daraus folgt $z=2\cdot \pi \cdot i
 \[\Rightarrow w = -k^{2}
 \]
 
-Damit gilt  $\lambda = \pm \sqrt{w} = \pm ik$ also a = 0 und b = k. diese Werte werden in die Eigenwertfunktion eingesetzt.  
+Damit gilt  $\lambda = \pm \sqrt{w} = \pm ik$ also a = 0 und b = k. Diese Werte werden in die Eigenwertfunktion eingesetzt.  
 \[X(x) = e^{a\cdot x}  \cdot (C_1 \cdot \cos(bx) + C_2 \cdot \sin(bx))\]
 \[X(x) = C_1 \cdot \cos(k\cdot x) + C_2 \cdot \sin(k\cdot x) \]
 
@@ -168,16 +168,16 @@ Einsetzen der Randbedingung $X(\pi)=0$
 
 
 Bildung der Produktlösung.
-\[u(x,t) = C_2\cdot sin(k \cdot x) \cdot C_3 \cdot e^{-a^2 \cdot k^2 \cdot t}, \qquad b_k := C_2C_3= \text{Konst.} \]
-\[u(x,t) = b_k \cdot sin(k \cdot x) \cdot e^{-a^2 \cdot k^2 \cdot t}\]         
+\[u(x,t) = C_2\cdot \sin(k \cdot x) \cdot C_3 \cdot e^{-a^2 \cdot k^2 \cdot t}, \qquad b_k := C_2C_3= \text{Konst.} \]
+\[u(x,t) = b_k \cdot \sin(k \cdot x) \cdot e^{-a^2 \cdot k^2 \cdot t}\]         
 
 \subsection{Von der Produktlösung zur Fourier-Reihe}
 Aufgrund der homogenen Dirichlet-Randbedingungen 
 $u(0,t)=u(\pi,t)=0$ ergeben sich als Eigenfunktionen des
-Ortsteils ausschließlich Sinusfunktionen. Cosinusfunktionen können die Randbedingungen nicht erfüllen. Aus gegebenem Grund wird nur der Sinus-Koeffizient $b_k$ beachtet, währen der Cosinus-Koeffizient $a_k$ entfällt.
+Ortsteils ausschließlich Sinusfunktionen. Cosinusfunktionen können die Randbedingungen nicht erfüllen. Aus gegebenem Grund wird nur der Sinus-Koeffizient $b_k$ beachtet, während der Cosinus-Koeffizient $a_k$ entfällt.
 
 Die Anfangsbedingung $u(x,0) = 1$ wird durch die Fourier-Analyse behandelt, um den Koeffizienten $b_k$ zu bestimmen.
-Um $b_k$ zu bestimmen, muss $u(x) = b_k \cdot sin(k \cdot x) \cdot$ als Fourier-Reihe dargestellt werden.
+Um $b_k$ zu bestimmen, muss $u(x) = b_k \cdot \sin(k \cdot x) \cdot$ als Fourier-Reihe dargestellt werden.
 
 \[
 u(x) = \sum_{k=1}^{\infty} b_k \cdot \sin(k \cdot x) \rightarrow b_k = \frac{2}{\pi} \int_{0}^{\pi} u(x) \cdot \sin(k \cdot x)\,\mathrm{d}x
@@ -219,10 +219,10 @@ u(x,t) = \sum_{k=1}^{\infty} \frac{4}{\pi \cdot k}\cdot \,\sin(k \cdot x)\cdot \
 
 
 \section{Gibbssches Phänomen}
-Das Gibbssche Phänomen, entdeckt von Josiah Willard Gibbs, bezeichnet die Über- und Unterschwingungen, die bei der Approximation einer Funktion durch ihre Fourier-Reihe in der Nähe einer Sprungstelle auftreten (Koch \& Stempfle, 2018, S.581-582). Das kann man sich als einen abrupten Richtungswechsel in einem Graphen vorstellen (Koch \& Stempfle, 2018, S.258). Zum Beispiel bei einer Rechteckfunktion, die linksseitig für $x < 1$ mit $f(x) = 1$ und rechtseitig für als $x > 1$ mit$ f(x) = -1$ definiert ist, entsteht dort wo sich die Intervalle berühren bei $x = 1$ eine Sprungstelle.
-Das Gibbssche Phänomen ist eine feste Größe und hat eine Abweichung von der Sptze des Überschwingers zur Spitze des Unterschwingers von ungefähr $18\%$. Durch das Einbeziehen sehr vieler Sinus- und Kosinusglieder wird der Bereich in dem das Gibbssche Phänomen auftritt schmaler, jedoch sinkt die Abweichung Grenzbereich nicht unter $18\%$ \cite[S.~581--582]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.581-582). 
+Das Gibbssche Phänomen, entdeckt von Josiah Willard Gibbs, bezeichnet die Über- und Unterschwingungen, die bei der Approximation einer Funktion durch ihre Fourier-Reihe in der Nähe einer Sprungstelle auftreten (Koch \& Stempfle, 2018, S.581-582). Das kann man sich als einen abrupten Richtungswechsel in einem Graphen vorstellen (Koch \& Stempfle, 2018, S.258). Zum Beispiel bei einer Rechteckfunktion, die linksseitig für $x < 1$ mit $f(x) = 1$ und rechtsseitig für als $x > 1$ mit$ f(x) = -1$ definiert ist, entsteht dort wo sich die Intervalle berühren bei $x = 1$ eine Sprungstelle.
+Das Gibbssche Phänomen ist eine feste Größe und hat eine Abweichung von der Spitze des Überschwingers zur Spitze des Unterschwingers von ungefähr $18\%$. Durch das Einbeziehen sehr vieler Sinus- und Kosinusglieder wird der Bereich in dem das Gibbssche Phänomen auftritt schmaler, jedoch sinkt die Abweichung Grenzbereich nicht unter $18\%$ \cite[S.~581--582]{koch2015mathematik}. %(Koch \& Stempfle, 2018, S.581-582). 
 
-Dieses Phänomen tritt besonders in Unstetigen Grenzregionen von Differenzialgleichungen auf und hat somit eine relevanz für die Wärmeleitglichung
+Dieses Phänomen tritt besonders in Unstetigen Grenzregionen von Differenzialgleichungen auf und hat somit eine Relevanz für die Wärmeleitungsgleichung,
 
 
 
