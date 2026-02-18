@@ -16,13 +16,8 @@
     {
       "name": "lualatex",
       "command": "lualatex",
-      "args": [
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
-      ]
+      "args": ["-interaction=nonstopmode", "-file-line-error", "%DOC%"]
     }
-  ]
+  ],
+  "cSpell.words": ["discribed"]
 }
-
-

@@ -1,29 +1,43 @@
 \chapter{Theoretische Grundlagen}
-In diesem Abschnitt werden Theoretische Grundlagen geschaffen, auf denen die späteren Kapitel aufbauen.
+In diesem Abschnitt werden theoretische Grundlagen geschaffen, auf denen die späteren Kapitel aufbauen.
 
 \section{Wärmeleitung als physikalisches Phänomen}
-Das Phänomen der Wärmeleitung beschreibt den Wärmefluss in einem Körper als Wärmetransport von warmen zu kälteren Bereichen \cite[S.~12--27]{langemann2018so}. Es beschreibt, wie sich die Wärmeenergie ohne Bewegung der Teilchen (Konvektion), die sich in diesem ausbreitet. Ausgehend von einem isotropen homogenen Material strahlt dabei die Wärme immer gleichmäßig vom wärmsten zum kältesten Punkt des Körpers und sorgt so dafür, dass das Material sich gleichmäßig temperiert. Die Temperatur, die dadurch an einem Ort $x$ zu einer Zeit $t$ in diesem Material entsteht, wird $U$ genannt. Daraus ergibt sich folgende Gleichung $U(x,t)$ mit $t \geqq 0$ und $x> Rand_{min}$ $x<= Rand_{max}$, sie beschreibt für jeden Punkt zu jeder Zeit die jeweilige Temperatur. Die Ränder des Materials sind gesondert zu betrachten. Sie können entsprechend der Situation angepasst werden, sie sind für den Wärmeabfluss entweder durchlässig oder nicht. Das bedeutet, dass der Körper seine Wärme an die Umgebung, in der er sich befindet entweder abstrahlen kann oder nicht. Realistisch ist, dass der Körper seine Wärme abstrahlt. Jedoch kann in der Mathematik auch mit perfekt gedämmten Rändern gearbeitet werden. Im Großen und Ganzen gibt es drei Rändertypen für die Wärmeleitgleichung. Beginnend mit der Dirichlet-Randbedingung, des Mathematikers Johann Peter Gustav Lejeune Dirichlet. Sie beschreibt den Rand als Netz aus Koordinatenpunkten, das sich um den Körper spannt. Auch hier kann zu jeder Zeit an jedem Ort in diesem Netz die Temperatur des Randes festgelegt werden, als $Q(x,t)$ oder der Einfachheit halber kann ein fester Wert für das gesamte Netz angenommen werden, zum Beispiel 20°C. Dies könnte der Raumtemperatur entsprechen, in der sich der Körper befindet. Nachfolgend die Neumann-Randbedingung des Mathematikers Carl Gottfried Neumann, sie gibt anstatt der Außentemperatur den Wärmestrom $-I(x,t)$ an, über den die Wärme des Körpers über seine Ränder abgestrahlt wird, und seinen Normalvektor $N$, welcher die Abstrahlrichtung bestimmt. Daraus ergibt sich dann die Gleichung $P(x,t)= -I*N$. Zum Schluss die Robin-Randbedingung des Mathematikers Victor Gustave Robin. Sie ist die realistischste Randbedingung, denn sie kombiniert Eigenschaften der Dirichlet- und Neuman-Randbedingung. In der Robin-Randbedingung wird der Wärmestrom $I(x,t)$ berücksichtigt und eine Temperaturdifferenz zwischen der Randtemperatur $Q(x,t)$ und der Temperatur im Körper $U(x,t)$ berechnet. Außerdem beinhaltet sie noch eine weitere Komponente, den Wärmeübergangskoeffizienten $β(x)$, welcher beschreibt, wie gut die Wärme zwischen dem Körper und der Umgebung um ihn gleitet. Zum Beispiel würde der Temperaturleitkoeffizient einer Thermoskanne mit Tee bestimmen, wie schnell die Wärme des Tees über die Außenwand der Thermoskanne seine Wärme abgibt. Daraus ergibt sich folgende Gleichung: $I(t,x)*N = β(x)* [U(t,x) - Q(t,x)]$.
+Das Phänomen der Wärmeleitung beschreibt den Wärmefluss in einem Körper als Transport thermischer Energie von warmen zu kälteren Bereichen \cite[S.~12--27]{langemann2018so}. Diese Wärmeleitung findet statt, bis sich die Temperatur räumlich ausgleicht. Sie beschreibt, wie sich die Wärmeenergie ohne makroskopische Bewegung des Materials ausbreitet, wie es bei der Konvektion der Fall ist. Der Transport der thermischen Energie findet durch mikroskopische Prozesse statt, wie etwa Stöße oder Schwingungen in der Materialstruktur.
+
+Mathematisch wird dieser Ausgleich durch eine partielle Differenzialgleichung beschrieben,
+die angibt, wie sich die Temperatur $u(x,t)$ mit der Zeit verändert.
+
+\section{Allgemeine Form der Wärmeleitungsgleichung}
+Die allgemeine Wärmeleitungsgleichung beschreibt die zeitliche Änderung der Temperatur
+als Ergebnis eines Wärmeflusses im Inneren des Körpers \cite[S.~23--25]{langemann2018so}. Nachfolgend eine häufig verwendete Form:
+
+\[
+u_t(t,\mathbf{x})
+=
+\nabla_{\mathbf{x}}\cdot\bigl[A(\mathbf{x})\,\nabla u(t,\mathbf{x})\bigr]
++ f(t,\mathbf{x}),
+\qquad \mathbf{x}\in\Omega \subset \mathbb{R}^d,\; t>0
+\]
+
+$\Omega \subset \mathbb{R}^d$ beschreibt das betrachtete räumliche Gebiet (z.\,B. ein Stab für $d=1$, eine Platte für $d=2$ oder ein Volumen für $d=3$). Der Term $u_t(t,\mathbf{x})$ ist die zeitliche Änderungsrate der Temperatur.
+Der Operator $\nabla u(t,\mathbf{x})$ bezeichnet den Gradienten von $u$ bezüglich der
+räumlichen Variablen $\mathbf{x}$, d.\,h. den Vektor der partiellen Ableitungen nach den Raumrichtungen. Er zeigt in Richtung des stärksten räumlichen Anstiegs der Temperatur.
+Die Matrix $A(x)$ beschreibt die Materialeigenschaften (Wärmeleit-/Diffusionsverhalten) und kann ortsabhängig sein. Im anisotropen Fall ist $A(x)$ eine positiv definite Matrix, die richtungsabhängige Leitfähigkeit modelliert.
+Der Ausdruck $A(x)\nabla_x u(t,x)$ ist damit der Wärmefluss, der aus dem Temperaturgefälle entsteht.
+Die Divergenz $\nabla_x$ misst, ob dieser Fluss an einem Punkt ``auseinanderläuft'' oder ``zusammenläuft'' und führt so auf die lokale Zu- oder Abnahme der Temperatur durch Wärmeleitung.
+Der Quellterm $f(t,x)$ beschreibt zusätzliche Wärmequellen bzw. Wärmesenken im Inneren des Gebiets, also externe Zu- oder Abfuhr von Wärmeenergie.
+
+Anschaulich bedeutet die Gleichung: Wo die Temperaturverteilung räumlich stark gekrümmt
+ist, also eine große zweite räumliche Ableitungen, findet ein schnellerer Ausgleich statt. Die Materialeigenschaften $A(x)$ steuern dabei, wie schnell ein Material Temperaturunterschiede abbaut.
+
+
+\section{Spezialfall und Modellannahme im Labor}
+Dieses Projekt befasst sich ausschließlich mit dem eindimensionalen Fall (1D), also zum Beispiel einem Stab, bei dem die Temperatur nur entlang einer Raumkoordinate variiert. Ausgehend von einem isotropen homogenen Material wird Wärme im Inneren des Körpers durch Temperaturunterschiede von warmen zu kälteren Bereichen transportiert, sodass sich die Temperatur mit der Zeit ausgleicht. Die Temperatur, die dadurch an einem Ort $x$ zu einer Zeit $t$ in diesem Material entsteht, wird durch $u(x,t)$ beschrieben. Daraus ergibt sich die Temperaturfunktion $u(x,t)$ mit $t \geqq 0$ und $x \in (a,b)$, wobei $a$ und $b$ die Endpunkte des eindimensionalen Körpers sind. Sie beschreibt für jeden Punkt zu jeder Zeit die jeweilige Temperatur. Beide Randpunkte dieses Körpers sind damit $x=a$ und $x=b$. Die Randpunkte des Materials sind gesondert zu betrachten. Sie können entsprechend der Situation angepasst werden, je nach Modellannahme kann über die Randpunkte Wärme mit der Umgebung ausgetauscht werden oder nicht. Das bedeutet, dass der Körper seine Wärme an die Umgebung abgeben oder aus ihr aufnehmen kann oder (idealisiert) thermisch isoliert ist. Realistisch ist, dass der Körper mit seiner Umgebung Wärme austauscht. Jedoch kann in der Mathematik auch mit perfekt isolierten Randpunkten gearbeitet werden. Im Großen und Ganzen gibt es drei Typen von Randbedingungen für die Wärmeleitungsgleichung. Beginnend mit der Dirichlet-Randbedingung nach Johann Peter Gustav Lejeune Dirichlet. Im eindimensionalen Fall besteht der Rand aus genau zwei Punkten, nämlich $x=a$ und $x=b$. Auch hier kann zu jeder Zeit an beiden Randpunkten die Temperatur festgelegt werden, als $u(a,t)=q(a,t)$ und $u(b,t)=q(b,t)$ oder der Einfachheit halber kann konstanter Wert angenommen werden, zum Beispiel 20°C. Dies könnte der Raumtemperatur entsprechen, in der sich der Körper befindet. Nachfolgend die Neumann-Randbedingung nach Carl Gottfried Neumann, sie gibt anstatt der Außentemperatur den Wärmestrom über die Randpunkte vor. Der Wärmestrom über die Randpunkte wird dabei so formuliert $-k \cdot u_x(a,t) = I(a,t)$ und $-k \cdot u_x(b,t) = I(b,t)$ mit $t \geqq 0$. Dabei ist $k \ge 0$ die Wärmeleitfähigkeit des Körpers und $I(a,t)$,$I(b,t)$ sind die vorgegebenen Wärmeströme an den Randpunkten. Zum Schluss die Robin-Randbedingung nach Victor Gustave Robin. Sie ist die realistischste Randbedingung, denn sie kombiniert Eigenschaften der Dirichlet- und Neumann-Randbedingung. In der Robin-Randbedingung wird der Wärmestrom an den Randpunkten berücksichtigt und eine Temperaturdifferenz zwischen der Umgebungstemperatur am Rand q(x,t) und der Temperatur des Körpers am Rand $u(x,t)$ angesetzt, also an den Randpunkten bei $x=a$ und $x=b$. Außerdem beinhaltet sie noch eine weitere Komponente, den Wärmeübergangskoeffizienten $\beta(x)$, welcher beschreibt, wie stark Wärme zwischen dem Körper und der Umgebung über den Rand ausgetauscht wird. Der Wärmeübergangskoeffizient bestimmt wie schnell Wärme von dem Körper oder System an seine Umgebung abgegeben wird. Die Wärmeleitfähigkeit $k$ beschreibt dagegen den Wärmetransport im Inneren des Materials, während $\beta(x)$ den Austausch über die Ränder beschreibt. Daraus ergibt sich folgende Gleichung: $I(t,x) = \beta(x) \cdot [u(t,x) - q(t,x)]$ für $t \geqq 0$ $x \in \{a,b\}$.
 %(So einfach ist Mathematik, xxxx, S.12-27).
 
-\section{Modellannahme und physikalische Größen}
-Konkret befasst sich diese Arbeit mit einem eindimensionalen Stabelement, dessen Wärmestrom ausschließlich entlang der X-Achse verläuft. Das Material des Stabelements wird als homogen vorausgesetzt, sodass die Stoffwerte ortsunabhängig sind. Es gibt weder externe noch interne Wärmequellen. Es herrschen Dirichlet-Randbedingungen mit einer einheitlich konstanten Temperatur von 0°C. In diesem Fall beschreibt die Gleichung ein eindimensionales Stabelement in einer perfekten Laborumgebung beim Erkalten. Sie soll dem Betrachter in der Simulation später visuell vermitteln, wie sich das Material im Labor verhalten würde. Um diese Probleme zu lösen, wurde die allgemeine Wärmeleitungsgleichung ohne Wärmequelle \cite[S.~15]{cannon1984one} herangezogen: \[u_t = a^2\,u_{xx}\]
+Für die im Labor betrachtete Situation wird folgende Modellannahme getroffen:
+Es wird ein eindimensionales Stabelement betrachtet, dessen Wärmefluss ausschließlich entlang der $x$-Achse verläuft. Das Material des Stabelements wird als homogen und isotrop angenommen, sodass die Stoffwerte ortsunabhängig sind. Es gibt weder externe noch interne Wärmequellen. Es herrschen Dirichlet-Randbedingungen mit einer einheitlich konstanten Temperatur von 0°C. In diesem Fall beschreibt die Gleichung ein eindimensionales Stabelement in einer idealisierten Laborbedingungen beim Abkühlen. Sie soll dem Betrachter in der Simulation später visuell vermitteln, wie sich das Material im Labor verhalten würde. Um diese Probleme zu lösen, wurde die allgemeine Wärmeleitungsgleichung ohne Wärmequelle \cite[S.~15]{cannon1984one} herangezogen: \[u_t(x,t) = a^2\,u_{xx}(x,t)\]
 
 Dabei steht $u_t$ für den nach der Zeit abgeleiteten Teil der Gleichung und $u_{xx}$ für den nach dem Ort abgeleiteten Teil der Gleichung. $a^2$ beschreibt in dieser Gleichung den spezifischen Temperaturleitkoeffizient, der beschreibt, wie gut oder schlecht das Material Wärme leitet. 
-
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\textwidth}{|c|p{4cm}|X|c|}
-\hline
-\textbf{Symbol} & \textbf{Bezeichnung} & \textbf{Einheit} & \textbf{Bedeutung} \\ \hline
-$u(x, t)$ & Temperatur & K oder $^\circ$C & Gesuchte Größe über Ort und Zeit \\ \hline
-$\alpha$ oder $a²$ & Temperaturleitkoeffizient & m$^2$/s oder mm$^2$/s& Maß für die thermische Dynamik \\ \hline
-$\lambda$ & Wärmeleitfähigkeit & W/(m$\cdot$K) & Fähigkeit zum Wärmetransport \\ \hline
-$\rho$ & Dichte & kg/m$^3$ & Masse pro Volumeneinheit \\ \hline
-$c_p$ & Spez. Wärmekapazität & J/(kg$\cdot$K) & Thermische Speicherfähigkeit \\ \hline
-\end{tabularx}
-\caption{Verwendete physikalische Größen}
-\label{tab:phys_groessen}
-\end{table}
 
 
